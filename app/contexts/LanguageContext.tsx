@@ -555,7 +555,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState("ka");
   const [mounted, setMounted] = useState(false);
 
   // Load language from localStorage on mount
@@ -565,9 +565,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (savedLanguage && (savedLanguage === "en" || savedLanguage === "ka")) {
       setLanguage(savedLanguage);
     } else {
-      // Detect browser language
+      // Default to Georgian, but detect browser language as fallback
       const browserLang = navigator.language.split("-")[0];
-      if (browserLang === "ka" || browserLang === "ka-GE") {
+      if (browserLang === "en") {
+        setLanguage("en");
+      } else {
+        // Default to Georgian
         setLanguage("ka");
       }
     }

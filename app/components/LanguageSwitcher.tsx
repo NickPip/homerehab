@@ -8,8 +8,8 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
   const languages = [
-    { code: "en", name: "EN", fullName: "English" },
     { code: "ka", name: "KA", fullName: "ქართული" },
+    { code: "en", name: "EN", fullName: "English" },
   ];
 
   return (
@@ -21,7 +21,7 @@ export default function LanguageSwitcher() {
       >
         <Globe className="w-4 h-4 text-gray-600" />
         <span className="font-medium text-gray-700 text-sm">
-          {languages.find((lang) => lang.code === language)?.name || "EN"}
+          {languages.find((lang) => lang.code === language)?.name || "KA"}
         </span>
       </button>
 

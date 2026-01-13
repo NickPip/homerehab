@@ -32,6 +32,7 @@ export default function Specialist() {
         t("specialist.doctors.0.education.0"),
         t("specialist.doctors.0.education.1"),
       ],
+      image: "/doctor.jpeg",
     },
     {
       id: 2,
@@ -45,19 +46,7 @@ export default function Specialist() {
         t("specialist.doctors.1.education.0"),
         t("specialist.doctors.1.education.1"),
       ],
-    },
-    {
-      id: 3,
-      name: t("specialist.doctors.2.name"),
-      credentials: t("specialist.doctors.2.credentials"),
-      currentRole: t("specialist.doctors.2.currentRole"),
-      description: t("specialist.doctors.2.description"),
-      experience: t("specialist.doctors.2.experience"),
-      patients: t("specialist.doctors.2.patients"),
-      education: [
-        t("specialist.doctors.2.education.0"),
-        t("specialist.doctors.2.education.1"),
-      ],
+      image: "/doctor2.jpeg",
     },
   ];
 
@@ -134,7 +123,7 @@ export default function Specialist() {
         </div>
 
         {/* Specialist Card with Animation */}
-        <div className="max-w-5xl mx-auto relative overflow-hidden">
+        <div className="max-w-4xl mx-auto relative overflow-hidden">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={activeDoctor}
@@ -167,13 +156,13 @@ export default function Specialist() {
                   mass: 0.8,
                 },
               }}
-              className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100"
+              className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 min-h-[480px] lg:min-h-[400px]"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
                 {/* Left: Doctor Photo */}
-                <div className="relative h-[280px] sm:h-[320px] lg:h-auto bg-gradient-to-br from-[#E8F4F8] to-[#D4EBF0] overflow-hidden">
+                <div className="relative h-[192px] sm:h-[224px] lg:h-full lg:min-h-[400px] bg-gradient-to-br from-[#E8F4F8] to-[#D4EBF0] overflow-hidden">
                   <Image
-                    src="/doctor.jpeg"
+                    src={currentDoctor.image}
                     alt={currentDoctor.name}
                     fill
                     className="object-cover object-center"
@@ -181,7 +170,7 @@ export default function Specialist() {
                     priority={activeDoctor === 0}
                   />
                   {/* Professional Badge Overlay */}
-                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg z-10">
+                  <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg z-10">
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-[#4A9D5F]" />
                       <span className="text-xs text-gray-700 font-medium">
@@ -192,52 +181,52 @@ export default function Specialist() {
                 </div>
 
                 {/* Right: Professional Information */}
-                <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
+                <div className="p-3 sm:p-4 lg:p-5 flex flex-col justify-between min-h-[288px] sm:min-h-[320px] lg:min-h-[400px]">
                   {/* Name & Title */}
-                  <div className="mb-3 sm:mb-4">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#2C6B8E] mb-1">
+                  <div className="mb-2 sm:mb-2.5">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#2C6B8E] mb-1">
                       {currentDoctor.name}
                     </h3>
-                    <p className="text-[#4A9D5F] font-semibold mb-2 text-sm sm:text-base">
+                    <p className="text-[#4A9D5F] font-semibold mb-1.5 text-xs sm:text-sm">
                       {currentDoctor.credentials}
                     </p>
-                    <div className="flex items-center gap-2 text-gray-600 text-xs sm:text-sm">
-                      <Building2 className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                      <span>{currentDoctor.currentRole}</span>
+                    <div className="flex items-center gap-2 text-gray-600 text-xs">
+                      <Building2 className="w-3 h-3 flex-shrink-0" />
+                      <span className="leading-tight">{currentDoctor.currentRole}</span>
                     </div>
                   </div>
 
                   {/* Professional Summary */}
-                  <div className="mb-4 pb-4 border-b border-gray-200">
-                    <p className="text-gray-700 leading-relaxed text-sm">
+                  <div className="mb-2.5 pb-2.5 border-b border-gray-200 flex-shrink-0 min-h-[64px]">
+                    <p className="text-gray-700 leading-relaxed text-xs sm:text-sm">
                       {currentDoctor.description}
                     </p>
                   </div>
 
                   {/* Key Credentials */}
-                  <div className="grid grid-cols-2 gap-4 mb-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-[#2C6B8E]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Award className="w-5 h-5 text-[#2C6B8E]" />
+                  <div className="grid grid-cols-2 gap-2.5 mb-2.5 flex-shrink-0">
+                    <div className="flex items-start gap-2">
+                      <div className="w-8 h-8 bg-[#2C6B8E]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Award className="w-4 h-4 text-[#2C6B8E]" />
                       </div>
                       <div>
-                        <p className="text-xs text-gray-500 uppercase tracking-wide mb-0.5 font-semibold">
+                        <p className="text-[10px] text-gray-500 uppercase tracking-wide mb-0.5 font-semibold">
                           {t("specialist.experienceLabel")}
                         </p>
-                        <p className="text-gray-900 text-sm font-medium">
+                        <p className="text-gray-900 text-xs font-medium">
                           {currentDoctor.experience}
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-[#4A9D5F]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Users className="w-5 h-5 text-[#4A9D5F]" />
+                    <div className="flex items-start gap-2">
+                      <div className="w-8 h-8 bg-[#4A9D5F]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Users className="w-4 h-4 text-[#4A9D5F]" />
                       </div>
                       <div>
-                        <p className="text-xs text-gray-500 uppercase tracking-wide mb-0.5 font-semibold">
+                        <p className="text-[10px] text-gray-500 uppercase tracking-wide mb-0.5 font-semibold">
                           {t("specialist.patientsLabel")}
                         </p>
-                        <p className="text-gray-900 text-sm font-medium">
+                        <p className="text-gray-900 text-xs font-medium">
                           {currentDoctor.patients}
                         </p>
                       </div>
@@ -245,18 +234,18 @@ export default function Specialist() {
                   </div>
 
                   {/* Education */}
-                  <div className="mb-4 pb-4 border-b border-gray-200">
-                    <div className="flex items-center gap-2 mb-3">
-                      <GraduationCap className="w-4 h-4 text-[#2C6B8E]" />
-                      <p className="text-xs text-gray-500 uppercase tracking-wide font-semibold">
+                  <div className="mb-2.5 pb-2.5 border-b border-gray-200 flex-shrink-0">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <GraduationCap className="w-3 h-3 text-[#2C6B8E]" />
+                      <p className="text-[10px] text-gray-500 uppercase tracking-wide font-semibold">
                         {t("specialist.educationLabel")}
                       </p>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 min-h-[48px]">
                       {currentDoctor.education.map((edu, index) => (
                         <p
                           key={index}
-                          className="text-gray-700 text-xs leading-relaxed pl-6"
+                          className="text-gray-700 text-[11px] leading-relaxed pl-5"
                         >
                           • {edu}
                         </p>
@@ -265,15 +254,15 @@ export default function Specialist() {
                   </div>
 
                   {/* Specializations */}
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-3 font-semibold">
+                  <div className="flex-shrink-0">
+                    <p className="text-[10px] text-gray-500 uppercase tracking-wide mb-1.5 font-semibold">
                       {t("specialist.specializationsLabel")}
                     </p>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1 min-h-[48px]">
                       {specializationAreas.map((spec, index) => (
                         <span
                           key={index}
-                          className="px-2.5 py-1 bg-gradient-to-r from-[#E8F4F8] to-[#E0F2E9] text-[#2C6B8E] text-xs rounded-full border border-[#2C6B8E]/10 font-medium"
+                          className="px-2 py-0.5 bg-gradient-to-r from-[#E8F4F8] to-[#E0F2E9] text-[#2C6B8E] text-[10px] rounded-full border border-[#2C6B8E]/10 font-medium"
                         >
                           {spec}
                         </span>
@@ -287,7 +276,7 @@ export default function Specialist() {
         </div>
 
         {/* Navigation Controls */}
-        <div className="max-w-5xl mx-auto mt-6 sm:mt-8 flex items-center justify-center gap-3 sm:gap-4 md:gap-6 px-4">
+        <div className="max-w-4xl mx-auto mt-6 sm:mt-8 flex items-center justify-center gap-3 sm:gap-4 md:gap-6 px-4">
           {/* Previous Button */}
           <button
             onClick={handlePrevious}

@@ -3,8 +3,17 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "HomeRehab - Transform Your Home",
-  description: "Modern home rehabilitation and renovation services",
+  title: "HomeRehab - სახლის რეაბილიტაცია",
+  description: "პროფესიონალური სახლში ფიზიკური რეაბილიტაციის სერვისები. თქვენი გამოჯანმრთელება, ჩვენი ვალდებულება.",
+  icons: {
+    icon: "/small-logo.png",
+    apple: "/small-logo.png",
+  },
+  openGraph: {
+    title: "HomeRehab - სახლის რეაბილიტაცია",
+    description: "პროფესიონალური სახლში ფიზიკური რეაბილიტაციის სერვისები",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
@@ -13,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ka">
       <body className="antialiased">
         <Providers>{children}</Providers>
       </body>

@@ -85,27 +85,27 @@ interface Translations {
     badge: string;
     title: string;
     subtitle: string;
-    evidenceBased: {
+    comfort: {
       title: string;
       description: string;
     };
-    personalized: {
+    professionalism: {
       title: string;
       description: string;
     };
-    homeBased: {
+    individualApproach: {
       title: string;
       description: string;
     };
-    progressTracking: {
+    timeSaving: {
       title: string;
       description: string;
     };
-    licensed: {
+    familyEnvironment: {
       title: string;
       description: string;
     };
-    familySupport: {
+    transparency: {
       title: string;
       description: string;
     };
@@ -146,8 +146,8 @@ const translations: Record<string, Translations> = {
       title2: "Rehabilitation",
       title3: "At Home",
       description:
-        "Professional home rehabilitation services delivered by experienced specialists. Transform your living space with expert care and attention to detail.",
-      callButton: "Call Now",
+        "Regain your freedom of movement without visiting the clinic. Our licensed physiotherapists will serve you in a comfortable environment.",
+      callButton: "Call",
       or: "or",
       cta: "Get a Free Consultation",
       trustBadge: "Certified professionals with 10+ years of experience",
@@ -197,9 +197,9 @@ const translations: Record<string, Translations> = {
     },
     specialist: {
       badge: "Our Specialists",
-      title: "Experienced Rehabilitation Professionals",
+      title: "Licensed Professionals",
       subtitle:
-        "Licensed specialists with international experience, providing professional services in your home",
+        "Our team is staffed with licensed doctors with international practice. Receive the highest quality medical service without leaving home.",
       licensed: "Licensed Specialist",
       experienceLabel: "Experience",
       patientsLabel: "Patients",
@@ -224,28 +224,15 @@ const translations: Record<string, Translations> = {
           ],
         },
         {
-          name: "Nikoloz Todua",
-          credentials: "Physical Therapist and Rehabilitation Specialist",
-          currentRole: "Physical Therapist at Georgian Foot and Ankle Institute",
+          name: "Giorgi Paichadze",
+          credentials: "Rehabilitation Specialist and Physical Therapist",
+          currentRole: "Rehabilitation Specialist at MedCapital LLC",
           description:
-            "Specialist with 6+ years of clinical experience, providing evidence-based, patient-centered care with individualized treatment plans. Specialized in orthopedic, traumatological, and neurological rehabilitation.",
-          experience: "6+ Years",
-          patients: "500+",
+            "Specialist with 4+ years of clinical experience, working across multiple rehabilitation centers including veterans' clinics and pediatric rehabilitation. Provides comprehensive rehabilitation services with a focus on evidence-based treatment methods.",
+          experience: "4+ Years",
+          patients: "400+",
           education: [
-            "Master's Degree in Physical Medicine and Rehabilitation – Tbilisi State Medical University",
-            "Advanced Professional Development Certificate – Pavlov First State Medical University, Saint Petersburg",
-          ],
-        },
-        {
-          name: "Nikoloz Todua",
-          credentials: "Physical Therapist and Rehabilitation Specialist",
-          currentRole: "Physical Therapist at Georgian Foot and Ankle Institute",
-          description:
-            "Specialist with 6+ years of clinical experience, providing evidence-based, patient-centered care with individualized treatment plans. Specialized in orthopedic, traumatological, and neurological rehabilitation.",
-          experience: "6+ Years",
-          patients: "500+",
-          education: [
-            "Master's Degree in Physical Medicine and Rehabilitation – Tbilisi State Medical University",
+            "Bachelor's Degree in Physical Medicine and Rehabilitation – Tbilisi State Medical University",
             "Advanced Professional Development Certificate – Pavlov First State Medical University, Saint Petersburg",
           ],
         },
@@ -262,54 +249,54 @@ const translations: Record<string, Translations> = {
     },
     whyUs: {
       badge: "Why Choose Us",
-      title: "Why Choose Our Physical Rehabilitation Services",
+      title: "Why HomeRehab?",
       subtitle:
-        "We combine evidence-based treatment methods with personalized care to help you recover in the comfort of your own home",
-      evidenceBased: {
-        title: "Evidence-Based Treatment",
+        "We combine evidence-based medicine and individual care to ensure your complete rehabilitation in a calm and comfortable environment.",
+      comfort: {
+        title: "Comfort",
         description:
-          "Our rehabilitation programs are based on the latest research and proven therapeutic techniques for optimal recovery outcomes.",
+          "Complete rehabilitation course in your home, without visiting the clinic.",
       },
-      personalized: {
-        title: "Personalized Care Plans",
+      professionalism: {
+        title: "Professionalism",
         description:
-          "Each treatment plan is tailored to your specific condition, goals, and lifestyle for the most effective rehabilitation journey.",
+          "The team is staffed only with licensed and experienced rehabilitation specialists.",
       },
-      homeBased: {
-        title: "Convenient Home-Based Care",
+      individualApproach: {
+        title: "Individual Approach",
         description:
-          "Receive professional rehabilitation services in the comfort of your home, eliminating travel stress and promoting faster recovery.",
+          "Treatment plan is created specifically according to your needs and doctor's prescription.",
       },
-      progressTracking: {
-        title: "Continuous Progress Monitoring",
+      timeSaving: {
+        title: "Time Saving",
         description:
-          "We track your progress with regular assessments and adjust treatment plans to ensure you're meeting your recovery milestones.",
+          "Forget about traffic jams and queues. The specialist comes at a convenient time for you.",
       },
-      licensed: {
-        title: "Licensed & Certified Specialists",
+      familyEnvironment: {
+        title: "Family Environment",
         description:
-          "All our therapists are fully licensed, certified, and continuously trained in the latest physical rehabilitation techniques.",
+          "Stress-free treatment accelerates the recovery process.",
       },
-      familySupport: {
-        title: "Family Involvement & Support",
+      transparency: {
+        title: "Transparency",
         description:
-          "We involve family members in the rehabilitation process, providing education and support for better long-term outcomes.",
+          "Pre-agreed plan and budget, without hidden costs.",
       },
       stats: {
         patients: {
-          number: "500+",
-          label: "Patients Treated",
+          number: "400+",
+          label: "Patients",
         },
         experience: {
           number: "10+",
           label: "Years Experience",
         },
         success: {
-          number: "95%",
+          number: "100%",
           label: "Recovery Rate",
         },
         satisfaction: {
-          number: "98%",
+          number: "100%",
           label: "Patient Satisfaction",
         },
       },
@@ -332,9 +319,9 @@ const translations: Record<string, Translations> = {
       serviceAreaDescription:
         "We provide professional rehabilitation services throughout Tbilisi and nearby regions.",
       emergency: "Emergency",
-      copyright: "© 2024 HomeRehab. All rights reserved.",
-      privacy: "Privacy Policy",
-      terms: "Terms of Service",
+      copyright: "© 2026 HomeRehab. All rights reserved.",
+      madeBy: "Developed by",
+      atomicImpact: "atomicimpact.tech",
     },
   },
   ka: {
@@ -351,12 +338,12 @@ const translations: Record<string, Translations> = {
       title2: "რეაბილიტაცია",
       title3: "სახლში",
       description:
-        "პროფესიონალური სახლის რეაბილიტაციის სერვისები გამოცდილი სპეციალისტების მიერ. გარდაქმენით თქვენს საცხოვრებელ სივრცეს ექსპერტული მოვლითა და დეტალებზე ყურადღებით.",
+        "დაიბრუნეთ მოძრაობის თავისუფლება კლინიკაში ვიზიტის გარეშე. ჩვენი ლიცენზირებული ფიზიოთერაპევტები მოგემსახურებიან თქვენთვის კომფორტულ გარემოში",
       callButton: "დარეკეთ",
       or: "ან",
       cta: "მიიღეთ უფასო კონსულტაცია",
       trustBadge: "სერტიფიცირებული პროფესიონალები 10+ წლის გამოცდილებით",
-      clients: "500+ კმაყოფილი კლიენტი",
+      clients: "500+ კმაყოფილი პაციენტი",
     },
     services: {
       badge: "რას გთავაზობთ",
@@ -402,9 +389,9 @@ const translations: Record<string, Translations> = {
     },
     specialist: {
       badge: "ჩვენი სპეციალისტები",
-      title: "გამოცდილი რეაბილიტაციის პროფესიონალები",
+      title: "ლიცენზირებული პროფესიონალები",
       subtitle:
-        "ლიცენზირებული სპეციალისტები საერთაშორისო გამოცდილებით, რომლებიც უზრუნველყოფენ პროფესიონალურ მომსახურებას თქვენს სახლში",
+        "ჩვენი გუნდი დაკომპლექტებულია საერთაშორისო პრაქტიკის მქონე ლიცენზირებული ექიმებით. მიიღეთ უმაღლესი ხარისხის სამედიცინო სერვისი სახლიდან გაუსვლელად.",
       licensed: "ლიცენზირებული სპეციალისტი",
       experienceLabel: "გამოცდილება",
       patientsLabel: "პაციენტები",
@@ -420,7 +407,7 @@ const translations: Record<string, Translations> = {
           credentials: "ფიზიკური თერაპევტი და რეაბილიტაციის სპეციალისტი",
           currentRole: "ფიზიკური თერაპევტი Georgian Foot and Ankle Institute-ში",
           description:
-            "6+ წლიანი კლინიკური გამოცდილების მქონე სპეციალისტი, რომელიც უზრუნველყოფს მტკიცებულებაზე დაფუძნებულ, პაციენტზე ორიენტირებულ მოვლას ინდივიდუალური მკურნალობის გეგმებით. სპეციალიზებულია ორთოპედიულ, ტრავმატოლოგიურ და ნევროლოგიურ რეაბილიტაციაში.",
+            "გამოცდილი სპეციალისტი, რომელიც ზრუნავს თქვენს ჯანმრთელობაზე 6-წლიანი კლინიკური პრაქტიკით. მკურნალობის პროცესი მოიცავს ინდივიდუალურ მიდგომას და თანამედროვე მეთოდებს.მიმართულებები:ორთოპედიული, ტრავმატოლოგიური და ნევროლოგიური პათოლოგიების რეაბილიტაცია",
           experience: "6+ წლიანი",
           patients: "500+",
           education: [
@@ -429,29 +416,16 @@ const translations: Record<string, Translations> = {
           ],
         },
         {
-          name: "ნიკოლოზ თოდუა",
-          credentials: "ფიზიკური თერაპევტი და რეაბილიტაციის სპეციალისტი",
-          currentRole: "ფიზიკური თერაპევტი Georgian Foot and Ankle Institute-ში",
+          name: "გიორგი პაიჭაძე",
+          credentials: "რეაბილიტოლოგი და ფიზიკური თერაპევტი",
+          currentRole: "რეაბილიტოლოგი შპს მედკაპიტალში",
           description:
-            "6+ წლიანი კლინიკური გამოცდილების მქონე სპეციალისტი, რომელიც უზრუნველყოფს მტკიცებულებაზე დაფუძნებულ, პაციენტზე ორიენტირებულ მოვლას ინდივიდუალური მკურნალობის გეგმებით. სპეციალიზებულია ორთოპედიულ, ტრავმატოლოგიურ და ნევროლოგიურ რეაბილიტაციაში.",
-          experience: "6+ წლიანი",
-          patients: "500+",
+            "გამოცდილი სპეციალისტი, რომელიც ზრუნავს თქვენს ჯანმრთელობაზე 4-წლიანი კლინიკური პრაქტიკით. მკურნალობის პროცესი მოიცავს ინდივიდუალურ მიდგომას და თანამედროვე მეთოდებს.მიმართულებები:ორთოპედიული, ტრავმატოლოგიური და ნევროლოგიური პათოლოგიების რეაბილიტაცია",
+          experience: "4+ წლიანი",
+          patients: "400+",
           education: [
-            "მაგისტრის ხარისხი ფიზიკურ მედიცინასა და რეაბილიტაციაში – თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
-            "პროფესიული განვითარების მოწინავე სერტიფიკატი – პავლოვის სახელობის პირველი სახელმწიფო სამედიცინო უნივერსიტეტი, სანკტ-პეტერბურგი",
-          ],
-        },
-        {
-          name: "ნიკოლოზ თოდუა",
-          credentials: "ფიზიკური თერაპევტი და რეაბილიტაციის სპეციალისტი",
-          currentRole: "ფიზიკური თერაპევტი Georgian Foot and Ankle Institute-ში",
-          description:
-            "6+ წლიანი კლინიკური გამოცდილების მქონე სპეციალისტი, რომელიც უზრუნველყოფს მტკიცებულებაზე დაფუძნებულ, პაციენტზე ორიენტირებულ მოვლას ინდივიდუალური მკურნალობის გეგმებით. სპეციალიზებულია ორთოპედიულ, ტრავმატოლოგიურ და ნევროლოგიურ რეაბილიტაციაში.",
-          experience: "6+ წლიანი",
-          patients: "500+",
-          education: [
-            "მაგისტრის ხარისხი ფიზიკურ მედიცინასა და რეაბილიტაციაში – თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
-            "პროფესიული განვითარების მოწინავე სერტიფიკატი – პავლოვის სახელობის პირველი სახელმწიფო სამედიცინო უნივერსიტეტი, სანკტ-პეტერბურგი",
+            "ბაკალავრის ხარისხი ფიზიკურ მედიცინასა და რეაბილიტაციაში – თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
+            "კვალიფიკაციის ასამაღლებელი კურსი – პავლოვის სახელობის პირველი სახელმწიფო სამედიცინო უნივერსიტეტი, სანკტ-პეტერბურგი",
           ],
         },
       ],
@@ -467,42 +441,42 @@ const translations: Record<string, Translations> = {
     },
     whyUs: {
       badge: "რატომ ჩვენ",
-      title: "რატომ აირჩიოთ ჩვენი ფიზიკური რეაბილიტაციის სერვისები",
+      title: "რატომ HomeRehab?",
       subtitle:
-        "ჩვენ ვაერთიანებთ მტკიცებულებაზე დაფუძნებულ მკურნალობის მეთოდებს პერსონალიზებულ მოვლასთან, რათა დაგეხმაროთ გამოჯანმრთელებაში თქვენი სახლის კომფორტში",
-      evidenceBased: {
-        title: "მტკიცებულებაზე დაფუძნებული მკურნალობა",
+        "ჩვენ ვაერთიანებთ მტკიცებით მედიცინასა და ინდივიდუალურ ზრუნვას, რათა უზრუნველვყოთ თქვენი სრული რეაბილიტაცია მშვიდ და კომფორტულ გარემოში.",
+      comfort: {
+        title: "კომფორტი",
         description:
-          "ჩვენი რეაბილიტაციის პროგრამები ეფუძნება უახლეს კვლევებსა და დადასტურებულ თერაპევტიკულ ტექნიკებს ოპტიმალური გამოჯანმრთელების შედეგებისთვის.",
+          "სრული სარეაბილიტაციო კურსი თქვენს სახლში, კლინიკაში ვიზიტის გარეშე.",
       },
-      personalized: {
-        title: "ინდივიდუალური მოვლის გეგმები",
+      professionalism: {
+        title: "პროფესიონალიზმი",
         description:
-          "თითოეული მკურნალობის გეგმა არის მორგებული თქვენი კონკრეტული მდგომარეობის, მიზნებისა და ცხოვრების წესის მიხედვით ყველაზე ეფექტური რეაბილიტაციის გზისთვის.",
+          "გუნდი დაკომპლექტებულია მხოლოდ ლიცენზირებული და გამოცდილი რეაბილიტოლოგებით.",
       },
-      homeBased: {
-        title: "მოსახერხებელი სახლში მოვლა",
+      individualApproach: {
+        title: "ინდივიდუალური მიდგომა",
         description:
-          "მიიღეთ პროფესიონალური რეაბილიტაციის სერვისები თქვენი სახლის კომფორტში, აღმოფხვრით მგზავრობის სტრესს და ხელს უწყობთ უფრო სწრაფ გამოჯანმრთელებას.",
+          "მკურნალობის გეგმა დგება კონკრეტულად თქვენი საჭიროებებისა და ექიმის დანიშნულების მიხედვით.",
       },
-      progressTracking: {
-        title: "უწყვეტი პროგრესის მონიტორინგი",
+      timeSaving: {
+        title: "დროის დაზოგვა",
         description:
-          "ჩვენ ვადევნებთ თვალყურს თქვენს პროგრესს რეგულარული შეფასებებით და ვარეგულირებთ მკურნალობის გეგმებს, რათა დავრწმუნდეთ, რომ თქვენ აღწევთ გამოჯანმრთელების ეტაპებს.",
+          "დაივიწყეთ საცობები და რიგები. სპეციალისტი მოდის თქვენთვის მოსახერხებელ დროს.",
       },
-      licensed: {
-        title: "ლიცენზირებული და სერტიფიცირებული სპეციალისტები",
+      familyEnvironment: {
+        title: "ოჯახური გარემო",
         description:
-          "ჩვენი ყველა თერაპევტი სრულად არის ლიცენზირებული, სერტიფიცირებული და მუდმივად ვარჯიშობს უახლეს ფიზიკური რეაბილიტაციის ტექნიკებში.",
+          "სტრესის გარეშე მკურნალობა აჩქარებს გამოჯანმრთელების პროცესს.",
       },
-      familySupport: {
-        title: "ოჯახის ჩართულობა და მხარდაჭერა",
+      transparency: {
+        title: "გამჭვირვალობა",
         description:
-          "ჩვენ ვჩართავთ ოჯახის წევრებს რეაბილიტაციის პროცესში, უზრუნველვყოფთ განათლებასა და მხარდაჭერას უკეთესი გრძელვადიანი შედეგებისთვის.",
+          "წინასწარ გაწერილი გეგმა და ბიუჯეტი, დაფარული ხარჯების გარეშე.",
       },
       stats: {
         patients: {
-          number: "100+",
+          number: "400+",
           label: "პაციენტი",
         },
         experience: {
@@ -537,9 +511,9 @@ const translations: Record<string, Translations> = {
       serviceAreaDescription:
         "ჩვენ ვაწვდით პროფესიონალურ რეაბილიტაციის სერვისებს თბილისში და მიმდებარე რეგიონებში.",
       emergency: "სასწრაფო",
-      copyright: "© 2024 HomeRehab. ყველა უფლება დაცულია.",
-      privacy: "კონფიდენციალურობის პოლიტიკა",
-      terms: "მომსახურების პირობები",
+      copyright: "© 2026 HomeRehab. ყველა უფლება დაცულია.",
+      madeBy: "საიტი დამზადებულია",
+      atomicImpact: "atomicimpact.tech",
     },
   },
 };
@@ -565,14 +539,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (savedLanguage && (savedLanguage === "en" || savedLanguage === "ka")) {
       setLanguage(savedLanguage);
     } else {
-      // Default to Georgian, but detect browser language as fallback
-      const browserLang = navigator.language.split("-")[0];
-      if (browserLang === "en") {
-        setLanguage("en");
-      } else {
-        // Default to Georgian
-        setLanguage("ka");
-      }
+      // Always default to Georgian
+      setLanguage("ka");
     }
   }, []);
 

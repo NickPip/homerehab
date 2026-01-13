@@ -4,12 +4,12 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { motion } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import {
-  Stethoscope,
-  UserCheck,
   Home,
-  TrendingUp,
-  ShieldCheck,
-  HeartHandshake,
+  UserCheck,
+  FileText,
+  Clock,
+  Heart,
+  Eye,
 } from "lucide-react";
 
 export default function WhyUs() {
@@ -18,40 +18,40 @@ export default function WhyUs() {
 
   const features = [
     {
-      icon: Stethoscope,
-      title: t("whyUs.evidenceBased.title"),
-      description: t("whyUs.evidenceBased.description"),
+      icon: Home,
+      title: t("whyUs.comfort.title"),
+      description: t("whyUs.comfort.description"),
       color: "from-blue-500 to-blue-600",
     },
     {
       icon: UserCheck,
-      title: t("whyUs.personalized.title"),
-      description: t("whyUs.personalized.description"),
+      title: t("whyUs.professionalism.title"),
+      description: t("whyUs.professionalism.description"),
       color: "from-green-500 to-green-600",
     },
     {
-      icon: Home,
-      title: t("whyUs.homeBased.title"),
-      description: t("whyUs.homeBased.description"),
+      icon: FileText,
+      title: t("whyUs.individualApproach.title"),
+      description: t("whyUs.individualApproach.description"),
       color: "from-purple-500 to-purple-600",
     },
     {
-      icon: TrendingUp,
-      title: t("whyUs.progressTracking.title"),
-      description: t("whyUs.progressTracking.description"),
-      color: "from-orange-500 to-orange-600",
+      icon: Clock,
+      title: t("whyUs.timeSaving.title"),
+      description: t("whyUs.timeSaving.description"),
+      color: "from-teal-500 to-teal-600",
     },
     {
-      icon: ShieldCheck,
-      title: t("whyUs.licensed.title"),
-      description: t("whyUs.licensed.description"),
-      color: "from-red-500 to-red-600",
-    },
-    {
-      icon: HeartHandshake,
-      title: t("whyUs.familySupport.title"),
-      description: t("whyUs.familySupport.description"),
+      icon: Heart,
+      title: t("whyUs.familyEnvironment.title"),
+      description: t("whyUs.familyEnvironment.description"),
       color: "from-pink-500 to-pink-600",
+    },
+    {
+      icon: Eye,
+      title: t("whyUs.transparency.title"),
+      description: t("whyUs.transparency.description"),
+      color: "from-indigo-500 to-indigo-600",
     },
   ];
 
@@ -70,7 +70,23 @@ export default function WhyUs() {
             {t("whyUs.badge")}
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
-            {t("whyUs.title")}
+            {(() => {
+              const title = t("whyUs.title");
+              const parts = title.split(/(HomeRehab|Home Rehab)/);
+              return parts.map((part, index) => {
+                if (part === "HomeRehab" || part === "Home Rehab") {
+                  return (
+                    <span
+                      key={index}
+                      className="bg-gradient-to-r from-[#2C6B8E] to-[#4A9D5F] bg-clip-text text-transparent"
+                    >
+                      {part}
+                    </span>
+                  );
+                }
+                return <span key={index}>{part}</span>;
+              });
+            })()}
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
             {t("whyUs.subtitle")}

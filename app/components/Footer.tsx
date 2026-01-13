@@ -142,24 +142,22 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 sm:pt-8 border-t border-white/20">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-            <p className="text-white/60 text-xs sm:text-sm text-center sm:text-left">
+          <div className="flex flex-col items-center gap-2 sm:gap-3 text-center">
+            <p className="text-white/60 text-xs sm:text-sm">
               {t("footer.copyright")}
             </p>
-            <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-white/60">
-              <Link
-                href="#"
-                className="hover:text-[#4A9D5F] transition-colors py-1"
+            <p className="text-white/50 text-[10px] sm:text-xs">
+              {t("footer.madeBy")}{" "}
+              <a
+                href="http://atomicimpact.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${t("footer.madeBy")} ${t("footer.atomicImpact")}`}
+                className="text-white/60 hover:text-[#4A9D5F] transition-colors duration-200 hover:underline focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2 focus:ring-offset-[#2C6B8E] rounded"
               >
-                {t("footer.privacy")}
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-[#4A9D5F] transition-colors py-1"
-              >
-                {t("footer.terms")}
-              </Link>
-            </div>
+                {t("footer.atomicImpact")}
+              </a>
+            </p>
           </div>
         </div>
       </div>

@@ -512,7 +512,7 @@ const translations: Record<string, Translations> = {
         "ჩვენ ვაწვდით პროფესიონალურ რეაბილიტაციის სერვისებს თბილისში და მიმდებარე რეგიონებში.",
       emergency: "სასწრაფო",
       copyright: "© 2026 HomeRehab. ყველა უფლება დაცულია.",
-      madeBy: "საიტი დამზადებულია",
+      madeBy: "ტექნიკური უზრუნველყოფა:",
       atomicImpact: "atomicimpact.tech",
     },
   },

@@ -292,7 +292,7 @@ const translations: Record<string, Translations> = {
           label: "Years Experience",
         },
         success: {
-          number: "",
+          number: "94%",
           label: "Recovery Rate",
         },
         satisfaction: {
@@ -558,7 +558,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     for (const k of keys) {
       value = value?.[k];
     }
-    return value || key;
+    return typeof value === "string" ? value : key;
   }
 
   return (

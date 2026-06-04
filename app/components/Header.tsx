@@ -85,6 +85,28 @@ export default function Header() {
             )}
           </a>
           <a
+            href="#services"
+            className={`relative text-sm font-medium transition-colors ${
+              activeSection === "services"
+                ? "text-[#2C6B8E]"
+                : "text-gray-700 hover:text-[#2C6B8E]"
+            }`}
+          >
+            {t("nav.services")}
+            {activeSection === "services" && (
+              <motion.span
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
+                layoutId="activeSection"
+                initial={false}
+                transition={{
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 30,
+                }}
+              />
+            )}
+          </a>
+          <a
             href="#specialist"
             className={`relative text-sm font-medium transition-colors ${
               activeSection === "specialist"
@@ -215,6 +237,17 @@ export default function Header() {
                 }`}
               >
                 {t("nav.home")}
+              </a>
+              <a
+                href="#services"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block py-3 px-2 rounded-lg transition-colors font-medium text-base border-b border-gray-100 ${
+                  activeSection === "services"
+                    ? "text-[#2C6B8E] bg-[#2C6B8E]/5"
+                    : "text-gray-700 hover:text-[#2C6B8E] hover:bg-gray-50"
+                }`}
+              >
+                {t("nav.services")}
               </a>
               <a
                 href="#specialist"

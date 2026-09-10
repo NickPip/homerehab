@@ -53,6 +53,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="#services"
+                  className="text-white/80 hover:text-[#4A9D5F] transition-colors text-xs sm:text-sm block py-1"
+                >
+                  {t("nav.services")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="#specialist"
                   className="text-white/80 hover:text-[#4A9D5F] transition-colors text-xs sm:text-sm block py-1"
                 >

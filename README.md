@@ -79,9 +79,11 @@ homerehab/
 │   ├── components/      # React components
 │   │   ├── Header.tsx
 │   │   ├── Hero.tsx
+│   │   ├── Services.tsx
 │   │   ├── Specialist.tsx
 │   │   ├── WhyUs.tsx
-│   │   └── Footer.tsx
+│   │   ├── Footer.tsx
+│   │   └── LanguageSwitcher.tsx
 │   ├── contexts/        # React contexts
 │   │   └── LanguageContext.tsx
 │   ├── hooks/           # Custom hooks
@@ -92,13 +94,15 @@ homerehab/
 ├── public/              # Static assets
 │   ├── logo.png
 │   ├── cover.png
-│   └── doctor.jpeg
+│   ├── doctor.jpeg
+│   └── doctor2.jpeg
 └── package.json
 ```
 
 ## Sections
 
 - **Hero** - Main landing section with call-to-action
+- **Services** - Rehabilitation programs offered at home
 - **Specialist** - Showcase of rehabilitation specialists
 - **Why Us** - Key benefits and statistics
 - **Contact** - Footer with contact information

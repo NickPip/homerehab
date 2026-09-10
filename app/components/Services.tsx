@@ -4,12 +4,12 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { motion } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import {
-  Home,
-  Wrench,
-  Paintbrush,
-  Hammer,
-  Shield,
-  Heart,
+  Bone,
+  Activity,
+  Brain,
+  Hand,
+  Wind,
+  HeartPulse,
   ArrowRight,
   Phone,
 } from "lucide-react";
@@ -20,39 +20,39 @@ export default function Services() {
 
   const services = [
     {
-      icon: Home,
-      title: t("services.homeRehab.title"),
-      description: t("services.homeRehab.description"),
+      icon: Bone,
+      title: t("services.orthopedic.title"),
+      description: t("services.orthopedic.description"),
       color: "from-blue-500 to-blue-600",
     },
     {
-      icon: Wrench,
-      title: t("services.repair.title"),
-      description: t("services.repair.description"),
+      icon: Activity,
+      title: t("services.postSurgery.title"),
+      description: t("services.postSurgery.description"),
       color: "from-green-500 to-green-600",
     },
     {
-      icon: Paintbrush,
-      title: t("services.renovation.title"),
-      description: t("services.renovation.description"),
+      icon: Brain,
+      title: t("services.neurological.title"),
+      description: t("services.neurological.description"),
       color: "from-purple-500 to-purple-600",
     },
     {
-      icon: Hammer,
-      title: t("services.construction.title"),
-      description: t("services.construction.description"),
+      icon: Hand,
+      title: t("services.manualTherapy.title"),
+      description: t("services.manualTherapy.description"),
       color: "from-orange-500 to-orange-600",
     },
     {
-      icon: Shield,
-      title: t("services.safety.title"),
-      description: t("services.safety.description"),
+      icon: Wind,
+      title: t("services.respiratory.title"),
+      description: t("services.respiratory.description"),
       color: "from-red-500 to-red-600",
     },
     {
-      icon: Heart,
-      title: t("services.care.title"),
-      description: t("services.care.description"),
+      icon: HeartPulse,
+      title: t("services.seniors.title"),
+      description: t("services.seniors.description"),
       color: "from-pink-500 to-pink-600",
     },
   ];

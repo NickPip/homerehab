@@ -27,27 +27,27 @@ interface Translations {
     title: string;
     subtitle: string;
     learnMore: string;
-    homeRehab: {
+    orthopedic: {
       title: string;
       description: string;
     };
-    repair: {
+    postSurgery: {
       title: string;
       description: string;
     };
-    renovation: {
+    neurological: {
       title: string;
       description: string;
     };
-    construction: {
+    manualTherapy: {
       title: string;
       description: string;
     };
-    safety: {
+    respiratory: {
       title: string;
       description: string;
     };
-    care: {
+    seniors: {
       title: string;
       description: string;
     };
@@ -157,41 +157,41 @@ const translations: Record<string, Translations> = {
       badge: "What We Offer",
       title: "Our Services",
       subtitle:
-        "Comprehensive home rehabilitation solutions tailored to your needs",
+        "A full rehabilitation course at home, tailored to your diagnosis and needs",
       learnMore: "Learn More",
-      homeRehab: {
-        title: "Home Rehabilitation",
+      orthopedic: {
+        title: "Orthopedic Rehabilitation",
         description:
-          "Complete home rehabilitation services to restore your living space to its best condition with professional care.",
+          "Rehabilitation for joint, spine, and musculoskeletal conditions: reducing pain and restoring your full range of motion.",
       },
-      repair: {
-        title: "Repair & Maintenance",
+      postSurgery: {
+        title: "Post-Surgery & Injury Recovery",
         description:
-          "Expert repair services for all home systems including plumbing, electrical, and structural repairs.",
+          "Safe, step-by-step recovery of function after surgery, fractures, or sports injuries, following an individual treatment plan.",
       },
-      renovation: {
-        title: "Renovation Services",
+      neurological: {
+        title: "Neurological Rehabilitation",
         description:
-          "Transform your home with our professional renovation services, from design to completion.",
+          "Restoring movement, balance, and independence after a stroke, neurological conditions, or nervous system injury.",
       },
-      construction: {
-        title: "Construction Work",
+      manualTherapy: {
+        title: "Manual Therapy",
         description:
-          "Quality construction services for additions, modifications, and new builds with certified professionals.",
+          "Hands-on techniques to relieve muscle tension, improve joint mobility, and reduce pain.",
       },
-      safety: {
-        title: "Safety Improvements",
+      respiratory: {
+        title: "Respiratory Rehabilitation",
         description:
-          "Enhance your home's safety with modern security systems, accessibility features, and safety upgrades.",
+          "Breathing exercises and lung function recovery after prolonged illness, surgery, or infection.",
       },
-      care: {
-        title: "Specialized Care",
+      seniors: {
+        title: "Rehabilitation for Seniors",
         description:
-          "Dedicated care services for elderly and special needs, ensuring comfort and accessibility at home.",
+          "Maintaining balance, strength, and daily activity in older adults, reducing the risk of falls and supporting independent living at home.",
       },
       cta: {
-        title: "Need Custom Services?",
-        description: "Contact us to discuss your specific requirements",
+        title: "Not Sure Which Program You Need?",
+        description: "Call us for a free consultation and we will choose the right course together",
         button: "Call Now",
       },
     },
@@ -199,7 +199,7 @@ const translations: Record<string, Translations> = {
       badge: "Our Specialists",
       title: "Licensed Professionals",
       subtitle:
-        "Our team is staffed with licensed doctors with international practice. Receive the highest quality medical service without leaving home.",
+        "Our team is staffed with licensed physical therapists and rehabilitation specialists. Receive the highest quality care without leaving home.",
       licensed: "Licensed Specialist",
       experienceLabel: "Experience",
       patientsLabel: "Patients",
@@ -207,8 +207,8 @@ const translations: Record<string, Translations> = {
       specializationsLabel: "Specializations",
       previous: "Previous",
       next: "Next",
-      doctor: "Doctor",
-      imagePlaceholder: "Doctor Photo",
+      doctor: "Specialist",
+      imagePlaceholder: "Specialist Photo",
       doctors: [
         {
           name: "Nikoloz Todua",
@@ -284,7 +284,7 @@ const translations: Record<string, Translations> = {
       },
       stats: {
         patients: {
-          number: "400+",
+          number: "500+",
           label: "Patients",
         },
         experience: {
@@ -310,7 +310,7 @@ const translations: Record<string, Translations> = {
       contact: {
         title: "Contact Information",
         phoneLabel: "Phone",
-        locationLabel: "Service Area",
+        locationLabel: "Location",
         hoursLabel: "Working Hours",
         hours: "Mon - Sat: 9:00 AM - 7:00 PM",
       },
@@ -318,7 +318,6 @@ const translations: Record<string, Translations> = {
       serviceArea: "Tbilisi and surrounding areas",
       serviceAreaDescription:
         "We provide professional rehabilitation services throughout Tbilisi and nearby regions.",
-      emergency: "Emergency",
       copyright: "© 2026 HomeRehab. All rights reserved.",
       madeBy: "Developed by",
       atomicImpact: "atomicimpact.tech",
@@ -338,7 +337,7 @@ const translations: Record<string, Translations> = {
       title2: "რეაბილიტაცია",
       title3: "სახლში",
       description:
-        "დაიბრუნეთ მოძრაობის თავისუფლება კლინიკაში ვიზიტის გარეშე. ჩვენი ლიცენზირებული ფიზიოთერაპევტები მოგემსახურებიან თქვენთვის კომფორტულ გარემოში",
+        "დაიბრუნეთ მოძრაობის თავისუფლება კლინიკაში ვიზიტის გარეშე. ჩვენი ლიცენზირებული ფიზიოთერაპევტები მოგემსახურებიან თქვენთვის კომფორტულ გარემოში.",
       callButton: "დარეკეთ",
       or: "ან",
       cta: "მიიღეთ უფასო კონსულტაცია",
@@ -349,41 +348,41 @@ const translations: Record<string, Translations> = {
       badge: "რას გთავაზობთ",
       title: "ჩვენი სერვისები",
       subtitle:
-        "სრულყოფილი რეაბილიტაციის სახლში თქვენი საჭიროებების მიხედვით",
+        "სრული სარეაბილიტაციო კურსი სახლში, თქვენი დიაგნოზისა და საჭიროებების მიხედვით",
       learnMore: "გაიგეთ მეტი",
-      homeRehab: {
-        title: "რეაბილიტაცია სახლში",
+      orthopedic: {
+        title: "ორთოპედიული რეაბილიტაცია",
         description:
-          "სრულყოფილი რეაბილიტაციის სერვისები თქვენი საცხოვრებელი სივრცის საუკეთესო მდგომარეობაში აღსადგენად პროფესიონალური მოვლით.",
+          "სახსრების, ხერხემლისა და კუნთ-ჩონჩხის სისტემის დაავადებების რეაბილიტაცია: ტკივილის შემცირება და მოძრაობის სრული მოცულობის აღდგენა.",
       },
-      repair: {
-        title: "შეკეთება და მოვლა",
+      postSurgery: {
+        title: "პოსტოპერაციული და ტრავმის შემდგომი აღდგენა",
         description:
-          "ექსპერტული შეკეთების სერვისები ყველა სახლის სისტემისთვის, მათ შორის სანტექნიკა, ელექტრო და სტრუქტურული შეკეთებები.",
+          "ოპერაციის, მოტეხილობის ან სპორტული ტრავმის შემდეგ ფუნქციის უსაფრთხო და ეტაპობრივი აღდგენა ინდივიდუალური მკურნალობის გეგმით.",
       },
-      renovation: {
-        title: "რენოვაციის სერვისები",
+      neurological: {
+        title: "ნევროლოგიური რეაბილიტაცია",
         description:
-          "გარდაქმენით თქვენი სახლი ჩვენი პროფესიონალური რენოვაციის სერვისებით, დიზაინიდან დასრულებამდე.",
+          "მოძრაობის, წონასწორობისა და დამოუკიდებლობის აღდგენა ინსულტის, ნევროლოგიური დაავადებების ან ნერვული სისტემის დაზიანების შემდეგ.",
       },
-      construction: {
-        title: "სამშენებლო სამუშაოები",
+      manualTherapy: {
+        title: "მანუალური თერაპია",
         description:
-          "ხარისხიანი სამშენებლო სერვისები დამატებების, მოდიფიკაციებისა და ახალი ნაგებობებისთვის სერტიფიცირებული პროფესიონალებით.",
+          "ხელით ზემოქმედების მეთოდები კუნთების დაძაბულობის მოსახსნელად, სახსრების მობილობის გასაუმჯობესებლად და ტკივილის შესამცირებლად.",
       },
-      safety: {
-        title: "უსაფრთხოების გაუმჯობესება",
+      respiratory: {
+        title: "სუნთქვითი რეაბილიტაცია",
         description:
-          "გააუმჯობესეთ თქვენი სახლის უსაფრთხოება თანამედროვე უსაფრთხოების სისტემებით, ხელმისაწვდომობის ფუნქციებითა და უსაფრთხოების გაუმჯობესებებით.",
+          "სუნთქვითი ვარჯიშები და ფილტვების ფუნქციის აღდგენა ხანგრძლივი დაავადების, ოპერაციის ან ინფექციის შემდეგ.",
       },
-      care: {
-        title: "სპეციალიზებული მოვლა",
+      seniors: {
+        title: "ხანდაზმულთა რეაბილიტაცია",
         description:
-          "დედიკატური მოვლის სერვისები მოხუცებისა და სპეციალური საჭიროებების მქონე პირებისთვის, უზრუნველყოფს კომფორტსა და ხელმისაწვდომობას სახლში.",
+          "წონასწორობის, ძალისა და ყოველდღიური აქტივობის შენარჩუნება ხანდაზმულებში, დაცემის რისკის შემცირება და დამოუკიდებელი ცხოვრება სახლში.",
       },
       cta: {
-        title: "სჭირდებათ ინდივიდუალური სერვისები?",
-        description: "დაგვიკავშირდით თქვენი კონკრეტული მოთხოვნების განსახილველად",
+        title: "არ იცით, რომელი მიმართულება გჭირდებათ?",
+        description: "დაგვირეკეთ უფასო კონსულტაციისთვის და შესაფერის კურსს ერთად შევარჩევთ",
         button: "დარეკეთ",
       },
     },
@@ -391,7 +390,7 @@ const translations: Record<string, Translations> = {
       badge: "ჩვენი სპეციალისტები",
       title: "ლიცენზირებული პროფესიონალები",
       subtitle:
-        "ჩვენი გუნდი დაკომპლექტებულია საერთაშორისო პრაქტიკის მქონე ლიცენზირებული ექიმებით. მიიღეთ უმაღლესი ხარისხის სამედიცინო სერვისი სახლიდან გაუსვლელად.",
+        "ჩვენი გუნდი დაკომპლექტებულია ლიცენზირებული ფიზიკური თერაპევტებითა და რეაბილიტოლოგებით. მიიღეთ უმაღლესი ხარისხის სამედიცინო სერვისი სახლიდან გაუსვლელად.",
       licensed: "ლიცენზირებული სპეციალისტი",
       experienceLabel: "გამოცდილება",
       patientsLabel: "პაციენტები",
@@ -399,15 +398,15 @@ const translations: Record<string, Translations> = {
       specializationsLabel: "სპეციალიზაციები",
       previous: "წინა",
       next: "შემდეგი",
-      doctor: "ექიმი",
-      imagePlaceholder: "ექიმის ფოტო",
+      doctor: "სპეციალისტი",
+      imagePlaceholder: "სპეციალისტის ფოტო",
       doctors: [
         {
           name: "ნიკოლოზ თოდუა",
           credentials: "ფიზიკური თერაპევტი და რეაბილიტაციის სპეციალისტი",
           currentRole: "ფიზიკური თერაპევტი Georgian Foot and Ankle Institute-ში",
           description:
-            "გამოცდილი სპეციალისტი, რომელიც ზრუნავს თქვენს ჯანმრთელობაზე 6-წლიანი კლინიკური პრაქტიკით. მკურნალობის პროცესი მოიცავს ინდივიდუალურ მიდგომას და თანამედროვე მეთოდებს.მიმართულებები:ორთოპედიული, ტრავმატოლოგიური და ნევროლოგიური პათოლოგიების რეაბილიტაცია",
+            "სპეციალისტი 6+ წლიანი კლინიკური გამოცდილებით, რომელიც მტკიცებულებებზე დაფუძნებულ, პაციენტზე ორიენტირებულ მკურნალობას სთავაზობს ინდივიდუალური გეგმით. მიმართულებები: ორთოპედიული, ტრავმატოლოგიური და ნევროლოგიური რეაბილიტაცია.",
           experience: "6+ წლიანი",
           patients: "500+",
           education: [
@@ -420,7 +419,7 @@ const translations: Record<string, Translations> = {
           credentials: "რეაბილიტოლოგი და ფიზიკური თერაპევტი",
           currentRole: "რეაბილიტოლოგი შპს მედკაპიტალში",
           description:
-            "გამოცდილი სპეციალისტი, რომელიც ზრუნავს თქვენს ჯანმრთელობაზე 4-წლიანი კლინიკური პრაქტიკით. მკურნალობის პროცესი მოიცავს ინდივიდუალურ მიდგომას და თანამედროვე მეთოდებს.მიმართულებები:ორთოპედიული, ტრავმატოლოგიური და ნევროლოგიური პათოლოგიების რეაბილიტაცია",
+            "სპეციალისტი 4+ წლიანი კლინიკური გამოცდილებით, რომელსაც ნამუშევარი აქვს რამდენიმე სარეაბილიტაციო ცენტრში, მათ შორის ვეტერანთა კლინიკასა და პედიატრიულ რეაბილიტაციაში. სთავაზობს სრულ სარეაბილიტაციო მომსახურებას მტკიცებულებებზე დაფუძნებული მეთოდებით.",
           experience: "4+ წლიანი",
           patients: "400+",
           education: [
@@ -433,7 +432,7 @@ const translations: Record<string, Translations> = {
         "ორთოპედიული რეაბილიტაცია",
         "ტრავმის რეაბილიტაცია",
         "ნევროლოგიური რეაბილიტაცია",
-        "ტერფისა და მუხლის რეაბილიტაცია",
+        "ტერფისა და კოჭის რეაბილიტაცია",
         "მანუალური თერაპია",
         "კუნთ-ჩონჩხის დარღვევები",
         "სუნთქვითი რეაბილიტაცია",
@@ -476,7 +475,7 @@ const translations: Record<string, Translations> = {
       },
       stats: {
         patients: {
-          number: "400+",
+          number: "500+",
           label: "პაციენტი",
         },
         experience: {
@@ -502,7 +501,7 @@ const translations: Record<string, Translations> = {
       contact: {
         title: "კონტაქტის ინფორმაცია",
         phoneLabel: "ტელეფონი",
-        locationLabel: "სერვისის არეალი",
+        locationLabel: "მდებარეობა",
         hoursLabel: "სამუშაო საათები",
         hours: "ორშ - შაბ: 09:00 - 19:00",
       },
@@ -510,7 +509,6 @@ const translations: Record<string, Translations> = {
       serviceArea: "თბილისი და მიმდებარე რაიონები",
       serviceAreaDescription:
         "ჩვენ ვაწვდით პროფესიონალურ რეაბილიტაციის სერვისებს თბილისში და მიმდებარე რეგიონებში.",
-      emergency: "სასწრაფო",
       copyright: "© 2026 HomeRehab. ყველა უფლება დაცულია.",
       madeBy: "ტექნიკური უზრუნველყოფა:",
       atomicImpact: "atomicimpact.tech",

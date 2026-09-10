@@ -140,8 +140,8 @@ export default function Services() {
               <p className="text-gray-600">{t("services.cta.description")}</p>
             </div>
             <a
-              href="tel:+995599968989"
-              aria-label="Call us at +995 599 96 89 89"
+              href="tel:+995591314222"
+              aria-label="Call us at +995 591 31 42 22"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#4A9D5F] text-white rounded-xl font-semibold hover:bg-[#3d8550] active:bg-[#357045] transition-all shadow-md hover:shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />

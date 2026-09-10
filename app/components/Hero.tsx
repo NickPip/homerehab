@@ -108,8 +108,8 @@ export default function Hero() {
           >
             {/* Primary CTA - Phone */}
             <a
-              href="tel:+995599968989"
-              aria-label="Call us at +995 599 96 89 89"
+              href="tel:+995591314222"
+              aria-label="Call us at +995 591 31 42 22"
               className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#4A9D5F] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-[#3d8550] active:bg-[#357045] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2 focus:ring-offset-transparent font-semibold text-sm sm:text-base w-full sm:w-auto min-h-[48px]"
             >
               <Phone className="w-5 h-5 sm:w-5 sm:h-5" aria-hidden="true" />

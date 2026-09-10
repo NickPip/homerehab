@@ -192,12 +192,12 @@ export default function Header() {
 
           {/* Phone Number - always visible */}
           <a
-            href="tel:+995599968989"
-            aria-label="Call us at +995 599 96 89 89"
+            href="tel:+995591314222"
+            aria-label="Call us at +995 591 31 42 22"
             className="flex items-center gap-1.5 sm:gap-2 bg-[#4A9D5F] text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg hover:bg-[#3d8550] active:bg-[#357045] transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2 text-sm sm:text-base"
           >
             <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true" />
-            <span className="hidden xs:inline font-medium text-xs sm:text-sm">599-96-89-89</span>
+            <span className="hidden xs:inline font-medium text-xs sm:text-sm">591-31-42-22</span>
             <span className="xs:hidden font-medium">{t("hero.callButton")}</span>
           </a>
 

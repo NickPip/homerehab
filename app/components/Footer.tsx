@@ -2,6 +2,7 @@
 
 import { Phone, MapPin, Mail, Clock } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { trackCallClick } from "../lib/analytics";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,6 +31,7 @@ export default function Footer() {
               <Phone className="w-4 h-4 text-[#4A9D5F] flex-shrink-0" />
               <a
                 href="tel:+995591314222"
+                onClick={() => trackCallClick("footer_logo")}
                 className="text-sm sm:text-base font-semibold hover:text-[#4A9D5F] transition-colors"
               >
                 +995 591 31 42 22
@@ -100,6 +102,7 @@ export default function Footer() {
                   </p>
                   <a
                     href="tel:+995591314222"
+                    onClick={() => trackCallClick("footer_contact")}
                     className="text-white hover:text-[#4A9D5F] transition-colors font-medium text-sm sm:text-base"
                   >
                     +995 591 31 42 22

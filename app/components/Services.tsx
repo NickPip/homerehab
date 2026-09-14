@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "../contexts/LanguageContext";
+import { trackCallClick } from "../lib/analytics";
 import { motion } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import {
@@ -141,6 +142,7 @@ export default function Services() {
             </div>
             <a
               href="tel:+995591314222"
+              onClick={() => trackCallClick("services_cta")}
               aria-label="Call us at +995 591 31 42 22"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#4A9D5F] text-white rounded-xl font-semibold hover:bg-[#3d8550] active:bg-[#357045] transition-all shadow-md hover:shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2"
             >

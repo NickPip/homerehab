@@ -2,6 +2,7 @@
 
 import { Phone, Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { trackCallClick } from "../lib/analytics";
 import { motion, AnimatePresence } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { useActiveSection } from "../hooks/useActiveSection";
@@ -193,6 +194,7 @@ export default function Header() {
           {/* Phone Number - always visible */}
           <a
             href="tel:+995591314222"
+            onClick={() => trackCallClick("header")}
             aria-label="Call us at +995 591 31 42 22"
             className="flex items-center gap-1.5 sm:gap-2 bg-[#4A9D5F] text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg hover:bg-[#3d8550] active:bg-[#357045] transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2 text-sm sm:text-base"
           >

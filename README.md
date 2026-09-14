@@ -117,7 +117,15 @@ Language preference is saved in localStorage and persists across sessions.
 
 ## Environment Variables
 
-No environment variables required for basic deployment.
+| Variable | Required | Description |
+| --- | --- | --- |
+| `NEXT_PUBLIC_GA_ID` | No | Google Analytics 4 measurement ID (`G-XXXXXXXXXX`). When unset, no analytics script is loaded. |
+
+Copy `.env.example` to `.env.local` for local development. On Vercel, add the variable under **Project → Settings → Environment Variables** and redeploy.
+
+## Analytics
+
+With `NEXT_PUBLIC_GA_ID` set, the site loads Google Analytics 4 via `@next/third-parties` and reports page views automatically. Every "call" link (header, hero, services CTA, footer) also sends a `call_click` event with a `location` parameter, so phone leads can be tracked as conversions in GA4.
 
 ## License
 

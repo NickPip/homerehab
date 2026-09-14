@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Providers } from "./providers";
+import { GA_ID } from "./lib/analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.homerehab.ge"),
@@ -27,6 +29,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Providers>{children}</Providers>
       </body>
+      {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
   );
 }

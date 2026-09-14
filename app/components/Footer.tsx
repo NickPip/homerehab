@@ -2,6 +2,7 @@
 
 import { Phone, MapPin, Mail, Clock } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { trackCallClick } from "../lib/analytics";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,10 +30,11 @@ export default function Footer() {
             <div className="flex items-center gap-2 sm:gap-3 text-white/90">
               <Phone className="w-4 h-4 text-[#4A9D5F] flex-shrink-0" />
               <a
-                href="tel:+995599968989"
+                href="tel:+995591314222"
+                onClick={() => trackCallClick("footer_logo")}
                 className="text-sm sm:text-base font-semibold hover:text-[#4A9D5F] transition-colors"
               >
-                +995 599 96 89 89
+                +995 591 31 42 22
               </a>
             </div>
           </div>
@@ -49,6 +51,14 @@ export default function Footer() {
                   className="text-white/80 hover:text-[#4A9D5F] transition-colors text-xs sm:text-sm block py-1"
                 >
                   {t("nav.home")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#services"
+                  className="text-white/80 hover:text-[#4A9D5F] transition-colors text-xs sm:text-sm block py-1"
+                >
+                  {t("nav.services")}
                 </Link>
               </li>
               <li>
@@ -91,10 +101,11 @@ export default function Footer() {
                     {t("footer.contact.phoneLabel")}
                   </p>
                   <a
-                    href="tel:+995599968989"
+                    href="tel:+995591314222"
+                    onClick={() => trackCallClick("footer_contact")}
                     className="text-white hover:text-[#4A9D5F] transition-colors font-medium text-sm sm:text-base"
                   >
-                    +995 599 96 89 89
+                    +995 591 31 42 22
                   </a>
                 </div>
               </li>

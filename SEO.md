@@ -23,6 +23,7 @@ Set these in Vercel under **Settings → Environment Variables**, then redeploy.
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 measurement ID. Already set |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Search Console "HTML tag" token. No meta tag is emitted while empty |
 | `NEXT_PUBLIC_SAME_AS` | Comma-separated profile URLs (Google Business Profile, Facebook, Instagram) emitted as schema.org `sameAs` |
+| `NEXT_PUBLIC_GBP_REVIEW_URL` | Google Business Profile "write a review" short link. The footer review link is hidden while empty |
 
 ## What only you can do
 
@@ -66,6 +67,22 @@ here so nobody puts them back by accident:
 - No promised session count, lead time, or package discount. Add these once they are real.
 - No street address or map coordinate. The therapists visit patients; they have no premises, and a
   fabricated address is what gets a Business Profile suspended.
+
+## Deliberately not built
+
+Three options came out of the audit that are product decisions, not code fixes. They are recorded
+here with the trade-off rather than chosen unilaterally.
+
+- **A real URL for the English version.** English currently lives only in browser storage, so it has
+  no address Google can index and no valid hreflang. Two ways out: publish it at `/en` and drive the
+  language from the route, or drop the English version entirely. The target queries are Georgian, so
+  neither affects the ranking goal. Say which you want.
+- **A page per condition.** Eight diagnoses now have their own headings on the home page. Giving
+  each its own URL would let it compete for its own query, but each needs 400 to 600 words of real
+  clinical copy. Thin pages would rank worse than the single page does today, and that copy has to
+  come from the therapists.
+- **Published prices.** Adding a real starting figure would let the pricing answer and the schema
+  carry a number, which is what high-intent searches want. Nothing was invented.
 
 ## Expected timeline
 

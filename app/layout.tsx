@@ -93,6 +93,11 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: true,
   },
+  // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION to the token Search Console gives you for the
+  // "HTML tag" verification method. Omitted entirely when unset.
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export const viewport: Viewport = {
@@ -113,8 +118,8 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <Providers>{children}</Providers>
+        {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
       </body>
-      {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
   );
 }

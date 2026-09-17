@@ -20,7 +20,7 @@ export default function Footer() {
             <Link href="#home" className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
               <Image
                 src="/logo.png"
-                alt="HomeRehab Logo"
+                alt="HomeRehab — რეაბილიტაცია და ფიზიოთერაპია სახლში თბილისში"
                 width={120}
                 height={40}
                 className="h-8 sm:h-10 w-auto object-contain brightness-0 invert"

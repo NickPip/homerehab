@@ -19,10 +19,8 @@ export default function Hero() {
       {/* Animated Background Image */}
       <motion.div
         className="absolute inset-0"
-        initial={
-          prefersReducedMotion ? { scale: 1, opacity: 1 } : { scale: 1.08, opacity: 0 }
-        }
-        animate={{ scale: 1, opacity: 1 }}
+        initial={prefersReducedMotion ? { scale: 1 } : { scale: 1.08 }}
+        animate={{ scale: 1 }}
         transition={{
           duration: prefersReducedMotion ? 0 : 1.2,
           ease: [0.25, 0.46, 0.45, 0.94],
@@ -49,10 +47,8 @@ export default function Hero() {
           {/* Subtitle/Badge */}
           <motion.div
             className="mb-6"
-            initial={
-              prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
-            }
-            animate={{ opacity: 1, y: 0 }}
+            initial={prefersReducedMotion ? { y: 0 } : { y: 10 }}
+            animate={{ y: 0 }}
             transition={{
               duration: prefersReducedMotion ? 0 : 0.5,
               delay: prefersReducedMotion ? 0 : 0.3,
@@ -68,28 +64,24 @@ export default function Hero() {
           {/* Main Headline with colored accent */}
           <motion.h1
             className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-bold tracking-tight"
-            initial={
-              prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
-            animate={{ opacity: 1, y: 0 }}
+            initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
+            animate={{ y: 0 }}
             transition={{
               duration: prefersReducedMotion ? 0 : 0.7,
               delay: prefersReducedMotion ? 0 : 0.5,
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <span className="text-white block drop-shadow-lg">{t("hero.title1")}</span>
-            <span className="text-white block drop-shadow-lg">{t("hero.title2")}</span>
+            <span className="text-white block drop-shadow-lg">{t("hero.title1")}</span>{" "}
+            <span className="text-white block drop-shadow-lg">{t("hero.title2")}</span>{" "}
             <span className="text-[#4A9D5F] block drop-shadow-lg">{t("hero.title3")}</span>
           </motion.h1>
 
           {/* Description */}
           <motion.p
             className="mb-6 sm:mb-8 md:mb-10 text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-xl"
-            initial={
-              prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }
-            }
-            animate={{ opacity: 1, y: 0 }}
+            initial={prefersReducedMotion ? { y: 0 } : { y: 15 }}
+            animate={{ y: 0 }}
             transition={{
               duration: prefersReducedMotion ? 0 : 0.6,
               delay: prefersReducedMotion ? 0 : 0.7,
@@ -102,10 +94,8 @@ export default function Hero() {
           {/* CTA Buttons Group */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 mb-8"
-            initial={
-              prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
-            animate={{ opacity: 1, y: 0 }}
+            initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
+            animate={{ y: 0 }}
             transition={{
               duration: prefersReducedMotion ? 0 : 0.6,
               delay: prefersReducedMotion ? 0 : 0.9,
@@ -136,8 +126,8 @@ export default function Hero() {
           {/* Trust Indicators */}
           <motion.div
             className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-6 border-t border-white/20"
-            initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={prefersReducedMotion ? { y: 0 } : { y: 8 }}
+            animate={{ y: 0 }}
             transition={{
               duration: prefersReducedMotion ? 0 : 0.5,
               delay: prefersReducedMotion ? 0 : 1.1,

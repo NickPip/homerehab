@@ -44,7 +44,7 @@ export default function Header() {
         >
           <Image
             src="/logo.png"
-            alt="HomeRehab Logo"
+            alt="HomeRehab — რეაბილიტაცია და ფიზიოთერაპია სახლში თბილისში"
             width={180}
             height={56}
             className="h-10 sm:h-12 md:h-14 w-auto object-contain"

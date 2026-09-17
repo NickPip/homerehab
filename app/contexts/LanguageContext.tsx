@@ -168,7 +168,7 @@ const translations: Record<string, Translations> = {
       title2: "Rehabilitation",
       title3: "At Home",
       description:
-        "Regain your freedom of movement without visiting the clinic. Our licensed physiotherapists will serve you in a comfortable environment.",
+        "Physiotherapy and rehabilitation at home in Tbilisi. Regain your freedom of movement without visiting a clinic — a licensed physiotherapist comes to you and delivers the full course of treatment in your own home.",
       callButton: "Call",
       or: "or",
       cta: "Get a Free Consultation",
@@ -179,7 +179,7 @@ const translations: Record<string, Translations> = {
       badge: "What We Offer",
       title: "Our Services",
       subtitle:
-        "A full rehabilitation course at home, tailored to your diagnosis and needs",
+        "The physiotherapy and rehabilitation programs we deliver at home in Tbilisi, matched to your diagnosis and needs",
       learnMore: "Learn More",
       orthopedic: {
         title: "Orthopedic Rehabilitation",
@@ -221,7 +221,7 @@ const translations: Record<string, Translations> = {
       badge: "Our Specialists",
       title: "Licensed Professionals",
       subtitle:
-        "Our team is staffed with licensed physical therapists and rehabilitation specialists. Receive the highest quality care without leaving home.",
+        "Our team is staffed with licensed physiotherapists and rehabilitation specialists who visit patients at home across Tbilisi. Receive the highest quality care without leaving home.",
       licensed: "Licensed Specialist",
       experienceLabel: "Experience",
       patientsLabel: "Patients",
@@ -405,7 +405,7 @@ const translations: Record<string, Translations> = {
       serviceAreaTitle: "Service Area",
       serviceArea: "Tbilisi and surrounding areas",
       serviceAreaDescription:
-        "We provide professional rehabilitation services throughout Tbilisi and nearby regions.",
+        "We deliver physiotherapy and rehabilitation courses in the patient's own home, across every district of Tbilisi and the surrounding settlements.",
       copyright: "© 2026 HomeRehab. All rights reserved.",
       madeBy: "Developed by",
       atomicImpact: "atomicimpact.tech",
@@ -426,7 +426,7 @@ const translations: Record<string, Translations> = {
       title2: "რეაბილიტაცია",
       title3: "სახლში",
       description:
-        "დაიბრუნეთ მოძრაობის თავისუფლება კლინიკაში ვიზიტის გარეშე. ჩვენი ლიცენზირებული ფიზიოთერაპევტები მოგემსახურებიან თქვენთვის კომფორტულ გარემოში.",
+        "ფიზიოთერაპია და რეაბილიტაცია სახლში თბილისში. დაიბრუნეთ მოძრაობის თავისუფლება კლინიკაში ვიზიტის გარეშე — ლიცენზირებული ფიზიოთერაპევტი მოვა თქვენთან და სრულ სარეაბილიტაციო კურსს თქვენსავე სახლში ჩაგიტარებთ.",
       callButton: "დარეკეთ",
       or: "ან",
       cta: "მიიღეთ უფასო კონსულტაცია",
@@ -437,7 +437,7 @@ const translations: Record<string, Translations> = {
       badge: "რას გთავაზობთ",
       title: "ჩვენი სერვისები",
       subtitle:
-        "სრული სარეაბილიტაციო კურსი სახლში, თქვენი დიაგნოზისა და საჭიროებების მიხედვით",
+        "ფიზიოთერაპიისა და რეაბილიტაციის მიმართულებები, რომლებსაც თბილისში სახლში ვატარებთ — თქვენი დიაგნოზისა და საჭიროებების მიხედვით",
       learnMore: "გაიგეთ მეტი",
       orthopedic: {
         title: "ორთოპედიული რეაბილიტაცია",
@@ -479,7 +479,7 @@ const translations: Record<string, Translations> = {
       badge: "ჩვენი სპეციალისტები",
       title: "ლიცენზირებული პროფესიონალები",
       subtitle:
-        "ჩვენი გუნდი დაკომპლექტებულია ლიცენზირებული ფიზიკური თერაპევტებითა და რეაბილიტოლოგებით. მიიღეთ უმაღლესი ხარისხის სამედიცინო სერვისი სახლიდან გაუსვლელად.",
+        "ჩვენი გუნდი დაკომპლექტებულია ლიცენზირებული ფიზიოთერაპევტებითა და რეაბილიტოლოგებით, რომლებიც თბილისში პაციენტებთან სახლში დადიან. მიიღეთ უმაღლესი ხარისხის მომსახურება სახლიდან გაუსვლელად.",
       licensed: "ლიცენზირებული სპეციალისტი",
       experienceLabel: "გამოცდილება",
       patientsLabel: "პაციენტები",
@@ -531,7 +531,7 @@ const translations: Record<string, Translations> = {
       badge: "რატომ ჩვენ",
       title: "რატომ HomeRehab?",
       subtitle:
-        "ჩვენ ვაერთიანებთ მტკიცებით მედიცინასა და ინდივიდუალურ ზრუნვას, რათა უზრუნველვყოთ თქვენი სრული რეაბილიტაცია მშვიდ და კომფორტულ გარემოში.",
+        "ჩვენ ვაერთიანებთ მტკიცებულებებზე დაფუძნებულ მედიცინასა და ინდივიდუალურ ზრუნვას, რათა თქვენი რეაბილიტაცია სახლში მშვიდ და კომფორტულ გარემოში წარიმართოს.",
       comfort: {
         title: "კომფორტი",
         description:
@@ -649,7 +649,7 @@ const translations: Record<string, Translations> = {
     },
     footer: {
       tagline:
-        "პროფესიონალური სახლში ფიზიკური რეაბილიტაციის სერვისები. თქვენი გამოჯანმრთელება, ჩვენი ვალდებულება.",
+        "ფიზიოთერაპია და რეაბილიტაცია სახლში თბილისში. თქვენი გამოჯანმრთელება, ჩვენი ვალდებულება.",
       quickLinks: {
         title: "სწრაფი ბმულები",
       },
@@ -663,7 +663,7 @@ const translations: Record<string, Translations> = {
       serviceAreaTitle: "სერვისის არეალი",
       serviceArea: "თბილისი და მიმდებარე რაიონები",
       serviceAreaDescription:
-        "ჩვენ ვაწვდით პროფესიონალურ რეაბილიტაციის სერვისებს თბილისში და მიმდებარე რეგიონებში.",
+        "ვატარებთ ფიზიოთერაპიისა და რეაბილიტაციის კურსებს პაციენტის სახლში — თბილისის ყველა რაიონსა და მიმდებარე დასახლებებში.",
       copyright: "© 2026 HomeRehab. ყველა უფლება დაცულია.",
       madeBy: "ტექნიკური უზრუნველყოფა:",
       atomicImpact: "atomicimpact.tech",
@@ -696,6 +696,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setLanguage("ka");
     }
   }, []);
+
+  // Keep the document language in sync so assistive tech and crawlers see the language actually
+  // being displayed, not just the server default.
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = language;
+    }
+  }, [language]);
 
   // Save language to localStorage when it changes
   const handleSetLanguage = (lang: string) => {

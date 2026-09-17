@@ -163,7 +163,7 @@ export default function Specialist() {
                 <div className="relative h-[192px] sm:h-[224px] lg:h-full lg:min-h-[400px] bg-gradient-to-br from-[#E8F4F8] to-[#D4EBF0] overflow-hidden">
                   <Image
                     src={currentDoctor.image}
-                    alt={currentDoctor.name}
+                    alt={`${currentDoctor.name} — ${currentDoctor.credentials}, HomeRehab`}
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 50vw"

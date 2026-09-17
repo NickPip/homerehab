@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick, trackMessageClick } from "../lib/analytics";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { Phone, Send } from "lucide-react";
 import {
@@ -54,7 +54,7 @@ export default function CallbackForm() {
   return (
     <section id="callback" className="bg-white py-20 sm:py-24 px-4">
       <div className="max-w-3xl mx-auto">
-        <motion.div
+        <m.div
           className="text-center mb-8 sm:mb-10"
           initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -71,9 +71,9 @@ export default function CallbackForm() {
           <p className="text-base text-gray-600 max-w-xl mx-auto">
             {t("callback.subtitle")}
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.form
+        <m.form
           onSubmit={handleSubmit}
           action={WHATSAPP_URL}
           method="get"
@@ -184,7 +184,7 @@ export default function CallbackForm() {
               </a>
             </p>
           )}
-        </motion.form>
+        </m.form>
       </div>
     </section>
   );

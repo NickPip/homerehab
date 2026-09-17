@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import coverImage from "../../public/cover.webp";
 import { Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
 import { PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
 export default function Hero() {
@@ -18,7 +19,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center pt-16 sm:pt-20 overflow-x-hidden"
     >
       {/* Animated Background Image */}
-      <motion.div
+      <m.div
         className="absolute inset-0"
         initial={prefersReducedMotion ? { scale: 1 } : { scale: 1.08 }}
         animate={{ scale: 1 }}
@@ -28,7 +29,8 @@ export default function Hero() {
         }}
       >
         <Image
-          src="/cover.webp"
+          src={coverImage}
+          placeholder="blur"
           alt="ფიზიკური თერაპევტი ატარებს სარეაბილიტაციო ვარჯიშს პაციენტთან სახლში"
           fill
           priority
@@ -40,13 +42,13 @@ export default function Hero() {
         {/* Enhanced gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/50"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40"></div>
-      </motion.div>
+      </m.div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24 w-full lg:px-12">
         <div className="max-w-2xl">
           {/* Subtitle/Badge */}
-          <motion.div
+          <m.div
             className="mb-6"
             initial={prefersReducedMotion ? { y: 0 } : { y: 10 }}
             animate={{ y: 0 }}
@@ -60,10 +62,10 @@ export default function Hero() {
               <CheckCircle2 className="w-4 h-4" />
               {t("hero.badge")}
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Main Headline with colored accent */}
-          <motion.h1
+          <m.h1
             className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-bold tracking-tight"
             initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
             animate={{ y: 0 }}
@@ -76,10 +78,10 @@ export default function Hero() {
             <span className="text-white block drop-shadow-lg">{t("hero.title1")}</span>{" "}
             <span className="text-white block drop-shadow-lg">{t("hero.title2")}</span>{" "}
             <span className="text-[#4A9D5F] block drop-shadow-lg">{t("hero.title3")}</span>
-          </motion.h1>
+          </m.h1>
 
           {/* Description */}
-          <motion.p
+          <m.p
             className="mb-6 sm:mb-8 md:mb-10 text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-xl"
             initial={prefersReducedMotion ? { y: 0 } : { y: 15 }}
             animate={{ y: 0 }}
@@ -90,10 +92,10 @@ export default function Hero() {
             }}
           >
             {t("hero.description")}
-          </motion.p>
+          </m.p>
 
           {/* CTA Buttons Group */}
-          <motion.div
+          <m.div
             className="flex flex-col sm:flex-row gap-4 mb-8"
             initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
             animate={{ y: 0 }}
@@ -122,10 +124,10 @@ export default function Hero() {
               <span>{t("hero.cta")}</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
-          </motion.div>
+          </m.div>
 
           {/* Trust Indicators */}
-          <motion.div
+          <m.div
             className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-6 border-t border-white/20"
             initial={prefersReducedMotion ? { y: 0 } : { y: 8 }}
             animate={{ y: 0 }}
@@ -150,7 +152,7 @@ export default function Hero() {
               </div>
               <span className="ml-2">{t("hero.clients")}</span>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { ChevronDown, HelpCircle, Phone } from "lucide-react";
 import { PHONE_E164 } from "../lib/site";
@@ -21,7 +21,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="bg-white py-20 sm:py-24 px-4" key={language}>
       <div className="max-w-4xl mx-auto">
-        <motion.div
+        <m.div
           className="text-center mb-12 sm:mb-16"
           initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -38,14 +38,14 @@ export default function FAQ() {
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             {t("faq.subtitle")}
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="space-y-3 sm:space-y-4">
           {items.map((item, index) => {
             // The first answer starts open; the rest are collapsed but still in the HTML.
             const isOpen = index === 0;
             return (
-              <motion.div
+              <m.div
                 key={index}
                 initial={
                   prefersReducedMotion ? { y: 0 } : { y: 16 }
@@ -73,12 +73,12 @@ export default function FAQ() {
                     </p>
                   </div>
                 </details>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>
 
-        <motion.div
+        <m.div
           className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 rounded-2xl bg-[#2C6B8E]/5 border border-[#2C6B8E]/15 px-6 py-6 text-center sm:text-left"
           initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -94,7 +94,7 @@ export default function FAQ() {
             <Phone className="w-5 h-5" aria-hidden="true" />
             <span>{t("faq.ctaButton")}</span>
           </a>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

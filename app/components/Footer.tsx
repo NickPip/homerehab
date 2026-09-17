@@ -1,9 +1,9 @@
 "use client";
 
-import { Phone, MapPin, Mail, Clock } from "lucide-react";
+import { Phone, MapPin, Mail, Clock, Star } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import ContactChannels from "./ContactChannels";
-import { PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
+import { GBP_REVIEW_URL, PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
 import { trackCallClick } from "../lib/analytics";
 import Image from "next/image";
 import Link from "next/link";
@@ -40,6 +40,17 @@ export default function Footer() {
               </a>
             </div>
             <ContactChannels location="footer" />
+            {GBP_REVIEW_URL && (
+              <a
+                href={GBP_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm text-white/80 underline underline-offset-2 transition-colors hover:text-[#4A9D5F]"
+              >
+                <Star className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span>{t("footer.reviewCta")}</span>
+              </a>
+            )}
           </div>
 
           {/* Quick Links */}

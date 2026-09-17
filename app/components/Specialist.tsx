@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 export default function Specialist() {
@@ -125,7 +125,7 @@ export default function Specialist() {
         {/* Specialist Card with Animation */}
         <div className="max-w-4xl mx-auto relative overflow-hidden">
           <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
+            <m.div
               key={activeDoctor}
               custom={direction}
               variants={variants}
@@ -271,7 +271,7 @@ export default function Specialist() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </div>
 

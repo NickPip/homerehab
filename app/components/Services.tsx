@@ -3,7 +3,7 @@
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
 import { PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import {
   Bone,
@@ -63,7 +63,7 @@ export default function Services() {
     <section id="services" className="bg-gray-50 py-24 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
+        <m.div
           className="text-center mb-16"
           initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -79,14 +79,14 @@ export default function Services() {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {t("services.subtitle")}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <motion.div
+              <m.div
                 key={index}
                 className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#4A9D5F]/20"
                 initial={
@@ -121,13 +121,13 @@ export default function Services() {
                   <span>{t("services.learnMore")}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>
 
         {/* CTA Section */}
-        <motion.div
+        <m.div
           className="mt-16 text-center"
           initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -151,7 +151,7 @@ export default function Services() {
               <span>{t("services.cta.button")}</span>
             </a>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

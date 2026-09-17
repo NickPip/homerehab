@@ -2,7 +2,7 @@
 
 import { Globe } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 
 export default function LanguageSwitcher() {
@@ -71,7 +71,7 @@ export default function LanguageSwitcher() {
       {/* Desktop Dropdown Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -94,7 +94,7 @@ export default function LanguageSwitcher() {
                 <div className="flex items-center justify-between">
                   <span>{lang.fullName}</span>
                   {language === lang.code && (
-                    <motion.svg
+                    <m.svg
                       className="w-4 h-4"
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -111,12 +111,12 @@ export default function LanguageSwitcher() {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clipRule="evenodd"
                       />
-                    </motion.svg>
+                    </m.svg>
                   )}
                 </div>
               </button>
             ))}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

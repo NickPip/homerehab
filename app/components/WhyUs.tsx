@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "../contexts/LanguageContext";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import {
   Home,
@@ -59,7 +59,7 @@ export default function WhyUs() {
     <section id="why-us" className="bg-gradient-to-b from-white to-gray-50 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
+        <m.div
           className="text-center mb-10 sm:mb-12 md:mb-16"
           initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -91,14 +91,14 @@ export default function WhyUs() {
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
             {t("whyUs.subtitle")}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <motion.div
+              <m.div
                 key={index}
                 className="group relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#4A9D5F]/30 overflow-hidden"
                 initial={
@@ -127,13 +127,13 @@ export default function WhyUs() {
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed relative z-10">
                   {feature.description}
                 </p>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>
 
         {/* Stats Section */}
-        <motion.div
+        <m.div
           className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
           initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -146,7 +146,7 @@ export default function WhyUs() {
             { number: t("whyUs.stats.programs.number"), label: t("whyUs.stats.programs.label") },
             { number: t("whyUs.stats.districts.number"), label: t("whyUs.stats.districts.label") },
           ].map((stat, index) => (
-            <motion.div
+            <m.div
               key={index}
               className="text-center"
               initial={prefersReducedMotion ? { scale: 1 } : { scale: 0.9 }}
@@ -160,9 +160,9 @@ export default function WhyUs() {
               <div className="text-gray-600 text-xs sm:text-sm font-medium">
                 {stat.label}
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

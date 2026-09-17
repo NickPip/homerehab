@@ -570,6 +570,7 @@ const translations: Record<string, Translations> = {
         hoursLabel: "Working Hours",
         hours: "Mon - Sat: 9:00 AM - 7:00 PM",
       },
+      reviewCta: "Treated by us? Leave a review on Google",
       serviceAreaTitle: "Service Area",
       serviceArea: "Tbilisi and surrounding areas",
       serviceAreaDescription:
@@ -896,6 +897,7 @@ const translations: Record<string, Translations> = {
         hoursLabel: "სამუშაო საათები",
         hours: "ორშ - შაბ: 09:00 - 19:00",
       },
+      reviewCta: "გისარგებლიათ ჩვენი მომსახურებით? დაგვიტოვეთ შეფასება Google-ზე",
       serviceAreaTitle: "სერვისის არეალი",
       serviceArea: "თბილისი და მიმდებარე რაიონები",
       serviceAreaDescription:

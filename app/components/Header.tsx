@@ -4,7 +4,7 @@ import { Phone, Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
 import { PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { useActiveSection } from "../hooks/useActiveSection";
 import Image from "next/image";
@@ -18,7 +18,7 @@ export default function Header() {
   const activeSection = useActiveSection();
 
   return (
-    <motion.header
+    <m.header
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
       initial={
         prefersReducedMotion ? { y: 0 } : { y: -10 }
@@ -31,7 +31,7 @@ export default function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between lg:px-12">
         {/* Logo/Brand - clickable to scroll to hero */}
-        <motion.a
+        <m.a
           href="#home"
           className="flex items-center z-50"
           initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
@@ -51,10 +51,10 @@ export default function Header() {
             className="h-10 sm:h-12 md:h-14 w-auto object-contain"
             sizes="(min-width: 768px) 132px, 94px"
           />
-        </motion.a>
+        </m.a>
 
         {/* Desktop Navigation Menu - centered */}
-        <motion.nav
+        <m.nav
           className="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-7 px-4"
           initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
           animate={{ y: 0 }}
@@ -74,7 +74,7 @@ export default function Header() {
           >
             {t("nav.home")}
             {activeSection === "home" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -96,7 +96,7 @@ export default function Header() {
           >
             {t("nav.services")}
             {activeSection === "services" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -118,7 +118,7 @@ export default function Header() {
           >
             {t("nav.specialist")}
             {activeSection === "specialist" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -140,7 +140,7 @@ export default function Header() {
           >
             {t("nav.whyUs")}
             {activeSection === "why-us" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -162,7 +162,7 @@ export default function Header() {
           >
             {t("nav.coverage")}
             {activeSection === "coverage" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -184,7 +184,7 @@ export default function Header() {
           >
             {t("nav.faq")}
             {activeSection === "faq" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -206,7 +206,7 @@ export default function Header() {
           >
             {t("nav.contact")}
             {activeSection === "contact" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -218,10 +218,10 @@ export default function Header() {
               />
             )}
           </a>
-        </motion.nav>
+        </m.nav>
 
         {/* Right side actions */}
-        <motion.div
+        <m.div
           className="flex items-center gap-2 sm:gap-3 z-50"
           initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
           animate={{ y: 0 }}
@@ -260,13 +260,13 @@ export default function Header() {
               <Menu className="w-6 h-6" />
             )}
           </button>
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -357,9 +357,9 @@ export default function Header() {
                 </div>
               </div>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </m.header>
   );
 }

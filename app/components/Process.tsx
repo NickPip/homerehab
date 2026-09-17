@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "../contexts/LanguageContext";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { ListChecks } from "lucide-react";
 import ContactChannels from "./ContactChannels";
@@ -21,7 +21,7 @@ export default function Process() {
   return (
     <section id="process" className="bg-gray-50 py-20 sm:py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <motion.div
+        <m.div
           className="text-center mb-12 sm:mb-16"
           initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -38,11 +38,11 @@ export default function Process() {
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             {t("process.subtitle")}
           </p>
-        </motion.div>
+        </m.div>
 
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-14 sm:mb-16">
           {steps.map((step, index) => (
-            <motion.li
+            <m.li
               key={step.title}
               className="relative rounded-2xl bg-white border border-gray-200 p-6 shadow-sm"
               initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
@@ -60,11 +60,11 @@ export default function Process() {
                 {step.title}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
-            </motion.li>
+            </m.li>
           ))}
         </ol>
 
-        <motion.div
+        <m.div
           className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8"
           initial={prefersReducedMotion ? { y: 0 } : { y: 16 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -88,7 +88,7 @@ export default function Process() {
             ))}
           </ul>
           <ContactChannels location="process" />
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

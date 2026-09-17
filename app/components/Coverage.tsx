@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "../contexts/LanguageContext";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { MapPin } from "lucide-react";
 import ContactChannels from "./ContactChannels";
@@ -22,7 +22,7 @@ export default function Coverage() {
   return (
     <section id="coverage" className="bg-gray-50 py-20 sm:py-24 px-4">
       <div className="max-w-5xl mx-auto">
-        <motion.div
+        <m.div
           initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -39,9 +39,9 @@ export default function Coverage() {
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("coverage.description")}
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true }}
@@ -64,7 +64,7 @@ export default function Coverage() {
           </ul>
           <p className="text-sm text-gray-600 mb-5">{t("coverage.note")}</p>
           <ContactChannels location="coverage" />
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

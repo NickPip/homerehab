@@ -37,3 +37,9 @@ export const TBILISI_DISTRICTS = [
   "დიდი დიღომი",
   "ვარკეთილი",
 ] as const;
+
+/**
+ * Google Business Profile "write a review" short link (g.page/r/<id>/review). The review CTA is
+ * hidden entirely while this is unset, so nothing broken ships before the listing exists.
+ */
+export const GBP_REVIEW_URL = process.env.NEXT_PUBLIC_GBP_REVIEW_URL ?? "";

@@ -74,7 +74,7 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["MedicalBusiness", "PhysicalTherapy"],
+        "@type": "MedicalBusiness",
         "@id": `${SITE_URL}/#business`,
         name: "HomeRehab",
         slogan: "რეაბილიტაცია და ფიზიოთერაპია სახლში",
@@ -86,7 +86,7 @@ export function StructuredData() {
         logo: `${SITE_URL}/logo.png`,
         priceRange: "₾₾",
         currenciesAccepted: "GEL",
-        medicalSpecialty: "PhysicalTherapy",
+        medicalSpecialty: "Physiotherapy",
         address: {
           "@type": "PostalAddress",
           addressLocality: "თბილისი",

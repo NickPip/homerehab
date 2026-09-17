@@ -5,7 +5,6 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Providers } from "./providers";
 import { GA_ID } from "./lib/analytics";
 import { SITE_URL } from "./lib/site";
-import { StructuredData } from "./components/StructuredData";
 
 const georgian = Noto_Sans_Georgian({
   subsets: ["georgian", "latin"],
@@ -16,7 +15,7 @@ const georgian = Noto_Sans_Georgian({
 
 const TITLE = "რეაბილიტაცია და ფიზიოთერაპია სახლში თბილისში | HomeRehab";
 const DESCRIPTION =
-  "ფიზიოთერაპია და რეაბილიტაცია სახლში თბილისში. ლიცენზირებული ფიზიოთერაპევტი მოვა თქვენთან: ორთოპედიული, ნევროლოგიური, პოსტოპერაციული და ხანდაზმულთა რეაბილიტაცია. დარეკეთ: +995 591 31 42 22";
+  "ფიზიოთერაპია და რეაბილიტაცია სახლში თბილისში. ლიცენზირებული ფიზიოთერაპევტი მოვა თქვენთან. დარეკეთ: +995 591 31 42 22";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -55,7 +54,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ka_GE",
-    alternateLocale: ["en_US"],
     url: SITE_URL,
     siteName: "HomeRehab",
     title: TITLE,
@@ -86,9 +84,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  formatDetection: {
-    telephone: true,
-  },
   // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION to the token Search Console gives you for the
   // "HTML tag" verification method. Omitted entirely when unset.
   verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
@@ -110,14 +105,15 @@ export default function RootLayout({
   return (
     <html lang="ka" className={georgian.variable}>
       <head>
-        <link
-          rel="preconnect"
-          href="https://www.googletagmanager.com"
-          crossOrigin=""
-        />
+        {GA_ID && (
+          <link
+            rel="preconnect"
+            href="https://www.googletagmanager.com"
+            crossOrigin=""
+          />
+        )}
       </head>
       <body className="antialiased">
-        <StructuredData />
         <Providers>{children}</Providers>
         {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
       </body>

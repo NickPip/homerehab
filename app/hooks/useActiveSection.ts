@@ -6,13 +6,13 @@ export function useActiveSection() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
+    // Only sections with a nav entry: tracking one without a link leaves the header underline
+    // anchored to nothing.
     const sections = [
       "home",
       "services",
-      "conditions",
       "specialist",
       "why-us",
-      "process",
       "coverage",
       "faq",
       "contact",

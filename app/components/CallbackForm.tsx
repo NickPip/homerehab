@@ -11,6 +11,7 @@ import {
   PHONE_E164,
   TBILISI_DISTRICTS,
   WHATSAPP_BASE_URL,
+  WHATSAPP_URL,
 } from "../lib/site";
 
 /**
@@ -26,6 +27,7 @@ export default function CallbackForm() {
   const [phone, setPhone] = useState("");
   const [district, setDistrict] = useState("");
   const [message, setMessage] = useState("");
+  const [composedUrl, setComposedUrl] = useState<string | null>(null);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -36,12 +38,10 @@ export default function CallbackForm() {
       district && `${t("callback.districtLabel")}: ${district}`,
       message && `${t("callback.messageLabel")} ${message}`,
     ].filter(Boolean);
+    const url = `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(lines.join("\n"))}`;
     trackMessageClick("whatsapp", "callback_form");
-    window.open(
-      `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(lines.join("\n"))}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    setComposedUrl(url);
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const field =
@@ -72,6 +72,9 @@ export default function CallbackForm() {
 
         <motion.form
           onSubmit={handleSubmit}
+          action={WHATSAPP_URL}
+          method="get"
+          target="_blank"
           className="rounded-2xl border border-gray-200 bg-gray-50/70 p-6 sm:p-8 shadow-sm"
           initial={prefersReducedMotion ? { y: 0 } : { y: 16 }}
           whileInView={prefersReducedMotion ? {} : { y: 0 }}
@@ -85,7 +88,6 @@ export default function CallbackForm() {
               </label>
               <input
                 id="callback-name"
-                name="name"
                 type="text"
                 autoComplete="name"
                 required
@@ -101,7 +103,6 @@ export default function CallbackForm() {
               </label>
               <input
                 id="callback-phone"
-                name="phone"
                 type="tel"
                 inputMode="tel"
                 autoComplete="tel"
@@ -120,7 +121,6 @@ export default function CallbackForm() {
             </label>
             <select
               id="callback-district"
-              name="district"
               value={district}
               onChange={(event) => setDistrict(event.target.value)}
               className={field}
@@ -140,7 +140,6 @@ export default function CallbackForm() {
             </label>
             <textarea
               id="callback-message"
-              name="message"
               rows={3}
               value={message}
               onChange={(event) => setMessage(event.target.value)}
@@ -170,6 +169,18 @@ export default function CallbackForm() {
             </a>
           </div>
           <p className="mt-4 text-xs text-gray-500">{t("callback.hint")}</p>
+          {composedUrl && (
+            <p className="mt-3 text-sm text-gray-700">
+              <a
+                href={composedUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#2C6B8E] underline underline-offset-2"
+              >
+                {t("callback.fallback")}
+              </a>
+            </p>
+          )}
         </motion.form>
       </div>
     </section>

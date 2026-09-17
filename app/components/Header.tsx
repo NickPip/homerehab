@@ -49,7 +49,7 @@ export default function Header() {
             width={540}
             height={229}
             className="h-10 sm:h-12 md:h-14 w-auto object-contain"
-            priority
+            sizes="(min-width: 768px) 132px, 94px"
           />
         </motion.a>
 

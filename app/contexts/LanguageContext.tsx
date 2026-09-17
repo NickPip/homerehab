@@ -2,6 +2,8 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
+import { FAQ_ITEMS_KA } from "../lib/faq";
+
 interface Translations {
   nav: {
     home: string;
@@ -14,7 +16,6 @@ interface Translations {
   };
   contactChannels: {
     call: string;
-    heading: string;
   };
   conditions: {
     badge: string;
@@ -48,6 +49,7 @@ interface Translations {
     messagePlaceholder: string;
     submit: string;
     hint: string;
+    fallback: string;
     or: string;
   };
   coverage: {
@@ -55,7 +57,6 @@ interface Translations {
     title: string;
     description: string;
     districtsLabel: string;
-    districts: string[];
     note: string;
   };
   faq: {
@@ -73,7 +74,6 @@ interface Translations {
     title3: string;
     description: string;
     callButton: string;
-    or: string;
     cta: string;
     trustBadge: string;
     clients: string;
@@ -125,7 +125,6 @@ interface Translations {
     previous: string;
     next: string;
     doctor: string;
-    imagePlaceholder: string;
     doctors: Array<{
       name: string;
       credentials: string;
@@ -206,7 +205,6 @@ const translations: Record<string, Translations> = {
       description:
         "Physiotherapy and rehabilitation at home in Tbilisi. Regain your freedom of movement without visiting a clinic — a licensed physiotherapist comes to you and delivers the full course of treatment in your own home.",
       callButton: "Call",
-      or: "or",
       cta: "Get a Free Consultation",
       trustBadge: "Call out a physiotherapist to your home — anywhere in Tbilisi",
       clients: "500+ satisfied clients",
@@ -266,7 +264,6 @@ const translations: Record<string, Translations> = {
       previous: "Previous",
       next: "Next",
       doctor: "Specialist",
-      imagePlaceholder: "Specialist Photo",
       doctors: [
         {
           name: "Nikoloz Todua",
@@ -466,6 +463,7 @@ const translations: Record<string, Translations> = {
       messagePlaceholder: "e.g. rehabilitation after a knee operation",
       submit: "Send via WhatsApp",
       hint: "We reply during working hours: Mon-Sat, 09:00-19:00.",
+      fallback: "WhatsApp did not open? Tap here.",
       or: "or",
     },
     coverage: {
@@ -474,25 +472,10 @@ const translations: Record<string, Translations> = {
       description:
         "Our physiotherapists travel to patients throughout Tbilisi and the surrounding settlements. There is no clinic to reach and no waiting room: the specialist arrives with the equipment, at a time you choose, and delivers the session in your own home.",
       districtsLabel: "Districts we cover",
-      districts: [
-        "Vake",
-        "Saburtalo",
-        "Mtatsminda",
-        "Isani",
-        "Samgori",
-        "Gldani",
-        "Nadzaladevi",
-        "Didube",
-        "Chughureti",
-        "Krtsanisi",
-        "Didi Dighomi",
-        "Varketili",
-      ],
       note: "Live just outside the city? Call us — we cover the settlements around Tbilisi too.",
     },
     contactChannels: {
       call: "Call",
-      heading: "Get in touch the way that suits you",
     },
     faq: {
       badge: "Frequently Asked Questions",
@@ -604,7 +587,6 @@ const translations: Record<string, Translations> = {
       description:
         "ფიზიოთერაპია და რეაბილიტაცია სახლში თბილისში. დაიბრუნეთ მოძრაობის თავისუფლება კლინიკაში ვიზიტის გარეშე — ლიცენზირებული ფიზიოთერაპევტი მოვა თქვენთან და სრულ სარეაბილიტაციო კურსს თქვენსავე სახლში ჩაგიტარებთ.",
       callButton: "დარეკეთ",
-      or: "ან",
       cta: "მიიღეთ უფასო კონსულტაცია",
       trustBadge: "ფიზიოთერაპევტის გამოძახება სახლში — თბილისის ნებისმიერ რაიონში",
       clients: "500+ კმაყოფილი პაციენტი",
@@ -664,7 +646,6 @@ const translations: Record<string, Translations> = {
       previous: "წინა",
       next: "შემდეგი",
       doctor: "სპეციალისტი",
-      imagePlaceholder: "სპეციალისტის ფოტო",
       doctors: [
         {
           name: "ნიკოლოზ თოდუა",
@@ -864,6 +845,7 @@ const translations: Record<string, Translations> = {
       messagePlaceholder: "მაგ. მუხლის ოპერაციის შემდგომი რეაბილიტაცია",
       submit: "გაგზავნა WhatsApp-ით",
       hint: "ვპასუხობთ სამუშაო საათებში: ორშ-შაბ, 09:00-19:00.",
+      fallback: "WhatsApp არ გაიხსნა? დააჭირეთ აქ.",
       or: "ან",
     },
     coverage: {
@@ -872,93 +854,17 @@ const translations: Record<string, Translations> = {
       description:
         "ჩვენი ფიზიოთერაპევტები პაციენტებთან დადიან მთელ თბილისსა და მიმდებარე დასახლებებში. კლინიკამდე მისვლა და რიგში ლოდინი აღარ გჭირდებათ: სპეციალისტი აღჭურვილობით მოდის თქვენთვის შერჩეულ დროს და სეანსს თქვენსავე სახლში ატარებს.",
       districtsLabel: "რაიონები, სადაც ვმუშაობთ",
-      districts: [
-        "ვაკე",
-        "საბურთალო",
-        "მთაწმინდა",
-        "ისანი",
-        "სამგორი",
-        "გლდანი",
-        "ნაძალადევი",
-        "დიდუბე",
-        "ჩუღურეთი",
-        "კრწანისი",
-        "დიდი დიღომი",
-        "ვარკეთილი",
-      ],
       note: "ქალაქგარეთ ცხოვრობთ? დაგვირეკეთ — თბილისის მიმდებარე დასახლებებსაც ვფარავთ.",
     },
     contactChannels: {
       call: "დარეკეთ",
-      heading: "დაგვიკავშირდით თქვენთვის მოსახერხებელი გზით",
     },
     faq: {
       badge: "ხშირად დასმული კითხვები",
       title: "რეაბილიტაცია სახლში: პასუხები თქვენს კითხვებზე",
       subtitle:
         "კითხვები, რომლებსაც პაციენტები ყველაზე ხშირად სვამენ თბილისში სახლში ფიზიოთერაპიის პირველ სეანსამდე.",
-      items: [
-        {
-          question: "რა არის რეაბილიტაცია სახლში და ვისთვის არის განკუთვნილი?",
-          answer:
-            "რეაბილიტაცია სახლში ნიშნავს, რომ ლიცენზირებული ფიზიოთერაპევტი თავად ჩამოდის თქვენთან და სარეაბილიტაციო კურსს თქვენსავე საცხოვრებელში ატარებს. ის განკუთვნილია ოპერაციის, მოტეხილობის ან ინსულტის შემდგომი პაციენტებისთვის, ხერხემლისა და სახსრების ქრონიკული ტკივილის მქონე ადამიანებისთვის და ყველასთვის, ვისაც კლინიკამდე მისვლა უჭირს.",
-        },
-        {
-          question: "მოდის თუ არა ფიზიოთერაპევტი სახლში თბილისში?",
-          answer:
-            "დიახ. ჩვენი ფიზიოთერაპევტები მუშაობენ თბილისის ყველა რაიონში — ვაკე, საბურთალო, მთაწმინდა, ისანი, სამგორი, გლდანი, ნაძალადევი, დიდუბე, ჩუღურეთი და კრწანისი — ასევე მიმდებარე დასახლებებში. ვიზიტს თქვენთვის მოსახერხებელ დროზე ვნიშნავთ.",
-        },
-        {
-          question: "რამდენ ხანს გრძელდება სარეაბილიტაციო კურსი?",
-          answer:
-            "კურსის ხანგრძლივობა დიაგნოზზეა დამოკიდებული. მსუბუქი ორთოპედიული პრობლემა ხშირად 6-10 სეანსში წყდება, პოსტოპერაციული ან ნევროლოგიური აღდგენა კი 1-3 თვეს მოითხოვს. ზუსტ გეგმას პირველი შეფასების შემდეგ გეტყვით.",
-        },
-        {
-          question: "რამდენ ხანს გრძელდება ერთი სეანსი?",
-          answer:
-            "ერთი სეანსი ჩვეულებრივ 45-60 წუთია და მოიცავს შეფასებას, სამკურნალო ვარჯიშებს, მანუალურ თერაპიას და სახლში დამოუკიდებლად შესასრულებელი ვარჯიშების სწავლებას.",
-        },
-        {
-          question: "საჭიროა თუ არა ექიმის დანიშნულება ან სპეციალური აღჭურვილობა?",
-          answer:
-            "ექიმის დანიშნულება სასურველია, მაგრამ სავალდებულო არ არის — პირველ ვიზიტზე ფიზიოთერაპევტი თავად აფასებს მდგომარეობას. აღჭურვილობას სპეციალისტი თან მოიტანს; თქვენ მხოლოდ თავისუფალი სივრცე დაგჭირდებათ.",
-        },
-        {
-          question: "როგორ დავჯავშნო პირველი ვიზიტი?",
-          answer:
-            "დაგვირეკეთ ნომერზე +995 591 31 42 22. უფასო კონსულტაციაზე მოგისმენთ, შევარჩევთ შესაფერის მიმართულებას და შევათანხმებთ ვიზიტის დროსა და ღირებულებას წინასწარ, დაფარული ხარჯების გარეშე.",
-        },
-        {
-          question: "რამდენი ღირს რეაბილიტაცია სახლში თბილისში?",
-          answer:
-            "ვიზიტის ფასი დამოკიდებულია მიმართულებასა და რაიონზე. ზუსტ ღირებულებას უფასო კონსულტაციაზე შეგითანხმებთ, პირველი ვიზიტის დაჯავშნამდე, ხოლო ათსეანსიან კურსზე ერთი სეანსის ფასი უფრო დაბალია, ვიდრე ცალკეულ ვიზიტზე. დაფარული ხარჯები არ გვაქვს: რასაც გეტყვით, იმას გადაიხდით.",
-        },
-        {
-          question: "როგორ გამოვიძახო ფიზიოთერაპევტი სახლში თბილისში?",
-          answer:
-            "დაგვირეკეთ ნომერზე +995 591 31 42 22. ფიზიოთერაპევტის გამოძახება ერთი ზარით ხდება: აღწერთ პრობლემას, ჩვენ შევარჩევთ მიმართულებას და შევათანხმებთ დროს. თბილისის უმეტეს რაიონში პირველი ვიზიტი ერთ-ორ დღეში ეწყობა.",
-        },
-        {
-          question: "რა განსხვავებაა ფიზიოთერაპევტსა და რეაბილიტოლოგს შორის?",
-          answer:
-            "ორივე სპეციალისტი ფიზიკურ აღდგენაზე მუშაობს. ფიზიოთერაპევტი აქცენტს აკეთებს მოძრაობაზე, სამკურნალო ვარჯიშებსა და მანუალურ ტექნიკებზე, რეაბილიტოლოგი კი მთლიან აღდგენით გეგმას უყურებს, მათ შორის იმას, როგორ ერწყმის ის ექიმის დანიშნულ მკურნალობას. ჩვენს გუნდში ორივე კვალიფიკაციაა, ამიტომ ორივე კუთხეს იღებთ.",
-        },
-        {
-          question: "როდის უნდა დაიწყოს რეაბილიტაცია ინსულტის ან ოპერაციის შემდეგ?",
-          answer:
-            "რაც შეიძლება ადრე, როგორც კი მკურნალი ექიმი დაუშვებს — ჩვეულებრივ რამდენიმე დღეში. ადრეული და ფრთხილი დატვირთვა კუნთების ატროფიასა და სახსრების გაშეშებას აფერხებს და სწორედ ის განსაზღვრავს, რამდენად აღდგება ფუნქცია.",
-        },
-        {
-          question: "მუშაობთ თუ არა შაბათს?",
-          answer:
-            "დიახ. ვმუშაობთ ორშაბათიდან შაბათამდე, 09:00-დან 19:00-მდე, და ვიზიტს თქვენი ოჯახისთვის მოსახერხებელ დროზე ვნიშნავთ — შეთანხმებით სამუშაო საათების მიღმაც.",
-        },
-        {
-          question: "ატარებთ თუ არა სამკურნალო მასაჟს სახლში?",
-          answer:
-            "დიახ, სამკურნალო მასაჟი ჩვენს მეთოდებს შორისაა, თუმცა სარეაბილიტაციო გეგმის ნაწილად და არა ცალკე მომსახურებად. სამკურნალო ვარჯიშებთან და მანუალურ თერაპიასთან ერთად მისი ეფექტი გაცილებით დიდხანს ნარჩუნდება, ვიდრე მხოლოდ მასაჟის შემთხვევაში.",
-        },
-      ],
+      items: FAQ_ITEMS_KA,
       cta: "კიდევ გაქვთ კითხვა? სიამოვნებით გიპასუხებთ.",
       ctaButton: "უფასო კონსულტაცია",
     },

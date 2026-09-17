@@ -5,7 +5,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE_URL,
-      lastModified: new Date("2026-09-17"),
+      // Derived from build time: the page is fully static, so a deploy is the only way its
+      // content changes.
+      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },

@@ -4,7 +4,13 @@ import { PHONE_DISPLAY, PHONE_E164 } from "./lib/site";
 
 export const metadata: Metadata = {
   title: "გვერდი ვერ მოიძებნა",
-  robots: { index: false, follow: true },
+  // Without these the page inherits the homepage canonical and Open Graph tags from the root
+  // layout, telling Google this 404 is the homepage.
+  alternates: { canonical: null },
+  openGraph: null,
+  // The root layout sets index/follow, which would otherwise be emitted alongside the noindex
+  // Next adds for a not-found page, leaving two contradictory robots tags in the head.
+  robots: { index: false, follow: false },
 };
 
 /**

@@ -2,21 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* The design is light-only: every section paints its own light surface, so flipping these
+   under prefers-color-scheme: dark would leave dark text on dark panels. */
 :root {
+  color-scheme: light;
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  /* The header is fixed, so an anchor jump would otherwise land with the section heading hidden
+     underneath it. Reserve the header's height plus a little breathing room. */
+  scroll-padding-top: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 6.5rem;
+  }
+}
+
+/* Respect the OS reduced-motion setting for the smooth scroll as well. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {

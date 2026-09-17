@@ -55,7 +55,7 @@ export default function Header() {
 
         {/* Desktop Navigation Menu - centered */}
         <motion.nav
-          className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2"
+          className="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-7 px-4"
           initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
           animate={{ y: 0 }}
           transition={{
@@ -66,7 +66,7 @@ export default function Header() {
         >
           <a
             href="#home"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "home"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -88,7 +88,7 @@ export default function Header() {
           </a>
           <a
             href="#services"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "services"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -110,7 +110,7 @@ export default function Header() {
           </a>
           <a
             href="#specialist"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "specialist"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -132,7 +132,7 @@ export default function Header() {
           </a>
           <a
             href="#why-us"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "why-us"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -154,7 +154,7 @@ export default function Header() {
           </a>
           <a
             href="#coverage"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative hidden whitespace-nowrap xl:inline-block text-sm font-medium transition-colors ${
               activeSection === "coverage"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -176,7 +176,7 @@ export default function Header() {
           </a>
           <a
             href="#faq"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative hidden whitespace-nowrap xl:inline-block text-sm font-medium transition-colors ${
               activeSection === "faq"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -198,7 +198,7 @@ export default function Header() {
           </a>
           <a
             href="#contact"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "contact"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"

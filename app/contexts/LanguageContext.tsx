@@ -50,6 +50,11 @@ interface Translations {
     submit: string;
     hint: string;
     fallback: string;
+    messageIntro: string;
+    messageName: string;
+    messagePhone: string;
+    messageDistrict: string;
+    messageProblem: string;
     or: string;
   };
   coverage: {
@@ -173,11 +178,11 @@ interface Translations {
         number: string;
         label: string;
       };
-      success: {
+      programs: {
         number: string;
         label: string;
       };
-      satisfaction: {
+      districts: {
         number: string;
         label: string;
       };
@@ -199,15 +204,15 @@ const translations: Record<string, Translations> = {
     },
     hero: {
       badge: "Certified & Licensed",
-      title1: "Rehabilitation and Physiotherapy",
-      title2: "At Home",
+      title1: "Rehabilitation at Home",
+      title2: "and Physiotherapy",
       title3: "In Tbilisi",
       description:
         "Physiotherapy and rehabilitation at home in Tbilisi. Regain your freedom of movement without visiting a clinic — a licensed physiotherapist comes to you and delivers the full course of treatment in your own home.",
       callButton: "Call",
       cta: "Get a Free Consultation",
       trustBadge: "Call out a physiotherapist to your home — anywhere in Tbilisi",
-      clients: "500+ satisfied clients",
+      clients: "900+ patients treated between our two specialists",
     },
     services: {
       badge: "What We Offer",
@@ -218,27 +223,27 @@ const translations: Record<string, Translations> = {
       orthopedic: {
         title: "Orthopedic Rehabilitation at Home",
         description:
-          "Rehabilitation for joint, spine, and musculoskeletal conditions: reducing pain and restoring your full range of motion.",
+          "Rehabilitation for joint, spine and musculoskeletal conditions: reducing pain and recovering as much range of motion as possible.",
       },
       postSurgery: {
-        title: "Post-Surgery and Injury Rehabilitation at Home",
+        title: "Post-Surgery and Injury Rehabilitation",
         description:
           "Safe, step-by-step recovery of function after surgery, fractures, or sports injuries, following an individual treatment plan.",
       },
       neurological: {
-        title: "Neurological Rehabilitation at Home",
+        title: "Neurological Rehabilitation",
         description:
           "Restoring movement, balance, and independence after a stroke, neurological conditions, or nervous system injury.",
       },
       manualTherapy: {
-        title: "Manual Therapy at Home",
+        title: "Manual Therapy",
         description:
           "Hands-on techniques to relieve muscle tension, improve joint mobility, and reduce pain.",
       },
       respiratory: {
-        title: "Respiratory Rehabilitation at Home",
+        title: "Respiratory Rehabilitation",
         description:
-          "Breathing exercises and lung function recovery after prolonged illness, surgery, or infection.",
+          "Breathing exercises to improve lung function after prolonged illness, surgery or infection.",
       },
       seniors: {
         title: "Rehabilitation for Seniors at Home",
@@ -253,7 +258,7 @@ const translations: Record<string, Translations> = {
     },
     specialist: {
       badge: "Our Specialists",
-      title: "Licensed Physiotherapists and Rehabilitation Specialists in Tbilisi",
+      title: "Licensed Physiotherapists in Tbilisi",
       subtitle:
         "Our team is staffed with licensed physiotherapists and rehabilitation specialists who visit patients at home across Tbilisi. Receive the highest quality care without leaving home.",
       licensed: "Licensed Specialist",
@@ -280,7 +285,7 @@ const translations: Record<string, Translations> = {
         },
         {
           name: "Giorgi Paichadze",
-          credentials: "Rehabilitation Specialist and Physical Therapist",
+          credentials: "Physical Therapist, Rehabilitation Specialist",
           currentRole: "Rehabilitation Specialist at MedCapital LLC",
           description:
             "Specialist with 4+ years of clinical experience, working across multiple rehabilitation centers including veterans' clinics and pediatric rehabilitation. Provides comprehensive rehabilitation services with a focus on evidence-based treatment methods.",
@@ -315,7 +320,7 @@ const translations: Record<string, Translations> = {
       professionalism: {
         title: "Professionalism",
         description:
-          "The team is staffed only with licensed and experienced rehabilitation specialists.",
+          "The team is staffed only with licensed and experienced physiotherapists.",
       },
       individualApproach: {
         title: "Individual Approach",
@@ -330,7 +335,7 @@ const translations: Record<string, Translations> = {
       familyEnvironment: {
         title: "Family Environment",
         description:
-          "Stress-free treatment accelerates the recovery process.",
+          "A calm, familiar environment reduces stress and makes the rehabilitation process easier.",
       },
       transparency: {
         title: "Transparency",
@@ -339,20 +344,20 @@ const translations: Record<string, Translations> = {
       },
       stats: {
         patients: {
-          number: "500+",
-          label: "Patients",
+          number: "900+",
+          label: "Patients Treated Between Us",
         },
         experience: {
           number: "10+",
-          label: "Years Experience",
+          label: "Years of Combined Experience",
         },
-        success: {
-          number: "94%",
-          label: "Recovery Rate",
+        programs: {
+          number: "6",
+          label: "Rehabilitation Programs",
         },
-        satisfaction: {
-          number: "94%",
-          label: "Patient Satisfaction",
+        districts: {
+          number: "12",
+          label: "Districts in Tbilisi",
         },
       },
     },
@@ -375,17 +380,17 @@ const translations: Record<string, Translations> = {
         {
           title: "Rehabilitation after a hip fracture",
           description:
-            "For older patients after a femoral neck fracture, rehabilitation at home reduces the risk of complications and is the shortest route back to standing and walking independently.",
+            "For older patients we work on rebuilding walking in stages, on safe movement around the home and on preventing falls, within the limits the treating doctor sets.",
         },
         {
           title: "Spinal disc herniation and back pain",
           description:
-            "Reducing pain from a herniated disc, sciatica or chronic back pain, strengthening the core muscles, and correcting the movement patterns that caused the problem.",
+            "Reducing pain from a herniated disc, sciatica or chronic back pain, strengthening the deep stabilising muscles, and correcting the movement patterns that may be aggravating the symptoms.",
         },
         {
           title: "Arthrosis and joint pain",
           description:
-            "Managing knee, hip and shoulder arthrosis: exercises that ease pain, maintain joint mobility and slow the progression of the condition.",
+            "Managing arthrosis of the knee, hip and shoulder: exercises that ease pain, maintain joint mobility and make everyday activity easier.",
         },
         {
           title: "Parkinson's disease and neurological conditions",
@@ -464,6 +469,11 @@ const translations: Record<string, Translations> = {
       submit: "Send via WhatsApp",
       hint: "We reply during working hours: Mon-Sat, 09:00-19:00.",
       fallback: "WhatsApp did not open? Tap here.",
+      messageIntro: "Hello, I would like to arrange a physiotherapist visit at home",
+      messageName: "Name",
+      messagePhone: "Phone",
+      messageDistrict: "District",
+      messageProblem: "Problem",
       or: "or",
     },
     coverage: {
@@ -471,7 +481,7 @@ const translations: Record<string, Translations> = {
       title: "Physiotherapy at Home Across Tbilisi",
       description:
         "Our physiotherapists travel to patients throughout Tbilisi and the surrounding settlements. There is no clinic to reach and no waiting room: the specialist arrives with the equipment, at a time you choose, and delivers the session in your own home.",
-      districtsLabel: "Districts we cover",
+      districtsLabel: "Districts and neighbourhoods we cover",
       note: "Live just outside the city? Call us — we cover the settlements around Tbilisi too.",
     },
     contactChannels: {
@@ -496,7 +506,7 @@ const translations: Record<string, Translations> = {
         {
           question: "How long does a rehabilitation course last?",
           answer:
-            "It depends on the diagnosis. A mild orthopedic problem is often resolved in 6-10 sessions, while post-surgical or neurological recovery usually takes one to three months. You get an exact plan after the first assessment.",
+            "It depends on the diagnosis. A mild orthopedic case usually means a course of 6-10 sessions, while post-surgical or neurological recovery usually runs one to three months. Results vary from patient to patient. You get an exact plan after the first assessment.",
         },
         {
           question: "How long is a single session?",
@@ -516,12 +526,12 @@ const translations: Record<string, Translations> = {
         {
           question: "How much does rehabilitation at home cost in Tbilisi?",
           answer:
-            "The price of a visit depends on the program and the district. We agree the exact cost with you during the free consultation, before the first visit is booked, and a course of ten sessions is cheaper per session than single visits. There are no hidden charges: what we quote is what you pay.",
+            "The price of a visit depends on the program and the district. We agree the exact cost with you during the free consultation, before the first visit is booked. There are no hidden charges: what we quote is what you pay.",
         },
         {
           question: "How do I call out a physiotherapist to my home in Tbilisi?",
           answer:
-            "Call +995 591 31 42 22. Calling out a physiotherapist takes one phone call: you describe the problem, we choose the program, and we agree a time. In most districts of Tbilisi the first visit can be arranged within a day or two.",
+            "Call +995 591 31 42 22. Calling out a physiotherapist takes one phone call: you describe the problem, we choose the program, and we agree a time. We agree the time of the visit on the call itself, around your schedule and the specialist's.",
         },
         {
           question: "What is the difference between a physiotherapist and a rehabilitation specialist?",
@@ -531,7 +541,7 @@ const translations: Record<string, Translations> = {
         {
           question: "When should rehabilitation start after a stroke or an operation?",
           answer:
-            "As early as your treating doctor allows — usually within days. Early, careful loading prevents muscle wasting and joint stiffness, and it is the single biggest factor in how much function you get back.",
+            "When your treating doctor allows it, which is often within the first days. Early activity agreed with your doctor helps prevent muscle wasting and joint stiffness. We always match the pace of loading to your condition and to your doctor's instructions.",
         },
         {
           question: "Do you work on Saturdays?",
@@ -541,7 +551,7 @@ const translations: Record<string, Translations> = {
         {
           question: "Do you offer therapeutic massage at home?",
           answer:
-            "Yes, therapeutic massage is one of the methods we use, but as part of a rehabilitation plan rather than on its own. Combined with exercise therapy and manual techniques it holds its effect far longer than massage alone.",
+            "Yes, therapeutic massage is one of the methods we use, but as part of a rehabilitation plan rather than on its own. Massage prepares the tissue and exercise consolidates what it achieves, which is why we use it as part of a plan.",
         },
       ],
       cta: "Still have a question? We are happy to answer it.",
@@ -581,46 +591,46 @@ const translations: Record<string, Translations> = {
     },
     hero: {
       badge: "სერტიფიცირებული და ლიცენზირებული",
-      title1: "რეაბილიტაცია და ფიზიოთერაპია",
-      title2: "სახლში",
+      title1: "რეაბილიტაცია სახლში",
+      title2: "და ფიზიოთერაპია",
       title3: "თბილისში",
       description:
         "ფიზიოთერაპია და რეაბილიტაცია სახლში თბილისში. დაიბრუნეთ მოძრაობის თავისუფლება კლინიკაში ვიზიტის გარეშე — ლიცენზირებული ფიზიოთერაპევტი მოვა თქვენთან და სრულ სარეაბილიტაციო კურსს თქვენსავე სახლში ჩაგიტარებთ.",
       callButton: "დარეკეთ",
       cta: "მიიღეთ უფასო კონსულტაცია",
       trustBadge: "ფიზიოთერაპევტის გამოძახება სახლში — თბილისის ნებისმიერ რაიონში",
-      clients: "500+ კმაყოფილი პაციენტი",
+      clients: "900+ პაციენტი ორივე სპეციალისტთან",
     },
     services: {
       badge: "რას გთავაზობთ",
       title: "რეაბილიტაციისა და ფიზიოთერაპიის სერვისები სახლში",
       subtitle:
-        "ფიზიოთერაპიისა და რეაბილიტაციის მიმართულებები, რომლებსაც თბილისში სახლში ვატარებთ — თქვენი დიაგნოზისა და საჭიროებების მიხედვით",
+        "ფიზიოთერაპიისა და რეაბილიტაციის პროგრამები, რომლებსაც თბილისში სახლში ვატარებთ — თქვენი დიაგნოზისა და საჭიროებების მიხედვით",
       learnMore: "გაიგეთ მეტი",
       orthopedic: {
         title: "ორთოპედიული რეაბილიტაცია სახლში",
         description:
-          "სახსრების, ხერხემლისა და კუნთ-ჩონჩხის სისტემის დაავადებების რეაბილიტაცია: ტკივილის შემცირება და მოძრაობის სრული მოცულობის აღდგენა.",
+          "სახსრების, ხერხემლისა და საყრდენ-მამოძრავებელი სისტემის დაავადებების რეაბილიტაცია: ტკივილის შემცირება და მოძრაობის მოცულობის მაქსიმალური აღდგენა.",
       },
       postSurgery: {
-        title: "პოსტოპერაციული და ტრავმის შემდგომი რეაბილიტაცია სახლში",
+        title: "პოსტოპერაციული და ტრავმის შემდგომი რეაბილიტაცია",
         description:
           "ოპერაციის, მოტეხილობის ან სპორტული ტრავმის შემდეგ ფუნქციის უსაფრთხო და ეტაპობრივი აღდგენა ინდივიდუალური მკურნალობის გეგმით.",
       },
       neurological: {
-        title: "ნევროლოგიური რეაბილიტაცია სახლში",
+        title: "ნევროლოგიური რეაბილიტაცია",
         description:
           "მოძრაობის, წონასწორობისა და დამოუკიდებლობის აღდგენა ინსულტის, ნევროლოგიური დაავადებების ან ნერვული სისტემის დაზიანების შემდეგ.",
       },
       manualTherapy: {
-        title: "მანუალური თერაპია სახლში",
+        title: "მანუალური თერაპია",
         description:
           "ხელით ზემოქმედების მეთოდები კუნთების დაძაბულობის მოსახსნელად, სახსრების მობილობის გასაუმჯობესებლად და ტკივილის შესამცირებლად.",
       },
       respiratory: {
-        title: "სუნთქვითი რეაბილიტაცია სახლში",
+        title: "სუნთქვითი რეაბილიტაცია",
         description:
-          "სუნთქვითი ვარჯიშები და ფილტვების ფუნქციის აღდგენა ხანგრძლივი დაავადების, ოპერაციის ან ინფექციის შემდეგ.",
+          "სუნთქვითი ვარჯიშები და ფილტვების ფუნქციის გაუმჯობესება ხანგრძლივი დაავადების, ოპერაციის ან ინფექციის შემდეგ.",
       },
       seniors: {
         title: "ხანდაზმულთა რეაბილიტაცია სახლში",
@@ -628,16 +638,16 @@ const translations: Record<string, Translations> = {
           "წონასწორობის, ძალისა და ყოველდღიური აქტივობის შენარჩუნება ხანდაზმულებში, დაცემის რისკის შემცირება და დამოუკიდებელი ცხოვრება სახლში.",
       },
       cta: {
-        title: "არ იცით, რომელი მიმართულება გჭირდებათ?",
+        title: "არ იცით, რომელი პროგრამა გჭირდებათ?",
         description: "დაგვირეკეთ უფასო კონსულტაციისთვის და შესაფერის კურსს ერთად შევარჩევთ",
         button: "დარეკეთ",
       },
     },
     specialist: {
       badge: "ჩვენი სპეციალისტები",
-      title: "ლიცენზირებული ფიზიოთერაპევტები და რეაბილიტოლოგები თბილისში",
+      title: "ლიცენზირებული ფიზიოთერაპევტები თბილისში",
       subtitle:
-        "ჩვენი გუნდი დაკომპლექტებულია ლიცენზირებული ფიზიოთერაპევტებითა და რეაბილიტოლოგებით, რომლებიც თბილისში პაციენტებთან სახლში დადიან. მიიღეთ უმაღლესი ხარისხის მომსახურება სახლიდან გაუსვლელად.",
+        "ჩვენი გუნდი დაკომპლექტებულია ლიცენზირებული ფიზიოთერაპევტებით, რომლებიც თბილისში პაციენტებს სახლში სტუმრობენ. მიიღეთ უმაღლესი ხარისხის მომსახურება სახლიდან გაუსვლელად.",
       licensed: "ლიცენზირებული სპეციალისტი",
       experienceLabel: "გამოცდილება",
       patientsLabel: "პაციენტები",
@@ -653,7 +663,7 @@ const translations: Record<string, Translations> = {
           currentRole: "ფიზიკური თერაპევტი Georgian Foot and Ankle Institute-ში",
           description:
             "სპეციალისტი 6+ წლიანი კლინიკური გამოცდილებით, რომელიც მტკიცებულებებზე დაფუძნებულ, პაციენტზე ორიენტირებულ მკურნალობას სთავაზობს ინდივიდუალური გეგმით. მიმართულებები: ორთოპედიული, ტრავმატოლოგიური და ნევროლოგიური რეაბილიტაცია.",
-          experience: "6+ წლიანი",
+          experience: "6+ წელი",
           patients: "500+",
           education: [
             "მაგისტრის ხარისხი ფიზიკურ მედიცინასა და რეაბილიტაციაში – თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
@@ -662,11 +672,11 @@ const translations: Record<string, Translations> = {
         },
         {
           name: "გიორგი პაიჭაძე",
-          credentials: "რეაბილიტოლოგი და ფიზიკური თერაპევტი",
-          currentRole: "რეაბილიტოლოგი შპს მედკაპიტალში",
+          credentials: "ფიზიკური თერაპევტი, რეაბილიტაციის სპეციალისტი",
+          currentRole: "რეაბილიტაციის სპეციალისტი შპს მედკაპიტალში",
           description:
-            "სპეციალისტი 4+ წლიანი კლინიკური გამოცდილებით, რომელსაც ნამუშევარი აქვს რამდენიმე სარეაბილიტაციო ცენტრში, მათ შორის ვეტერანთა კლინიკასა და პედიატრიულ რეაბილიტაციაში. სთავაზობს სრულ სარეაბილიტაციო მომსახურებას მტკიცებულებებზე დაფუძნებული მეთოდებით.",
-          experience: "4+ წლიანი",
+            "სპეციალისტი 4+ წლიანი კლინიკური გამოცდილებით, რომელსაც უმუშავია რამდენიმე სარეაბილიტაციო ცენტრში, მათ შორის ვეტერანთა კლინიკასა და პედიატრიულ რეაბილიტაციაში. სთავაზობს სრულ სარეაბილიტაციო მომსახურებას მტკიცებულებებზე დაფუძნებული მეთოდებით.",
+          experience: "4+ წელი",
           patients: "400+",
           education: [
             "ბაკალავრის ხარისხი ფიზიკურ მედიცინასა და რეაბილიტაციაში – თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
@@ -680,13 +690,13 @@ const translations: Record<string, Translations> = {
         "ნევროლოგიური რეაბილიტაცია",
         "ტერფისა და კოჭის რეაბილიტაცია",
         "მანუალური თერაპია",
-        "კუნთ-ჩონჩხის დარღვევები",
+        "საყრდენ-მამოძრავებელი სისტემის დარღვევები",
         "სუნთქვითი რეაბილიტაცია",
       ],
     },
     whyUs: {
       badge: "რატომ ჩვენ",
-      title: "რატომ ჯობს რეაბილიტაცია სახლში კლინიკურ ვიზიტს?",
+      title: "რატომ სჯობს რეაბილიტაცია სახლში კლინიკაში ვიზიტს?",
       subtitle:
         "ჩვენ ვაერთიანებთ მტკიცებულებებზე დაფუძნებულ მედიცინასა და ინდივიდუალურ ზრუნვას, რათა თქვენი რეაბილიტაცია სახლში მშვიდ და კომფორტულ გარემოში წარიმართოს.",
       comfort: {
@@ -697,7 +707,7 @@ const translations: Record<string, Translations> = {
       professionalism: {
         title: "პროფესიონალიზმი",
         description:
-          "გუნდი დაკომპლექტებულია მხოლოდ ლიცენზირებული და გამოცდილი რეაბილიტოლოგებით.",
+          "გუნდი დაკომპლექტებულია მხოლოდ ლიცენზირებული და გამოცდილი ფიზიოთერაპევტებით.",
       },
       individualApproach: {
         title: "ინდივიდუალური მიდგომა",
@@ -712,7 +722,7 @@ const translations: Record<string, Translations> = {
       familyEnvironment: {
         title: "ოჯახური გარემო",
         description:
-          "სტრესის გარეშე მკურნალობა აჩქარებს გამოჯანმრთელების პროცესს.",
+          "მშვიდი, ნაცნობი გარემო ამცირებს სტრესს და აადვილებს რეაბილიტაციის პროცესს.",
       },
       transparency: {
         title: "გამჭვირვალობა",
@@ -721,20 +731,20 @@ const translations: Record<string, Translations> = {
       },
       stats: {
         patients: {
-          number: "500+",
-          label: "პაციენტი",
+          number: "900+",
+          label: "პაციენტი ორივე სპეციალისტთან",
         },
         experience: {
           number: "10+",
-          label: "წლის გამოცდილება",
+          label: "წლის ჯამური გამოცდილება",
         },
-        success: {
-          number: "94%",
-          label: "გამოჯანმრთელების მაჩვენებელი",
+        programs: {
+          number: "6",
+          label: "სარეაბილიტაციო პროგრამა",
         },
-        satisfaction: {
-          number: "94%",
-          label: "პაციენტების კმაყოფილება",
+        districts: {
+          number: "12",
+          label: "რაიონი თბილისში",
         },
       },
     },
@@ -750,27 +760,27 @@ const translations: Record<string, Translations> = {
             "მოძრაობის, კუნთების ძალის, წონასწორობისა და თვითმოვლის უნარების აღდგენა ინსულტის შემდეგ. მუშაობა ადრეულ პერიოდში იწყება და სახლში გრძელდება იმდენ ხანს, რამდენიც აღდგენას სჭირდება.",
         },
         {
-          title: "მუხლისა და ბარძაყის ენდოპროთეზირების შემდგომი რეაბილიტაცია",
+          title: "მუხლისა და მენჯ-ბარძაყის სახსრის ენდოპროთეზირების შემდგომი რეაბილიტაცია",
           description:
             "სახსრის ენდოპროთეზირების შემდეგ ეტაპობრივი პროგრამა: ოპერირებული კიდურის უსაფრთხო დატვირთვა, მოძრაობის მოცულობის აღდგენა, სიარულის ხელახალი სწავლება და ყოველდღიურ აქტივობაში დაბრუნება.",
         },
         {
           title: "ბარძაყის ყელის მოტეხილობის შემდგომი რეაბილიტაცია",
           description:
-            "ხანდაზმული პაციენტებისთვის ბარძაყის ყელის მოტეხილობის შემდეგ რეაბილიტაცია სახლში ამცირებს გართულებების რისკს და ყველაზე მოკლე გზაა ფეხზე დამოუკიდებლად დადგომამდე.",
+            "ხანდაზმული პაციენტებისთვის ვმუშაობთ სიარულის ეტაპობრივ აღდგენაზე, გადაადგილების უსაფრთხოებასა და დაცემის პრევენციაზე — მკურნალი ექიმის მითითებების ფარგლებში.",
         },
         {
           title: "ხერხემლის თიაქარი და ზურგის ტკივილი",
           description:
-            "ხერხემლის თიაქრით, რადიკულიტითა და ქრონიკული ზურგის ტკივილით გამოწვეული სიმპტომების შემცირება, ღრმა კუნთოვანი კორსეტის გაძლიერება და იმ მოძრაობითი ჩვევების გასწორება, რამაც პრობლემა გამოიწვია.",
+            "ხერხემლის თიაქრით, რადიკულიტითა და ქრონიკული ზურგის ტკივილით გამოწვეული სიმპტომების შემცირება, ღრმა სტაბილიზატორი კუნთების გაძლიერება და იმ მოძრაობითი ჩვევების კორექცია, რომლებმაც შესაძლოა სიმპტომები გაამწვავოს.",
         },
         {
           title: "ართროზი და სახსრების ტკივილი",
           description:
-            "მუხლის, ბარძაყისა და მხრის ართროზის მართვა: ვარჯიშები, რომლებიც ამსუბუქებს ტკივილს, ინარჩუნებს სახსრის მოძრაობას და ანელებს დაავადების პროგრესირებას.",
+            "მუხლის, მენჯ-ბარძაყისა და მხრის სახსრების ართროზის მართვა: ვარჯიშები, რომლებიც ამსუბუქებს ტკივილს, ინარჩუნებს სახსრის მოძრაობას და აადვილებს ყოველდღიურ აქტივობას.",
         },
         {
-          title: "პარკინსონის დაავადება და ნევროლოგიური პათოლოგიები",
+          title: "პარკინსონის დაავადება და ნევროლოგიური დაავადებები",
           description:
             "სამკურნალო ვარჯიშები პარკინსონის დაავადების, გაფანტული სკლეროზისა და სხვა ნევროლოგიური მდგომარეობებისას — აქცენტით წონასწორობაზე, სიარულსა და დაცემის პრევენციაზე.",
         },
@@ -780,9 +790,9 @@ const translations: Record<string, Translations> = {
             "ფუნქციის აღდგენა მოტეხილობის, იოგის გახევის ან დაჭიმვის შემდეგ — იმობილიზაციის პერიოდიდან სპორტში სრულ დაბრუნებამდე.",
         },
         {
-          title: "სწორი წელის დარღვევა და სკოლიოზი",
+          title: "ტანადობის დარღვევა და სკოლიოზი",
           description:
-            "მაკორექტირებელი ვარჯიშები მოზარდებსა და მოზრდილებში ღეროს არასწორი პოზისა და სკოლიოზის დროს, იმ ყოველდღიურ ჩვევებთან ერთად, რომლებიც შედეგს ინარჩუნებს.",
+            "მაკორექტირებელი ვარჯიშები მოზარდებსა და ზრდასრულებში ტანადობის დარღვევისა და სკოლიოზის დროს, იმ ყოველდღიურ ჩვევებთან ერთად, რომლებიც შედეგს ინარჩუნებს.",
         },
       ],
     },
@@ -792,7 +802,7 @@ const translations: Record<string, Translations> = {
       subtitle:
         "თითოეული პროგრამა ამ მეთოდებიდან რამდენიმეს აერთიანებს — შერჩეულს თქვენი დიაგნოზისა და მიმდინარე მდგომარეობის მიხედვით.",
       items: [
-        "სამკურნალო ვარჯიშები და კინეზითერაპია (ლფკ)",
+        "კინეზითერაპია — სამკურნალო ვარჯიშები (ლფკ)",
         "სამკურნალო მასაჟი",
         "მანუალური თერაპია",
         "მიოფასციალური რელიზი",
@@ -846,14 +856,19 @@ const translations: Record<string, Translations> = {
       submit: "გაგზავნა WhatsApp-ით",
       hint: "ვპასუხობთ სამუშაო საათებში: ორშ-შაბ, 09:00-19:00.",
       fallback: "WhatsApp არ გაიხსნა? დააჭირეთ აქ.",
+      messageIntro: "გამარჯობა, მინდა ფიზიოთერაპევტის სახლში გამოძახება",
+      messageName: "სახელი",
+      messagePhone: "ტელეფონი",
+      messageDistrict: "რაიონი",
+      messageProblem: "პრობლემა",
       or: "ან",
     },
     coverage: {
-      badge: "მომსახურების არეალი",
+      badge: "სერვისის არეალი",
       title: "ფიზიოთერაპია სახლში თბილისის ყველა რაიონში",
       description:
         "ჩვენი ფიზიოთერაპევტები პაციენტებთან დადიან მთელ თბილისსა და მიმდებარე დასახლებებში. კლინიკამდე მისვლა და რიგში ლოდინი აღარ გჭირდებათ: სპეციალისტი აღჭურვილობით მოდის თქვენთვის შერჩეულ დროს და სეანსს თქვენსავე სახლში ატარებს.",
-      districtsLabel: "რაიონები, სადაც ვმუშაობთ",
+      districtsLabel: "რაიონები და უბნები, სადაც ვმუშაობთ",
       note: "ქალაქგარეთ ცხოვრობთ? დაგვირეკეთ — თბილისის მიმდებარე დასახლებებსაც ვფარავთ.",
     },
     contactChannels: {

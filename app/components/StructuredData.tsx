@@ -22,7 +22,7 @@ const SERVICES = [
   {
     name: "ორთოპედიული რეაბილიტაცია სახლში",
     description:
-      "სახსრების, ხერხემლისა და კუნთ-ჩონჩხის სისტემის დაავადებების რეაბილიტაცია სახლის პირობებში: ტკივილის შემცირება და მოძრაობის სრული მოცულობის აღდგენა.",
+      "სახსრების, ხერხემლისა და საყრდენ-მამოძრავებელი სისტემის დაავადებების რეაბილიტაცია სახლის პირობებში: ტკივილის შემცირება და მოძრაობის მოცულობის მაქსიმალური აღდგენა.",
   },
   {
     name: "პოსტოპერაციული და ტრავმის შემდგომი რეაბილიტაცია",
@@ -42,7 +42,7 @@ const SERVICES = [
   {
     name: "სუნთქვითი რეაბილიტაცია",
     description:
-      "სუნთქვითი ვარჯიშები და ფილტვების ფუნქციის აღდგენა ხანგრძლივი დაავადების, ოპერაციის ან ინფექციის შემდეგ.",
+      "სუნთქვითი ვარჯიშები და ფილტვების ფუნქციის გაუმჯობესება ხანგრძლივი დაავადების, ოპერაციის ან ინფექციის შემდეგ.",
   },
   {
     name: "ხანდაზმულთა რეაბილიტაცია სახლში",
@@ -55,14 +55,12 @@ const THERAPISTS = [
   {
     name: "ნიკოლოზ თოდუა",
     jobTitle: "ფიზიკური თერაპევტი და რეაბილიტაციის სპეციალისტი",
-    worksFor: "Georgian Foot and Ankle Institute",
     alumniOf: "თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
     image: `${SITE_URL}/doctor.jpeg`,
   },
   {
     name: "გიორგი პაიჭაძე",
-    jobTitle: "რეაბილიტოლოგი და ფიზიკური თერაპევტი",
-    worksFor: "შპს მედკაპიტალი",
+    jobTitle: "ფიზიკური თერაპევტი, რეაბილიტაციის სპეციალისტი",
     alumniOf: "თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
     image: `${SITE_URL}/doctor2.jpeg`,
   },
@@ -84,19 +82,12 @@ export function StructuredData() {
         telephone: PHONE_E164,
         image: `${SITE_URL}/cover.jpg`,
         logo: `${SITE_URL}/logo.png`,
-        priceRange: "₾₾",
-        currenciesAccepted: "GEL",
         medicalSpecialty: "Physiotherapy",
         address: {
           "@type": "PostalAddress",
           addressLocality: "თბილისი",
           addressRegion: "თბილისი",
           addressCountry: "GE",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: 41.7151,
-          longitude: 44.8271,
         },
         areaServed: [
           {
@@ -160,7 +151,6 @@ export function StructuredData() {
           name: t.name,
           jobTitle: t.jobTitle,
           image: t.image,
-          worksFor: { "@type": "Organization", name: t.worksFor },
           alumniOf: {
             "@type": "CollegeOrUniversity",
             name: t.alumniOf,
@@ -172,15 +162,15 @@ export function StructuredData() {
           telephone: PHONE_E164,
           contactType: "customer service",
           areaServed: "GE",
-          availableLanguage: ["Georgian", "English", "Russian"],
+          availableLanguage: ["Georgian", "English"],
         },
         ...(SAME_AS.length > 0 ? { sameAs: SAME_AS } : {}),
         potentialAction: {
-          "@type": "ReserveAction",
-          name: "უფასო კონსულტაციის დაჯავშნა",
+          "@type": "CommunicateAction",
+          name: "უფასო კონსულტაცია",
           target: {
             "@type": "EntryPoint",
-            urlTemplate: `${SITE_URL}/#callback`,
+            urlTemplate: `tel:${PHONE_E164}`,
             actionPlatform: [
               "https://schema.org/DesktopWebPlatform",
               "https://schema.org/MobileWebPlatform",

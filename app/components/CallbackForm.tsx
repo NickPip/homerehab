@@ -31,12 +31,15 @@ export default function CallbackForm() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    // The message is written from the patient's side. Reusing the form's own labels made it read
+    // backwards — "call us out" and "your name" are the page addressing the patient, not the
+    // patient addressing the clinic.
     const lines = [
-      t("callback.badge"),
-      name && `${t("callback.nameLabel")}: ${name}`,
-      phone && `${t("callback.phoneLabel")}: ${phone}`,
-      district && `${t("callback.districtLabel")}: ${district}`,
-      message && `${t("callback.messageLabel")} ${message}`,
+      t("callback.messageIntro"),
+      name && `${t("callback.messageName")}: ${name}`,
+      phone && `${t("callback.messagePhone")}: ${phone}`,
+      district && `${t("callback.messageDistrict")}: ${district}`,
+      message && `${t("callback.messageProblem")}: ${message}`,
     ].filter(Boolean);
     const url = `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(lines.join("\n"))}`;
     trackMessageClick("whatsapp", "callback_form");

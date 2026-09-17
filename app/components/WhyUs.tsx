@@ -143,8 +143,8 @@ export default function WhyUs() {
           {[
             { number: t("whyUs.stats.patients.number"), label: t("whyUs.stats.patients.label") },
             { number: t("whyUs.stats.experience.number"), label: t("whyUs.stats.experience.label") },
-            { number: t("whyUs.stats.success.number"), label: t("whyUs.stats.success.label") },
-            { number: t("whyUs.stats.satisfaction.number"), label: t("whyUs.stats.satisfaction.label") },
+            { number: t("whyUs.stats.programs.number"), label: t("whyUs.stats.programs.label") },
+            { number: t("whyUs.stats.districts.number"), label: t("whyUs.stats.districts.label") },
           ].map((stat, index) => (
             <motion.div
               key={index}

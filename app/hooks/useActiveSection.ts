@@ -6,7 +6,17 @@ export function useActiveSection() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const sections = ["home", "services", "specialist", "why-us", "faq", "contact"];
+    const sections = [
+      "home",
+      "services",
+      "conditions",
+      "specialist",
+      "why-us",
+      "process",
+      "coverage",
+      "faq",
+      "contact",
+    ];
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       // Get all intersecting entries

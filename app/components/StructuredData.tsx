@@ -1,4 +1,14 @@
+import { FAQ_ITEMS_KA } from "../lib/faq";
 import { PHONE_E164, SITE_URL } from "../lib/site";
+
+/**
+ * Profile URLs Google can reconcile this business against: the Google Business Profile listing,
+ * a Facebook page, an Instagram profile. Set NEXT_PUBLIC_SAME_AS to a comma-separated list.
+ */
+const SAME_AS = (process.env.NEXT_PUBLIC_SAME_AS ?? "")
+  .split(",")
+  .map((url) => url.trim())
+  .filter(Boolean);
 
 /**
  * schema.org JSON-LD describing the business, its therapists and its services.
@@ -58,38 +68,6 @@ const THERAPISTS = [
   },
 ];
 
-export const FAQ_ITEMS = [
-  {
-    question: "რა არის რეაბილიტაცია სახლში და ვისთვის არის განკუთვნილი?",
-    answer:
-      "რეაბილიტაცია სახლში ნიშნავს, რომ ლიცენზირებული ფიზიოთერაპევტი თავად ჩამოდის თქვენთან და სარეაბილიტაციო კურსს თქვენსავე საცხოვრებელში ატარებს. ის განკუთვნილია ოპერაციის, მოტეხილობის ან ინსულტის შემდგომი პაციენტებისთვის, ხერხემლისა და სახსრების ქრონიკული ტკივილის მქონე ადამიანებისთვის და ყველასთვის, ვისაც კლინიკამდე მისვლა უჭირს.",
-  },
-  {
-    question: "მოდის თუ არა ფიზიოთერაპევტი სახლში თბილისში?",
-    answer:
-      "დიახ. ჩვენი ფიზიოთერაპევტები მუშაობენ თბილისის ყველა რაიონში — ვაკე, საბურთალო, მთაწმინდა, ისანი, სამგორი, გლდანი, ნაძალადევი, დიდუბე, ჩუღურეთი და კრწანისი — ასევე მიმდებარე დასახლებებში. ვიზიტს თქვენთვის მოსახერხებელ დროზე ვნიშნავთ.",
-  },
-  {
-    question: "რამდენ ხანს გრძელდება სარეაბილიტაციო კურსი?",
-    answer:
-      "კურსის ხანგრძლივობა დიაგნოზზეა დამოკიდებული. მსუბუქი ორთოპედიული პრობლემა ხშირად 6-10 სეანსში წყდება, პოსტოპერაციული ან ნევროლოგიური აღდგენა კი 1-3 თვეს მოითხოვს. ზუსტ გეგმას პირველი შეფასების შემდეგ გეტყვით.",
-  },
-  {
-    question: "რამდენ ხანს გრძელდება ერთი სეანსი?",
-    answer:
-      "ერთი სეანსი ჩვეულებრივ 45-60 წუთია და მოიცავს შეფასებას, სამკურნალო ვარჯიშებს, მანუალურ თერაპიას და სახლში დამოუკიდებლად შესასრულებელი ვარჯიშების სწავლებას.",
-  },
-  {
-    question: "საჭიროა თუ არა ექიმის დანიშნულება ან სპეციალური აღჭურვილობა?",
-    answer:
-      "ექიმის დანიშნულება სასურველია, მაგრამ სავალდებულო არ არის — პირველ ვიზიტზე ფიზიოთერაპევტი თავად აფასებს მდგომარეობას. აღჭურვილობას სპეციალისტი თან მოიტანს; თქვენ მხოლოდ თავისუფალი სივრცე დაგჭირდებათ.",
-  },
-  {
-    question: "როგორ დავჯავშნო პირველი ვიზიტი?",
-    answer:
-      "დაგვირეკეთ ნომერზე +995 591 31 42 22. უფასო კონსულტაციაზე მოგისმენთ, შევარჩევთ შესაფერის მიმართულებას და შევათანხმებთ ვიზიტის დროსა და ღირებულებას წინასწარ, დაფარული ხარჯების გარეშე.",
-  },
-];
 
 export function StructuredData() {
   const graph = {
@@ -141,6 +119,20 @@ export function StructuredData() {
           name: s.name,
           description: s.description,
         })),
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "რეაბილიტაციისა და ფიზიოთერაპიის სერვისები სახლში",
+          itemListElement: SERVICES.map((s) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: s.name,
+              description: s.description,
+              serviceType: "ფიზიოთერაპია და რეაბილიტაცია სახლში",
+              areaServed: { "@type": "City", name: "თბილისი" },
+            },
+          })),
+        },
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
@@ -168,6 +160,7 @@ export function StructuredData() {
           },
         })),
         knowsLanguage: ["ka", "en"],
+        ...(SAME_AS.length > 0 ? { sameAs: SAME_AS } : {}),
         potentialAction: {
           "@type": "ReserveAction",
           target: `tel:${PHONE_E164}`,
@@ -185,7 +178,7 @@ export function StructuredData() {
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/#faq`,
-        mainEntity: FAQ_ITEMS.map((item) => ({
+        mainEntity: FAQ_ITEMS_KA.map((item) => ({
           "@type": "Question",
           name: item.question,
           acceptedAnswer: {

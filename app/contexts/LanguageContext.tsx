@@ -15,6 +15,24 @@ interface Translations {
     call: string;
     heading: string;
   };
+  conditions: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    items: Array<{ title: string; description: string }>;
+  };
+  methods: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    items: string[];
+  };
+  process: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    steps: Array<{ title: string; description: string }>;
+  };
   coverage: {
     badge: string;
     title: string;
@@ -164,50 +182,50 @@ const translations: Record<string, Translations> = {
     },
     hero: {
       badge: "Certified & Licensed",
-      title1: "Professional",
-      title2: "Rehabilitation",
-      title3: "At Home",
+      title1: "Rehabilitation and Physiotherapy",
+      title2: "At Home",
+      title3: "In Tbilisi",
       description:
         "Physiotherapy and rehabilitation at home in Tbilisi. Regain your freedom of movement without visiting a clinic — a licensed physiotherapist comes to you and delivers the full course of treatment in your own home.",
       callButton: "Call",
       or: "or",
       cta: "Get a Free Consultation",
-      trustBadge: "Certified professionals with 10+ years of experience",
+      trustBadge: "Call out a physiotherapist to your home — anywhere in Tbilisi",
       clients: "500+ satisfied clients",
     },
     services: {
       badge: "What We Offer",
-      title: "Our Services",
+      title: "Rehabilitation and Physiotherapy Services at Home",
       subtitle:
         "The physiotherapy and rehabilitation programs we deliver at home in Tbilisi, matched to your diagnosis and needs",
       learnMore: "Learn More",
       orthopedic: {
-        title: "Orthopedic Rehabilitation",
+        title: "Orthopedic Rehabilitation at Home",
         description:
           "Rehabilitation for joint, spine, and musculoskeletal conditions: reducing pain and restoring your full range of motion.",
       },
       postSurgery: {
-        title: "Post-Surgery & Injury Recovery",
+        title: "Post-Surgery and Injury Rehabilitation at Home",
         description:
           "Safe, step-by-step recovery of function after surgery, fractures, or sports injuries, following an individual treatment plan.",
       },
       neurological: {
-        title: "Neurological Rehabilitation",
+        title: "Neurological Rehabilitation at Home",
         description:
           "Restoring movement, balance, and independence after a stroke, neurological conditions, or nervous system injury.",
       },
       manualTherapy: {
-        title: "Manual Therapy",
+        title: "Manual Therapy at Home",
         description:
           "Hands-on techniques to relieve muscle tension, improve joint mobility, and reduce pain.",
       },
       respiratory: {
-        title: "Respiratory Rehabilitation",
+        title: "Respiratory Rehabilitation at Home",
         description:
           "Breathing exercises and lung function recovery after prolonged illness, surgery, or infection.",
       },
       seniors: {
-        title: "Rehabilitation for Seniors",
+        title: "Rehabilitation for Seniors at Home",
         description:
           "Maintaining balance, strength, and daily activity in older adults, reducing the risk of falls and supporting independent living at home.",
       },
@@ -219,7 +237,7 @@ const translations: Record<string, Translations> = {
     },
     specialist: {
       badge: "Our Specialists",
-      title: "Licensed Professionals",
+      title: "Licensed Physiotherapists and Rehabilitation Specialists in Tbilisi",
       subtitle:
         "Our team is staffed with licensed physiotherapists and rehabilitation specialists who visit patients at home across Tbilisi. Receive the highest quality care without leaving home.",
       licensed: "Licensed Specialist",
@@ -271,7 +289,7 @@ const translations: Record<string, Translations> = {
     },
     whyUs: {
       badge: "Why Choose Us",
-      title: "Why HomeRehab?",
+      title: "Why Rehabilitation at Home Beats a Clinic Visit",
       subtitle:
         "We combine evidence-based medicine and individual care to ensure your complete rehabilitation in a calm and comfortable environment.",
       comfort: {
@@ -322,6 +340,98 @@ const translations: Record<string, Translations> = {
           label: "Patient Satisfaction",
         },
       },
+    },
+    conditions: {
+      badge: "Who We Help",
+      title: "Rehabilitation at Home by Diagnosis",
+      subtitle:
+        "The conditions our physiotherapists most often treat in patients' homes across Tbilisi.",
+      items: [
+        {
+          title: "Rehabilitation after a stroke",
+          description:
+            "Restoring movement, muscle strength, balance and self-care skills after a stroke. Work begins in the early period and continues at home for as long as recovery requires.",
+        },
+        {
+          title: "Rehabilitation after knee or hip replacement",
+          description:
+            "A staged program after joint replacement: safe loading of the operated limb, range of motion, walking retraining, and returning to everyday activity.",
+        },
+        {
+          title: "Rehabilitation after a hip fracture",
+          description:
+            "For older patients after a femoral neck fracture, rehabilitation at home reduces the risk of complications and is the shortest route back to standing and walking independently.",
+        },
+        {
+          title: "Spinal disc herniation and back pain",
+          description:
+            "Reducing pain from a herniated disc, sciatica or chronic back pain, strengthening the core muscles, and correcting the movement patterns that caused the problem.",
+        },
+        {
+          title: "Arthrosis and joint pain",
+          description:
+            "Managing knee, hip and shoulder arthrosis: exercises that ease pain, maintain joint mobility and slow the progression of the condition.",
+        },
+        {
+          title: "Parkinson's disease and neurological conditions",
+          description:
+            "Exercise therapy for Parkinson's disease, multiple sclerosis and other neurological conditions, focused on balance, gait and preventing falls.",
+        },
+        {
+          title: "Rehabilitation after a fracture or sports injury",
+          description:
+            "Restoring function after a fracture, ligament rupture or sprain, from the immobilization period through to full return to sport.",
+        },
+        {
+          title: "Posture problems and scoliosis",
+          description:
+            "Corrective exercise for postural problems and scoliosis in teenagers and adults, together with the daily habits that hold the correction in place.",
+        },
+      ],
+    },
+    methods: {
+      badge: "Our Methods",
+      title: "The Treatment Methods We Use",
+      subtitle:
+        "Every program combines several of these methods, chosen to fit your diagnosis and your current condition.",
+      items: [
+        "Therapeutic exercise and kinesiotherapy",
+        "Therapeutic massage",
+        "Manual therapy",
+        "Myofascial release",
+        "Breathing exercises",
+        "Gait and balance training",
+        "Kinesio taping",
+        "Post-immobilization joint mobilization",
+        "A home exercise program you continue between visits",
+      ],
+    },
+    process: {
+      badge: "How It Works",
+      title: "Rehabilitation at Home in Four Steps",
+      subtitle: "From the first call to the end of your course, this is what happens.",
+      steps: [
+        {
+          title: "Call and free consultation",
+          description:
+            "You call us and describe the problem. We tell you whether home rehabilitation is right for your case, which program fits, and what the visit will cost — before anything is booked.",
+        },
+        {
+          title: "First visit and assessment",
+          description:
+            "The physiotherapist comes to you, examines your condition, measures range of motion and strength, and reviews any medical documentation and imaging you have.",
+        },
+        {
+          title: "Your individual rehabilitation plan",
+          description:
+            "You receive a written plan: the goal, the number of sessions, their frequency, and the exercises you will do on your own between visits.",
+        },
+        {
+          title: "Sessions in your own home",
+          description:
+            "The specialist comes at a time that suits you, brings the equipment, and adjusts the plan as you progress. You are told the cost in advance, with no hidden charges.",
+        },
+      ],
     },
     coverage: {
       badge: "Service Area",
@@ -385,6 +495,36 @@ const translations: Record<string, Translations> = {
           answer:
             "Call +995 591 31 42 22. During the free consultation we listen to your situation, choose the right program, and agree the visit time and price up front, with no hidden costs.",
         },
+        {
+          question: "How much does rehabilitation at home cost in Tbilisi?",
+          answer:
+            "The price of a visit depends on the program and the district. We agree the exact cost with you during the free consultation, before the first visit is booked, and a course of ten sessions is cheaper per session than single visits. There are no hidden charges: what we quote is what you pay.",
+        },
+        {
+          question: "How do I call out a physiotherapist to my home in Tbilisi?",
+          answer:
+            "Call +995 591 31 42 22. Calling out a physiotherapist takes one phone call: you describe the problem, we choose the program, and we agree a time. In most districts of Tbilisi the first visit can be arranged within a day or two.",
+        },
+        {
+          question: "What is the difference between a physiotherapist and a rehabilitation specialist?",
+          answer:
+            "Both work on physical recovery. A physiotherapist focuses on movement, exercise therapy and manual techniques, while a rehabilitation specialist looks at the whole recovery plan, including how it fits with the treatment your doctor prescribed. Our team holds both qualifications, so you get both perspectives.",
+        },
+        {
+          question: "When should rehabilitation start after a stroke or an operation?",
+          answer:
+            "As early as your treating doctor allows — usually within days. Early, careful loading prevents muscle wasting and joint stiffness, and it is the single biggest factor in how much function you get back.",
+        },
+        {
+          question: "Do you work on Saturdays?",
+          answer:
+            "Yes. We work Monday to Saturday, 09:00 to 19:00, and schedule visits at a time that suits your household, including outside working hours by arrangement.",
+        },
+        {
+          question: "Do you offer therapeutic massage at home?",
+          answer:
+            "Yes, therapeutic massage is one of the methods we use, but as part of a rehabilitation plan rather than on its own. Combined with exercise therapy and manual techniques it holds its effect far longer than massage alone.",
+        },
       ],
       cta: "Still have a question? We are happy to answer it.",
       ctaButton: "Free Consultation",
@@ -422,50 +562,50 @@ const translations: Record<string, Translations> = {
     },
     hero: {
       badge: "სერტიფიცირებული და ლიცენზირებული",
-      title1: "პროფესიონალური",
-      title2: "რეაბილიტაცია",
-      title3: "სახლში",
+      title1: "რეაბილიტაცია და ფიზიოთერაპია",
+      title2: "სახლში",
+      title3: "თბილისში",
       description:
         "ფიზიოთერაპია და რეაბილიტაცია სახლში თბილისში. დაიბრუნეთ მოძრაობის თავისუფლება კლინიკაში ვიზიტის გარეშე — ლიცენზირებული ფიზიოთერაპევტი მოვა თქვენთან და სრულ სარეაბილიტაციო კურსს თქვენსავე სახლში ჩაგიტარებთ.",
       callButton: "დარეკეთ",
       or: "ან",
       cta: "მიიღეთ უფასო კონსულტაცია",
-      trustBadge: "სერტიფიცირებული პროფესიონალები 10+ წლის გამოცდილებით",
+      trustBadge: "ფიზიოთერაპევტის გამოძახება სახლში — თბილისის ნებისმიერ რაიონში",
       clients: "500+ კმაყოფილი პაციენტი",
     },
     services: {
       badge: "რას გთავაზობთ",
-      title: "ჩვენი სერვისები",
+      title: "რეაბილიტაციისა და ფიზიოთერაპიის სერვისები სახლში",
       subtitle:
         "ფიზიოთერაპიისა და რეაბილიტაციის მიმართულებები, რომლებსაც თბილისში სახლში ვატარებთ — თქვენი დიაგნოზისა და საჭიროებების მიხედვით",
       learnMore: "გაიგეთ მეტი",
       orthopedic: {
-        title: "ორთოპედიული რეაბილიტაცია",
+        title: "ორთოპედიული რეაბილიტაცია სახლში",
         description:
           "სახსრების, ხერხემლისა და კუნთ-ჩონჩხის სისტემის დაავადებების რეაბილიტაცია: ტკივილის შემცირება და მოძრაობის სრული მოცულობის აღდგენა.",
       },
       postSurgery: {
-        title: "პოსტოპერაციული და ტრავმის შემდგომი აღდგენა",
+        title: "პოსტოპერაციული და ტრავმის შემდგომი რეაბილიტაცია სახლში",
         description:
           "ოპერაციის, მოტეხილობის ან სპორტული ტრავმის შემდეგ ფუნქციის უსაფრთხო და ეტაპობრივი აღდგენა ინდივიდუალური მკურნალობის გეგმით.",
       },
       neurological: {
-        title: "ნევროლოგიური რეაბილიტაცია",
+        title: "ნევროლოგიური რეაბილიტაცია სახლში",
         description:
           "მოძრაობის, წონასწორობისა და დამოუკიდებლობის აღდგენა ინსულტის, ნევროლოგიური დაავადებების ან ნერვული სისტემის დაზიანების შემდეგ.",
       },
       manualTherapy: {
-        title: "მანუალური თერაპია",
+        title: "მანუალური თერაპია სახლში",
         description:
           "ხელით ზემოქმედების მეთოდები კუნთების დაძაბულობის მოსახსნელად, სახსრების მობილობის გასაუმჯობესებლად და ტკივილის შესამცირებლად.",
       },
       respiratory: {
-        title: "სუნთქვითი რეაბილიტაცია",
+        title: "სუნთქვითი რეაბილიტაცია სახლში",
         description:
           "სუნთქვითი ვარჯიშები და ფილტვების ფუნქციის აღდგენა ხანგრძლივი დაავადების, ოპერაციის ან ინფექციის შემდეგ.",
       },
       seniors: {
-        title: "ხანდაზმულთა რეაბილიტაცია",
+        title: "ხანდაზმულთა რეაბილიტაცია სახლში",
         description:
           "წონასწორობის, ძალისა და ყოველდღიური აქტივობის შენარჩუნება ხანდაზმულებში, დაცემის რისკის შემცირება და დამოუკიდებელი ცხოვრება სახლში.",
       },
@@ -477,7 +617,7 @@ const translations: Record<string, Translations> = {
     },
     specialist: {
       badge: "ჩვენი სპეციალისტები",
-      title: "ლიცენზირებული პროფესიონალები",
+      title: "ლიცენზირებული ფიზიოთერაპევტები და რეაბილიტოლოგები თბილისში",
       subtitle:
         "ჩვენი გუნდი დაკომპლექტებულია ლიცენზირებული ფიზიოთერაპევტებითა და რეაბილიტოლოგებით, რომლებიც თბილისში პაციენტებთან სახლში დადიან. მიიღეთ უმაღლესი ხარისხის მომსახურება სახლიდან გაუსვლელად.",
       licensed: "ლიცენზირებული სპეციალისტი",
@@ -529,7 +669,7 @@ const translations: Record<string, Translations> = {
     },
     whyUs: {
       badge: "რატომ ჩვენ",
-      title: "რატომ HomeRehab?",
+      title: "რატომ ჯობს რეაბილიტაცია სახლში კლინიკურ ვიზიტს?",
       subtitle:
         "ჩვენ ვაერთიანებთ მტკიცებულებებზე დაფუძნებულ მედიცინასა და ინდივიდუალურ ზრუნვას, რათა თქვენი რეაბილიტაცია სახლში მშვიდ და კომფორტულ გარემოში წარიმართოს.",
       comfort: {
@@ -580,6 +720,98 @@ const translations: Record<string, Translations> = {
           label: "პაციენტების კმაყოფილება",
         },
       },
+    },
+    conditions: {
+      badge: "ვის ვეხმარებით",
+      title: "რეაბილიტაცია სახლში დიაგნოზის მიხედვით",
+      subtitle:
+        "მდგომარეობები, რომლებზეც ჩვენი ფიზიოთერაპევტები ყველაზე ხშირად მუშაობენ თბილისში პაციენტის სახლში.",
+      items: [
+        {
+          title: "ინსულტის შემდგომი რეაბილიტაცია სახლში",
+          description:
+            "მოძრაობის, კუნთების ძალის, წონასწორობისა და თვითმოვლის უნარების აღდგენა ინსულტის შემდეგ. მუშაობა ადრეულ პერიოდში იწყება და სახლში გრძელდება იმდენ ხანს, რამდენიც აღდგენას სჭირდება.",
+        },
+        {
+          title: "მუხლისა და ბარძაყის ენდოპროთეზირების შემდგომი რეაბილიტაცია",
+          description:
+            "სახსრის ენდოპროთეზირების შემდეგ ეტაპობრივი პროგრამა: ოპერირებული კიდურის უსაფრთხო დატვირთვა, მოძრაობის მოცულობის აღდგენა, სიარულის ხელახალი სწავლება და ყოველდღიურ აქტივობაში დაბრუნება.",
+        },
+        {
+          title: "ბარძაყის ყელის მოტეხილობის შემდგომი რეაბილიტაცია",
+          description:
+            "ხანდაზმული პაციენტებისთვის ბარძაყის ყელის მოტეხილობის შემდეგ რეაბილიტაცია სახლში ამცირებს გართულებების რისკს და ყველაზე მოკლე გზაა ფეხზე დამოუკიდებლად დადგომამდე.",
+        },
+        {
+          title: "ხერხემლის თიაქარი და ზურგის ტკივილი",
+          description:
+            "ხერხემლის თიაქრით, რადიკულიტითა და ქრონიკული ზურგის ტკივილით გამოწვეული სიმპტომების შემცირება, ღრმა კუნთოვანი კორსეტის გაძლიერება და იმ მოძრაობითი ჩვევების გასწორება, რამაც პრობლემა გამოიწვია.",
+        },
+        {
+          title: "ართროზი და სახსრების ტკივილი",
+          description:
+            "მუხლის, ბარძაყისა და მხრის ართროზის მართვა: ვარჯიშები, რომლებიც ამსუბუქებს ტკივილს, ინარჩუნებს სახსრის მოძრაობას და ანელებს დაავადების პროგრესირებას.",
+        },
+        {
+          title: "პარკინსონის დაავადება და ნევროლოგიური პათოლოგიები",
+          description:
+            "სამკურნალო ვარჯიშები პარკინსონის დაავადების, გაფანტული სკლეროზისა და სხვა ნევროლოგიური მდგომარეობებისას — აქცენტით წონასწორობაზე, სიარულსა და დაცემის პრევენციაზე.",
+        },
+        {
+          title: "მოტეხილობისა და სპორტული ტრავმის შემდგომი აღდგენა",
+          description:
+            "ფუნქციის აღდგენა მოტეხილობის, იოგის გახევის ან დაჭიმვის შემდეგ — იმობილიზაციის პერიოდიდან სპორტში სრულ დაბრუნებამდე.",
+        },
+        {
+          title: "სწორი წელის დარღვევა და სკოლიოზი",
+          description:
+            "მაკორექტირებელი ვარჯიშები მოზარდებსა და მოზრდილებში ღეროს არასწორი პოზისა და სკოლიოზის დროს, იმ ყოველდღიურ ჩვევებთან ერთად, რომლებიც შედეგს ინარჩუნებს.",
+        },
+      ],
+    },
+    methods: {
+      badge: "ჩვენი მეთოდები",
+      title: "მკურნალობის მეთოდები, რომლებსაც ვიყენებთ",
+      subtitle:
+        "თითოეული პროგრამა ამ მეთოდებიდან რამდენიმეს აერთიანებს — შერჩეულს თქვენი დიაგნოზისა და მიმდინარე მდგომარეობის მიხედვით.",
+      items: [
+        "სამკურნალო ვარჯიშები და კინეზითერაპია (ლფკ)",
+        "სამკურნალო მასაჟი",
+        "მანუალური თერაპია",
+        "მიოფასციალური რელიზი",
+        "სუნთქვითი ვარჯიშები",
+        "სიარულისა და წონასწორობის ვარჯიში",
+        "კინეზიოტეიპირება",
+        "სახსრების მობილიზაცია იმობილიზაციის შემდეგ",
+        "სახლში დამოუკიდებლად შესასრულებელი ვარჯიშების პროგრამა",
+      ],
+    },
+    process: {
+      badge: "როგორ ვმუშაობთ",
+      title: "როგორ მიმდინარეობს რეაბილიტაცია სახლში — 4 ნაბიჯი",
+      subtitle: "პირველი ზარიდან კურსის დასრულებამდე — აი, რა ხდება.",
+      steps: [
+        {
+          title: "ზარი და უფასო კონსულტაცია",
+          description:
+            "დაგვირეკავთ და აღწერთ პრობლემას. გეტყვით, შეესაბამება თუ არა თქვენს შემთხვევას რეაბილიტაცია სახლში, რომელი მიმართულება გჭირდებათ და რა ეღირება ვიზიტი — ჯავშნამდე.",
+        },
+        {
+          title: "პირველი ვიზიტი და ფიზიოთერაპევტის შეფასება",
+          description:
+            "ფიზიოთერაპევტი ჩამოდის თქვენთან, ათვალიერებს მდგომარეობას, ზომავს მოძრაობის მოცულობასა და კუნთების ძალას და ეცნობა თქვენს სამედიცინო დოკუმენტაციასა და კვლევებს.",
+        },
+        {
+          title: "ინდივიდუალური სარეაბილიტაციო გეგმა",
+          description:
+            "მიიღებთ წერილობით გეგმას: მიზანი, სეანსების რაოდენობა და სიხშირე, ასევე ვარჯიშები, რომლებსაც ვიზიტებს შორის დამოუკიდებლად შეასრულებთ.",
+        },
+        {
+          title: "სეანსები თქვენსავე სახლში",
+          description:
+            "სპეციალისტი მოდის თქვენთვის მოსახერხებელ დროს, თან მოაქვს აღჭურვილობა და გეგმას პროგრესის მიხედვით არეგულირებს. ღირებულებას წინასწარ შეგითანხმებთ, დაფარული ხარჯების გარეშე.",
+        },
+      ],
     },
     coverage: {
       badge: "მომსახურების არეალი",
@@ -643,13 +875,43 @@ const translations: Record<string, Translations> = {
           answer:
             "დაგვირეკეთ ნომერზე +995 591 31 42 22. უფასო კონსულტაციაზე მოგისმენთ, შევარჩევთ შესაფერის მიმართულებას და შევათანხმებთ ვიზიტის დროსა და ღირებულებას წინასწარ, დაფარული ხარჯების გარეშე.",
         },
+        {
+          question: "რამდენი ღირს რეაბილიტაცია სახლში თბილისში?",
+          answer:
+            "ვიზიტის ფასი დამოკიდებულია მიმართულებასა და რაიონზე. ზუსტ ღირებულებას უფასო კონსულტაციაზე შეგითანხმებთ, პირველი ვიზიტის დაჯავშნამდე, ხოლო ათსეანსიან კურსზე ერთი სეანსის ფასი უფრო დაბალია, ვიდრე ცალკეულ ვიზიტზე. დაფარული ხარჯები არ გვაქვს: რასაც გეტყვით, იმას გადაიხდით.",
+        },
+        {
+          question: "როგორ გამოვიძახო ფიზიოთერაპევტი სახლში თბილისში?",
+          answer:
+            "დაგვირეკეთ ნომერზე +995 591 31 42 22. ფიზიოთერაპევტის გამოძახება ერთი ზარით ხდება: აღწერთ პრობლემას, ჩვენ შევარჩევთ მიმართულებას და შევათანხმებთ დროს. თბილისის უმეტეს რაიონში პირველი ვიზიტი ერთ-ორ დღეში ეწყობა.",
+        },
+        {
+          question: "რა განსხვავებაა ფიზიოთერაპევტსა და რეაბილიტოლოგს შორის?",
+          answer:
+            "ორივე სპეციალისტი ფიზიკურ აღდგენაზე მუშაობს. ფიზიოთერაპევტი აქცენტს აკეთებს მოძრაობაზე, სამკურნალო ვარჯიშებსა და მანუალურ ტექნიკებზე, რეაბილიტოლოგი კი მთლიან აღდგენით გეგმას უყურებს, მათ შორის იმას, როგორ ერწყმის ის ექიმის დანიშნულ მკურნალობას. ჩვენს გუნდში ორივე კვალიფიკაციაა, ამიტომ ორივე კუთხეს იღებთ.",
+        },
+        {
+          question: "როდის უნდა დაიწყოს რეაბილიტაცია ინსულტის ან ოპერაციის შემდეგ?",
+          answer:
+            "რაც შეიძლება ადრე, როგორც კი მკურნალი ექიმი დაუშვებს — ჩვეულებრივ რამდენიმე დღეში. ადრეული და ფრთხილი დატვირთვა კუნთების ატროფიასა და სახსრების გაშეშებას აფერხებს და სწორედ ის განსაზღვრავს, რამდენად აღდგება ფუნქცია.",
+        },
+        {
+          question: "მუშაობთ თუ არა შაბათს?",
+          answer:
+            "დიახ. ვმუშაობთ ორშაბათიდან შაბათამდე, 09:00-დან 19:00-მდე, და ვიზიტს თქვენი ოჯახისთვის მოსახერხებელ დროზე ვნიშნავთ — შეთანხმებით სამუშაო საათების მიღმაც.",
+        },
+        {
+          question: "ატარებთ თუ არა სამკურნალო მასაჟს სახლში?",
+          answer:
+            "დიახ, სამკურნალო მასაჟი ჩვენს მეთოდებს შორისაა, თუმცა სარეაბილიტაციო გეგმის ნაწილად და არა ცალკე მომსახურებად. სამკურნალო ვარჯიშებთან და მანუალურ თერაპიასთან ერთად მისი ეფექტი გაცილებით დიდხანს ნარჩუნდება, ვიდრე მხოლოდ მასაჟის შემთხვევაში.",
+        },
       ],
       cta: "კიდევ გაქვთ კითხვა? სიამოვნებით გიპასუხებთ.",
       ctaButton: "უფასო კონსულტაცია",
     },
     footer: {
       tagline:
-        "ფიზიოთერაპია და რეაბილიტაცია სახლში თბილისში. თქვენი გამოჯანმრთელება, ჩვენი ვალდებულება.",
+        "ფიზიოთერაპია და ფიზიკური რეაბილიტაცია სახლში — ლიცენზირებული ფიზიოთერაპევტები თბილისში. თქვენი გამოჯანმრთელება, ჩვენი ვალდებულება.",
       quickLinks: {
         title: "სწრაფი ბმულები",
       },
@@ -663,7 +925,7 @@ const translations: Record<string, Translations> = {
       serviceAreaTitle: "სერვისის არეალი",
       serviceArea: "თბილისი და მიმდებარე რაიონები",
       serviceAreaDescription:
-        "ვატარებთ ფიზიოთერაპიისა და რეაბილიტაციის კურსებს პაციენტის სახლში — თბილისის ყველა რაიონსა და მიმდებარე დასახლებებში.",
+        "ვმუშაობთ თბილისის ყველა რაიონში — ვაკე, საბურთალო, მთაწმინდა, ისანი, სამგორი, გლდანი, ნაძალადევი, დიდუბე, ჩუღურეთი, კრწანისი, დიდი დიღომი, ვარკეთილი — და მიმდებარე დასახლებებში.",
       copyright: "© 2026 HomeRehab. ყველა უფლება დაცულია.",
       madeBy: "ტექნიკური უზრუნველყოფა:",
       atomicImpact: "atomicimpact.tech",

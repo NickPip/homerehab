@@ -21,8 +21,8 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="HomeRehab — რეაბილიტაცია და ფიზიოთერაპია სახლში თბილისში"
-                width={120}
-                height={40}
+                width={270}
+                height={115}
                 className="h-8 sm:h-10 w-auto object-contain brightness-0 invert"
               />
             </Link>
@@ -78,6 +78,14 @@ export default function Footer() {
                   className="text-white/80 hover:text-[#4A9D5F] transition-colors text-xs sm:text-sm block py-1"
                 >
                   {t("nav.whyUs")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#coverage"
+                  className="text-white/80 hover:text-[#4A9D5F] transition-colors text-xs sm:text-sm block py-1"
+                >
+                  {t("nav.coverage")}
                 </Link>
               </li>
               <li>

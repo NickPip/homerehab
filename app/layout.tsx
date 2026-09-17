@@ -52,10 +52,6 @@ export const metadata: Metadata = {
       "x-default": SITE_URL,
     },
   },
-  icons: {
-    icon: "/small-logo.png",
-    apple: "/small-logo.png",
-  },
   openGraph: {
     type: "website",
     locale: "ka_GE",
@@ -114,9 +110,14 @@ export default function RootLayout({
   return (
     <html lang="ka" className={georgian.variable}>
       <head>
-        <StructuredData />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin=""
+        />
       </head>
       <body className="antialiased">
+        <StructuredData />
         <Providers>{children}</Providers>
         {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
       </body>

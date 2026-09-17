@@ -5,8 +5,7 @@ import { motion } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { MapPin } from "lucide-react";
 import ContactChannels from "./ContactChannels";
-
-const MAX_DISTRICTS = 30;
+import { TBILISI_DISTRICTS } from "../lib/site";
 
 /**
  * Service-area section. Naming the individual Tbilisi districts in body copy is what lets the page
@@ -17,19 +16,15 @@ export default function Coverage() {
   const { t } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
 
-  const districts: string[] = [];
-  for (let i = 0; i < MAX_DISTRICTS; i++) {
-    const value = t(`coverage.districts.${i}`);
-    if (value.startsWith("coverage.districts")) break;
-    districts.push(value);
-  }
+  // Georgian place names are what patients search with, so they stay Georgian in both languages.
+  const districts = TBILISI_DISTRICTS;
 
   return (
     <section id="coverage" className="bg-gray-50 py-20 sm:py-24 px-4">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-12"
@@ -47,8 +42,8 @@ export default function Coverage() {
         </motion.div>
 
         <motion.div
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm"

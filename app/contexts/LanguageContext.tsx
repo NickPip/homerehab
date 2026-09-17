@@ -8,6 +8,7 @@ interface Translations {
     services: string;
     whyUs: string;
     specialist: string;
+    coverage: string;
     faq: string;
     contact: string;
   };
@@ -32,6 +33,22 @@ interface Translations {
     title: string;
     subtitle: string;
     steps: Array<{ title: string; description: string }>;
+  };
+  callback: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    phoneLabel: string;
+    phonePlaceholder: string;
+    districtLabel: string;
+    districtPlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    submit: string;
+    hint: string;
+    or: string;
   };
   coverage: {
     badge: string;
@@ -177,6 +194,7 @@ const translations: Record<string, Translations> = {
       services: "Services",
       whyUs: "Why Us",
       specialist: "Specialist",
+      coverage: "Areas",
       faq: "FAQ",
       contact: "Contact",
     },
@@ -433,6 +451,23 @@ const translations: Record<string, Translations> = {
         },
       ],
     },
+    callback: {
+      badge: "Request a Callback",
+      title: "Arrange a Visit",
+      subtitle:
+        "Fill in the form and your request opens in WhatsApp, ready to send. Or simply call us — we answer during working hours.",
+      nameLabel: "Your name",
+      namePlaceholder: "e.g. Nino",
+      phoneLabel: "Phone number",
+      phonePlaceholder: "+995 5XX XX XX XX",
+      districtLabel: "District",
+      districtPlaceholder: "Choose a district",
+      messageLabel: "What is the problem?",
+      messagePlaceholder: "e.g. rehabilitation after a knee operation",
+      submit: "Send via WhatsApp",
+      hint: "We reply during working hours: Mon-Sat, 09:00-19:00.",
+      or: "or",
+    },
     coverage: {
       badge: "Service Area",
       title: "Physiotherapy at Home Across Tbilisi",
@@ -557,6 +592,7 @@ const translations: Record<string, Translations> = {
       services: "სერვისები",
       whyUs: "რატომ ჩვენ",
       specialist: "სპეციალისტი",
+      coverage: "რაიონები",
       faq: "კითხვები",
       contact: "კონტაქტი",
     },
@@ -812,6 +848,23 @@ const translations: Record<string, Translations> = {
             "სპეციალისტი მოდის თქვენთვის მოსახერხებელ დროს, თან მოაქვს აღჭურვილობა და გეგმას პროგრესის მიხედვით არეგულირებს. ღირებულებას წინასწარ შეგითანხმებთ, დაფარული ხარჯების გარეშე.",
         },
       ],
+    },
+    callback: {
+      badge: "გამოგვიძახეთ",
+      title: "ვიზიტის შეთანხმება",
+      subtitle:
+        "შეავსეთ ფორმა და თქვენი მოთხოვნა WhatsApp-ში გაიხსნება, გასაგზავნად მზად. ან უბრალოდ დაგვირეკეთ — სამუშაო საათებში ყოველთვის ვპასუხობთ.",
+      nameLabel: "თქვენი სახელი",
+      namePlaceholder: "მაგ. ნინო",
+      phoneLabel: "ტელეფონის ნომერი",
+      phonePlaceholder: "+995 5XX XX XX XX",
+      districtLabel: "რაიონი",
+      districtPlaceholder: "აირჩიეთ რაიონი",
+      messageLabel: "რა პრობლემაა?",
+      messagePlaceholder: "მაგ. მუხლის ოპერაციის შემდგომი რეაბილიტაცია",
+      submit: "გაგზავნა WhatsApp-ით",
+      hint: "ვპასუხობთ სამუშაო საათებში: ორშ-შაბ, 09:00-19:00.",
+      or: "ან",
     },
     coverage: {
       badge: "მომსახურების არეალი",

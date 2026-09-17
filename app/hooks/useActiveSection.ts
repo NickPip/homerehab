@@ -108,11 +108,22 @@ export function useActiveSection() {
     handleScroll();
     
     // Listen to scroll events for better detection
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Coalesce scroll work into one frame: the handler reads layout for every section, and firing
+    // it on every scroll event forces a synchronous reflow dozens of times per second.
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        handleScroll();
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       observers.forEach((observer) => observer.disconnect());
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
 

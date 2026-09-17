@@ -2,6 +2,7 @@
 
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
+import { PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
 import { motion } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import {
@@ -64,8 +65,8 @@ export default function Services() {
         {/* Section Header */}
         <motion.div
           className="text-center mb-16"
-          initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
@@ -90,10 +91,10 @@ export default function Services() {
                 className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#4A9D5F]/20"
                 initial={
                   prefersReducedMotion
-                    ? { opacity: 1, y: 0 }
-                    : { opacity: 0, y: 30 }
+                    ? { y: 0 }
+                    : { y: 30 }
                 }
-                whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+                whileInView={prefersReducedMotion ? {} : { y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
@@ -128,8 +129,8 @@ export default function Services() {
         {/* CTA Section */}
         <motion.div
           className="mt-16 text-center"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
@@ -141,9 +142,9 @@ export default function Services() {
               <p className="text-gray-600">{t("services.cta.description")}</p>
             </div>
             <a
-              href="tel:+995591314222"
+              href={`tel:${PHONE_E164}`}
               onClick={() => trackCallClick("services_cta")}
-              aria-label="Call us at +995 591 31 42 22"
+              aria-label={`${t("contactChannels.call")} ${PHONE_DISPLAY}`}
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#4A9D5F] text-white rounded-xl font-semibold hover:bg-[#3d8550] active:bg-[#357045] transition-all shadow-md hover:shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />

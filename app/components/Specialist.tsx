@@ -167,7 +167,7 @@ export default function Specialist() {
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority={activeDoctor === 0}
+                    loading="lazy"
                   />
                   {/* Professional Badge Overlay */}
                   <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg z-10">

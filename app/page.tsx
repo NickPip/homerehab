@@ -7,6 +7,7 @@ import WhyUs from "./components/WhyUs";
 import Process from "./components/Process";
 import Coverage from "./components/Coverage";
 import FAQ from "./components/FAQ";
+import CallbackForm from "./components/CallbackForm";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <Process />
       <Coverage />
       <FAQ />
+      <CallbackForm />
       <Footer />
     </main>
   );

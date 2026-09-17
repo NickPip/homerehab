@@ -61,8 +61,8 @@ export default function WhyUs() {
         {/* Section Header */}
         <motion.div
           className="text-center mb-10 sm:mb-12 md:mb-16"
-          initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
@@ -103,10 +103,10 @@ export default function WhyUs() {
                 className="group relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#4A9D5F]/30 overflow-hidden"
                 initial={
                   prefersReducedMotion
-                    ? { opacity: 1, y: 0 }
-                    : { opacity: 0, y: 30 }
+                    ? { y: 0 }
+                    : { y: 30 }
                 }
-                whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+                whileInView={prefersReducedMotion ? {} : { y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
@@ -135,8 +135,8 @@ export default function WhyUs() {
         {/* Stats Section */}
         <motion.div
           className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >

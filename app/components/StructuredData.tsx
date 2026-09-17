@@ -1,5 +1,5 @@
 import { FAQ_ITEMS_KA } from "../lib/faq";
-import { PHONE_E164, SITE_URL } from "../lib/site";
+import { PHONE_E164, SITE_URL, TBILISI_DISTRICTS } from "../lib/site";
 
 /**
  * Profile URLs Google can reconcile this business against: the Google Business Profile listing,
@@ -76,8 +76,8 @@ export function StructuredData() {
       {
         "@type": ["MedicalBusiness", "PhysicalTherapy"],
         "@id": `${SITE_URL}/#business`,
-        name: "HomeRehab — რეაბილიტაცია და ფიზიოთერაპია სახლში",
-        alternateName: "HomeRehab",
+        name: "HomeRehab",
+        slogan: "რეაბილიტაცია და ფიზიოთერაპია სახლში",
         description:
           "ლიცენზირებული ფიზიოთერაპევტების გუნდი, რომელიც სარეაბილიტაციო კურსს პაციენტის სახლში ატარებს თბილისსა და მიმდებარე რაიონებში.",
         url: SITE_URL,
@@ -104,6 +104,13 @@ export function StructuredData() {
             name: "თბილისი",
             sameAs: "https://www.wikidata.org/wiki/Q994",
           },
+          // The districts are named in the visible Coverage section; repeating them here is what
+          // makes neighbourhood-level coverage machine-readable rather than prose-only.
+          ...TBILISI_DISTRICTS.map((district) => ({
+            "@type": "Place",
+            name: district,
+            containedInPlace: { "@type": "City", name: "თბილისი" },
+          })),
           {
             "@type": "GeoCircle",
             geoMidpoint: {
@@ -160,11 +167,25 @@ export function StructuredData() {
           },
         })),
         knowsLanguage: ["ka", "en"],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: PHONE_E164,
+          contactType: "customer service",
+          areaServed: "GE",
+          availableLanguage: ["Georgian", "English", "Russian"],
+        },
         ...(SAME_AS.length > 0 ? { sameAs: SAME_AS } : {}),
         potentialAction: {
           "@type": "ReserveAction",
-          target: `tel:${PHONE_E164}`,
           name: "უფასო კონსულტაციის დაჯავშნა",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${SITE_URL}/#callback`,
+            actionPlatform: [
+              "https://schema.org/DesktopWebPlatform",
+              "https://schema.org/MobileWebPlatform",
+            ],
+          },
         },
       },
       {

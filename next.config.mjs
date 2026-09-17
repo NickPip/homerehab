@@ -3,6 +3,8 @@ const nextConfig = {
   // Serve modern formats for the next/image-optimized assets.
   images: {
     formats: ["image/avif", "image/webp"],
+    // Optimised variants are immutable per source file, so there is no reason to re-derive them.
+    minimumCacheTTL: 31536000,
   },
   // Collapse the apex domain onto the canonical www host so link equity and crawl budget are not
   // split across two origins. Vercel also needs the apex added as a redirecting domain in the

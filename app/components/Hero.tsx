@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
+import { PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
 import { motion } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
@@ -104,9 +105,9 @@ export default function Hero() {
           >
             {/* Primary CTA - Phone */}
             <a
-              href="tel:+995591314222"
+              href={`tel:${PHONE_E164}`}
               onClick={() => trackCallClick("hero")}
-              aria-label="Call us at +995 591 31 42 22"
+              aria-label={`${t("contactChannels.call")} ${PHONE_DISPLAY}`}
               className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#4A9D5F] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-[#3d8550] active:bg-[#357045] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2 focus:ring-offset-transparent font-semibold text-sm sm:text-base w-full sm:w-auto min-h-[48px]"
             >
               <Phone className="w-5 h-5 sm:w-5 sm:h-5" aria-hidden="true" />

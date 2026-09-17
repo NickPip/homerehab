@@ -3,6 +3,7 @@
 import { Phone, Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
+import { PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
 import { motion, AnimatePresence } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { useActiveSection } from "../hooks/useActiveSection";
@@ -20,9 +21,9 @@ export default function Header() {
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
       initial={
-        prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }
+        prefersReducedMotion ? { y: 0 } : { y: -10 }
       }
-      animate={{ opacity: 1, y: 0 }}
+      animate={{ y: 0 }}
       transition={{
         duration: prefersReducedMotion ? 0 : 0.5,
         ease: "easeOut",
@@ -33,8 +34,8 @@ export default function Header() {
         <motion.a
           href="#home"
           className="flex items-center z-50"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          animate={{ y: 0 }}
           transition={{
             duration: prefersReducedMotion ? 0 : 0.5,
             delay: prefersReducedMotion ? 0 : 0.1,
@@ -45,8 +46,8 @@ export default function Header() {
           <Image
             src="/logo.png"
             alt="HomeRehab — რეაბილიტაცია და ფიზიოთერაპია სახლში თბილისში"
-            width={180}
-            height={56}
+            width={540}
+            height={229}
             className="h-10 sm:h-12 md:h-14 w-auto object-contain"
             priority
           />
@@ -55,8 +56,8 @@ export default function Header() {
         {/* Desktop Navigation Menu - centered */}
         <motion.nav
           className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          animate={{ y: 0 }}
           transition={{
             duration: prefersReducedMotion ? 0 : 0.5,
             delay: prefersReducedMotion ? 0 : 0.15,
@@ -152,6 +153,28 @@ export default function Header() {
             )}
           </a>
           <a
+            href="#coverage"
+            className={`relative text-sm font-medium transition-colors ${
+              activeSection === "coverage"
+                ? "text-[#2C6B8E]"
+                : "text-gray-700 hover:text-[#2C6B8E]"
+            }`}
+          >
+            {t("nav.coverage")}
+            {activeSection === "coverage" && (
+              <motion.span
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
+                layoutId="activeSection"
+                initial={false}
+                transition={{
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 30,
+                }}
+              />
+            )}
+          </a>
+          <a
             href="#faq"
             className={`relative text-sm font-medium transition-colors ${
               activeSection === "faq"
@@ -200,8 +223,8 @@ export default function Header() {
         {/* Right side actions */}
         <motion.div
           className="flex items-center gap-2 sm:gap-3 z-50"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          animate={{ y: 0 }}
           transition={{
             duration: prefersReducedMotion ? 0 : 0.5,
             delay: prefersReducedMotion ? 0 : 0.2,
@@ -215,13 +238,13 @@ export default function Header() {
 
           {/* Phone Number - always visible */}
           <a
-            href="tel:+995591314222"
+            href={`tel:${PHONE_E164}`}
             onClick={() => trackCallClick("header")}
-            aria-label="Call us at +995 591 31 42 22"
+            aria-label={`${t("contactChannels.call")} ${PHONE_DISPLAY}`}
             className="flex items-center gap-1.5 sm:gap-2 bg-[#4A9D5F] text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg hover:bg-[#3d8550] active:bg-[#357045] transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2 text-sm sm:text-base"
           >
             <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true" />
-            <span className="hidden xs:inline font-medium text-xs sm:text-sm">591-31-42-22</span>
+            <span className="hidden xs:inline font-medium text-xs sm:text-sm">{PHONE_DISPLAY}</span>
             <span className="xs:hidden font-medium">{t("hero.callButton")}</span>
           </a>
 
@@ -294,6 +317,17 @@ export default function Header() {
                 }`}
               >
                 {t("nav.whyUs")}
+              </a>
+              <a
+                href="#coverage"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block py-3 px-2 rounded-lg transition-colors font-medium text-base border-b border-gray-100 ${
+                  activeSection === "coverage"
+                    ? "text-[#2C6B8E] bg-[#2C6B8E]/5"
+                    : "text-gray-700 hover:text-[#2C6B8E] hover:bg-gray-50"
+                }`}
+              >
+                {t("nav.coverage")}
               </a>
               <a
                 href="#faq"

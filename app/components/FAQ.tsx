@@ -32,8 +32,8 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto">
         <motion.div
           className="text-center mb-12 sm:mb-16"
-          initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
@@ -57,9 +57,9 @@ export default function FAQ() {
               <motion.div
                 key={index}
                 initial={
-                  prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }
+                  prefersReducedMotion ? { y: 0 } : { y: 16 }
                 }
-                whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+                whileInView={prefersReducedMotion ? {} : { y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: Math.min(index, 4) * 0.06 }}
               >
@@ -89,8 +89,8 @@ export default function FAQ() {
 
         <motion.div
           className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 rounded-2xl bg-[#2C6B8E]/5 border border-[#2C6B8E]/15 px-6 py-6 text-center sm:text-left"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >

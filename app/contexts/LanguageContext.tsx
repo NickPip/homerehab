@@ -990,6 +990,7 @@ interface LanguageContextType {
   language: string;
   setLanguage: (lang: string) => void;
   t: (key: string) => string;
+  tList: <T>(key: string) => T[];
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -1028,18 +1029,30 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  function resolve(key: string): unknown {
+    return key
+      .split(".")
+      .reduce<any>((value, part) => value?.[part], translations[language]);
+  }
+
   function t(key: string): string {
-    const keys = key.split(".");
-    let value: any = translations[language];
-    for (const k of keys) {
-      value = value?.[k];
-    }
+    const value = resolve(key);
     return typeof value === "string" ? value : key;
+  }
+
+  /**
+   * Reads a list out of the dictionary. Sections that render repeated content need the array
+   * itself; probing t("x.items.0"), t("x.items.1") until it returns the key back would break on
+   * any string that happened to start with the key prefix.
+   */
+  function tList<T>(key: string): T[] {
+    const value = resolve(key);
+    return Array.isArray(value) ? (value as T[]) : [];
   }
 
   return (
     <LanguageContext.Provider
-      value={{ language, setLanguage: handleSetLanguage, t }}
+      value={{ language, setLanguage: handleSetLanguage, t, tList }}
     >
       {children}
     </LanguageContext.Provider>

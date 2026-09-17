@@ -12,20 +12,11 @@ import { PHONE_E164 } from "../lib/site";
  * server HTML for crawlers even while collapsed. The same questions are emitted as FAQPage
  * JSON-LD in StructuredData, which is what makes them eligible for rich results.
  */
-const MAX_ITEMS = 20;
-
 export default function FAQ() {
-  const { t, language } = useLanguage();
+  const { t, tList, language } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
 
-  // t() resolves dotted paths and returns the key itself when a path is missing, which is how we
-  // detect the end of the list without hard-coding a count.
-  const items: Array<{ question: string; answer: string }> = [];
-  for (let i = 0; i < MAX_ITEMS; i++) {
-    const question = t(`faq.items.${i}.question`);
-    if (question.startsWith("faq.items")) break;
-    items.push({ question, answer: t(`faq.items.${i}.answer`) });
-  }
+  const items = tList<{ question: string; answer: string }>("faq.items");
 
   return (
     <section id="faq" className="bg-white py-20 sm:py-24 px-4" key={language}>

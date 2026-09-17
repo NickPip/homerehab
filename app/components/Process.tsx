@@ -6,31 +6,17 @@ import { useReducedMotion } from "../hooks/useReducedMotion";
 import { ListChecks } from "lucide-react";
 import ContactChannels from "./ContactChannels";
 
-const MAX_STEPS = 10;
-const MAX_METHODS = 30;
-
 /**
  * "How it works" plus the list of treatment methods. Both answer question-shaped searches that the
  * service cards alone never match, and the method names (massage, kinesiotherapy/LFK) are
  * high-volume queries in their own right.
  */
 export default function Process() {
-  const { t } = useLanguage();
+  const { t, tList } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
 
-  const steps: Array<{ title: string; description: string }> = [];
-  for (let i = 0; i < MAX_STEPS; i++) {
-    const title = t(`process.steps.${i}.title`);
-    if (title.startsWith("process.steps")) break;
-    steps.push({ title, description: t(`process.steps.${i}.description`) });
-  }
-
-  const methods: string[] = [];
-  for (let i = 0; i < MAX_METHODS; i++) {
-    const value = t(`methods.items.${i}`);
-    if (value.startsWith("methods.items")) break;
-    methods.push(value);
-  }
+  const steps = tList<{ title: string; description: string }>("process.steps");
+  const methods = tList<string>("methods.items");
 
   return (
     <section id="process" className="bg-gray-50 py-20 sm:py-24 px-4">

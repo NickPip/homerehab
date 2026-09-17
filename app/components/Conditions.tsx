@@ -5,23 +5,16 @@ import { motion } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { Stethoscope } from "lucide-react";
 
-const MAX_ITEMS = 30;
-
 /**
  * Conditions treated, one h3 per diagnosis. Patients search by their diagnosis rather than by the
  * name of a therapy, so this section is what makes queries like "ინსულტის შემდეგ რეაბილიტაცია
  * სახლში" matchable at all.
  */
 export default function Conditions() {
-  const { t } = useLanguage();
+  const { t, tList } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
 
-  const items: Array<{ title: string; description: string }> = [];
-  for (let i = 0; i < MAX_ITEMS; i++) {
-    const title = t(`conditions.items.${i}.title`);
-    if (title.startsWith("conditions.items")) break;
-    items.push({ title, description: t(`conditions.items.${i}.description`) });
-  }
+  const items = tList<{ title: string; description: string }>("conditions.items");
 
   return (
     <section id="conditions" className="bg-white py-20 sm:py-24 px-4">

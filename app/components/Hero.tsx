@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
@@ -27,11 +28,15 @@ export default function Hero() {
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url(/cover.png)",
-          }}
+        <Image
+          src="/cover.webp"
+          alt="ფიზიკური თერაპევტი ატარებს სარეაბილიტაციო ვარჯიშს პაციენტთან სახლში"
+          fill
+          priority
+          fetchPriority="high"
+          quality={80}
+          sizes="100vw"
+          className="object-cover object-center"
         />
         {/* Enhanced gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/50"></div>

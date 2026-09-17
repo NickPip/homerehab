@@ -8,7 +8,28 @@ interface Translations {
     services: string;
     whyUs: string;
     specialist: string;
+    faq: string;
     contact: string;
+  };
+  contactChannels: {
+    call: string;
+    heading: string;
+  };
+  coverage: {
+    badge: string;
+    title: string;
+    description: string;
+    districtsLabel: string;
+    districts: string[];
+    note: string;
+  };
+  faq: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    items: Array<{ question: string; answer: string }>;
+    cta: string;
+    ctaButton: string;
   };
   hero: {
     badge: string;
@@ -138,6 +159,7 @@ const translations: Record<string, Translations> = {
       services: "Services",
       whyUs: "Why Us",
       specialist: "Specialist",
+      faq: "FAQ",
       contact: "Contact",
     },
     hero: {
@@ -301,6 +323,72 @@ const translations: Record<string, Translations> = {
         },
       },
     },
+    coverage: {
+      badge: "Service Area",
+      title: "Physiotherapy at Home Across Tbilisi",
+      description:
+        "Our physiotherapists travel to patients throughout Tbilisi and the surrounding settlements. There is no clinic to reach and no waiting room: the specialist arrives with the equipment, at a time you choose, and delivers the session in your own home.",
+      districtsLabel: "Districts we cover",
+      districts: [
+        "Vake",
+        "Saburtalo",
+        "Mtatsminda",
+        "Isani",
+        "Samgori",
+        "Gldani",
+        "Nadzaladevi",
+        "Didube",
+        "Chughureti",
+        "Krtsanisi",
+        "Didi Dighomi",
+        "Varketili",
+      ],
+      note: "Live just outside the city? Call us — we cover the settlements around Tbilisi too.",
+    },
+    contactChannels: {
+      call: "Call",
+      heading: "Get in touch the way that suits you",
+    },
+    faq: {
+      badge: "Frequently Asked Questions",
+      title: "Home Rehabilitation: Your Questions Answered",
+      subtitle:
+        "The questions patients ask most often before booking their first physiotherapy session at home in Tbilisi.",
+      items: [
+        {
+          question: "What is home rehabilitation and who is it for?",
+          answer:
+            "Home rehabilitation means a licensed physiotherapist comes to you and delivers the full course of treatment in your own home. It is for patients recovering from surgery, a fracture or a stroke, people living with chronic back and joint pain, and anyone for whom travelling to a clinic is difficult.",
+        },
+        {
+          question: "Do physiotherapists make home visits in Tbilisi?",
+          answer:
+            "Yes. Our physiotherapists work across every district of Tbilisi — Vake, Saburtalo, Mtatsminda, Isani, Samgori, Gldani, Nadzaladevi, Didube, Chughureti and Krtsanisi — as well as nearby settlements. Visits are scheduled at a time that suits you.",
+        },
+        {
+          question: "How long does a rehabilitation course last?",
+          answer:
+            "It depends on the diagnosis. A mild orthopedic problem is often resolved in 6-10 sessions, while post-surgical or neurological recovery usually takes one to three months. You get an exact plan after the first assessment.",
+        },
+        {
+          question: "How long is a single session?",
+          answer:
+            "A session normally runs 45-60 minutes and covers assessment, therapeutic exercise, manual therapy, and teaching you the exercises to continue on your own between visits.",
+        },
+        {
+          question: "Do I need a doctor's referral or special equipment?",
+          answer:
+            "A referral is helpful but not required — the physiotherapist assesses your condition at the first visit. The specialist brings the equipment; all you need is a clear space to work in.",
+        },
+        {
+          question: "How do I book the first visit?",
+          answer:
+            "Call +995 591 31 42 22. During the free consultation we listen to your situation, choose the right program, and agree the visit time and price up front, with no hidden costs.",
+        },
+      ],
+      cta: "Still have a question? We are happy to answer it.",
+      ctaButton: "Free Consultation",
+    },
     footer: {
       tagline:
         "Professional home-based physical rehabilitation services. Your recovery, our commitment.",
@@ -329,6 +417,7 @@ const translations: Record<string, Translations> = {
       services: "სერვისები",
       whyUs: "რატომ ჩვენ",
       specialist: "სპეციალისტი",
+      faq: "კითხვები",
       contact: "კონტაქტი",
     },
     hero: {
@@ -491,6 +580,72 @@ const translations: Record<string, Translations> = {
           label: "პაციენტების კმაყოფილება",
         },
       },
+    },
+    coverage: {
+      badge: "მომსახურების არეალი",
+      title: "ფიზიოთერაპია სახლში თბილისის ყველა რაიონში",
+      description:
+        "ჩვენი ფიზიოთერაპევტები პაციენტებთან დადიან მთელ თბილისსა და მიმდებარე დასახლებებში. კლინიკამდე მისვლა და რიგში ლოდინი აღარ გჭირდებათ: სპეციალისტი აღჭურვილობით მოდის თქვენთვის შერჩეულ დროს და სეანსს თქვენსავე სახლში ატარებს.",
+      districtsLabel: "რაიონები, სადაც ვმუშაობთ",
+      districts: [
+        "ვაკე",
+        "საბურთალო",
+        "მთაწმინდა",
+        "ისანი",
+        "სამგორი",
+        "გლდანი",
+        "ნაძალადევი",
+        "დიდუბე",
+        "ჩუღურეთი",
+        "კრწანისი",
+        "დიდი დიღომი",
+        "ვარკეთილი",
+      ],
+      note: "ქალაქგარეთ ცხოვრობთ? დაგვირეკეთ — თბილისის მიმდებარე დასახლებებსაც ვფარავთ.",
+    },
+    contactChannels: {
+      call: "დარეკეთ",
+      heading: "დაგვიკავშირდით თქვენთვის მოსახერხებელი გზით",
+    },
+    faq: {
+      badge: "ხშირად დასმული კითხვები",
+      title: "რეაბილიტაცია სახლში: პასუხები თქვენს კითხვებზე",
+      subtitle:
+        "კითხვები, რომლებსაც პაციენტები ყველაზე ხშირად სვამენ თბილისში სახლში ფიზიოთერაპიის პირველ სეანსამდე.",
+      items: [
+        {
+          question: "რა არის რეაბილიტაცია სახლში და ვისთვის არის განკუთვნილი?",
+          answer:
+            "რეაბილიტაცია სახლში ნიშნავს, რომ ლიცენზირებული ფიზიოთერაპევტი თავად ჩამოდის თქვენთან და სარეაბილიტაციო კურსს თქვენსავე საცხოვრებელში ატარებს. ის განკუთვნილია ოპერაციის, მოტეხილობის ან ინსულტის შემდგომი პაციენტებისთვის, ხერხემლისა და სახსრების ქრონიკული ტკივილის მქონე ადამიანებისთვის და ყველასთვის, ვისაც კლინიკამდე მისვლა უჭირს.",
+        },
+        {
+          question: "მოდის თუ არა ფიზიოთერაპევტი სახლში თბილისში?",
+          answer:
+            "დიახ. ჩვენი ფიზიოთერაპევტები მუშაობენ თბილისის ყველა რაიონში — ვაკე, საბურთალო, მთაწმინდა, ისანი, სამგორი, გლდანი, ნაძალადევი, დიდუბე, ჩუღურეთი და კრწანისი — ასევე მიმდებარე დასახლებებში. ვიზიტს თქვენთვის მოსახერხებელ დროზე ვნიშნავთ.",
+        },
+        {
+          question: "რამდენ ხანს გრძელდება სარეაბილიტაციო კურსი?",
+          answer:
+            "კურსის ხანგრძლივობა დიაგნოზზეა დამოკიდებული. მსუბუქი ორთოპედიული პრობლემა ხშირად 6-10 სეანსში წყდება, პოსტოპერაციული ან ნევროლოგიური აღდგენა კი 1-3 თვეს მოითხოვს. ზუსტ გეგმას პირველი შეფასების შემდეგ გეტყვით.",
+        },
+        {
+          question: "რამდენ ხანს გრძელდება ერთი სეანსი?",
+          answer:
+            "ერთი სეანსი ჩვეულებრივ 45-60 წუთია და მოიცავს შეფასებას, სამკურნალო ვარჯიშებს, მანუალურ თერაპიას და სახლში დამოუკიდებლად შესასრულებელი ვარჯიშების სწავლებას.",
+        },
+        {
+          question: "საჭიროა თუ არა ექიმის დანიშნულება ან სპეციალური აღჭურვილობა?",
+          answer:
+            "ექიმის დანიშნულება სასურველია, მაგრამ სავალდებულო არ არის — პირველ ვიზიტზე ფიზიოთერაპევტი თავად აფასებს მდგომარეობას. აღჭურვილობას სპეციალისტი თან მოიტანს; თქვენ მხოლოდ თავისუფალი სივრცე დაგჭირდებათ.",
+        },
+        {
+          question: "როგორ დავჯავშნო პირველი ვიზიტი?",
+          answer:
+            "დაგვირეკეთ ნომერზე +995 591 31 42 22. უფასო კონსულტაციაზე მოგისმენთ, შევარჩევთ შესაფერის მიმართულებას და შევათანხმებთ ვიზიტის დროსა და ღირებულებას წინასწარ, დაფარული ხარჯების გარეშე.",
+        },
+      ],
+      cta: "კიდევ გაქვთ კითხვა? სიამოვნებით გიპასუხებთ.",
+      ctaButton: "უფასო კონსულტაცია",
     },
     footer: {
       tagline:

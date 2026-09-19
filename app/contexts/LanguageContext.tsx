@@ -204,9 +204,9 @@ const translations: Record<string, Translations> = {
     },
     hero: {
       badge: "Certified & Licensed",
-      title1: "Rehabilitation at Home",
+      title1: "Rehabilitation",
       title2: "and Physiotherapy",
-      title3: "In Tbilisi",
+      title3: "at Home",
       description:
         "Physiotherapy and rehabilitation at home in Tbilisi. Regain your freedom of movement without visiting a clinic — a licensed physiotherapist comes to you and delivers the full course of treatment in your own home.",
       callButton: "Call",
@@ -592,9 +592,9 @@ const translations: Record<string, Translations> = {
     },
     hero: {
       badge: "სერტიფიცირებული და ლიცენზირებული",
-      title1: "რეაბილიტაცია სახლში",
+      title1: "რეაბილიტაცია",
       title2: "და ფიზიოთერაპია",
-      title3: "თბილისში",
+      title3: "სახლში",
       description:
         "ფიზიოთერაპია და რეაბილიტაცია სახლში თბილისში. დაიბრუნეთ მოძრაობის თავისუფლება კლინიკაში ვიზიტის გარეშე — ლიცენზირებული ფიზიოთერაპევტი მოვა თქვენთან და სრულ სარეაბილიტაციო კურსს თქვენსავე სახლში ჩაგიტარებთ.",
       callButton: "დარეკეთ",

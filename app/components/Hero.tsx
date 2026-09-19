@@ -66,7 +66,7 @@ export default function Hero() {
 
           {/* Main Headline with colored accent */}
           <m.h1
-            className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-bold tracking-tight"
+            className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] font-bold tracking-tight"
             initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
             animate={{ y: 0 }}
             transition={{

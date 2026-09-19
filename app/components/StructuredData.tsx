@@ -75,9 +75,9 @@ export function StructuredData() {
         "@type": "MedicalBusiness",
         "@id": `${SITE_URL}/#business`,
         name: "HomeRehab",
-        slogan: "რეაბილიტაცია და ფიზიოთერაპია სახლში",
+        slogan: "ფიზიო თერაპია და რეაბილიტაცია ბინაზე გამოძახებით",
         description:
-          "ლიცენზირებული ფიზიოთერაპევტების გუნდი, რომელიც სარეაბილიტაციო კურსს პაციენტის სახლში ატარებს თბილისსა და მიმდებარე რაიონებში.",
+          "ლიცენზირებული ფიზიოთერაპევტების გუნდი, რომელიც ბინაზე გამოძახებით ატარებს სარეაბილიტაციო კურსს თბილისსა და მიმდებარე რაიონებში.",
         url: SITE_URL,
         telephone: PHONE_E164,
         image: `${SITE_URL}/cover.jpg`,
@@ -119,14 +119,14 @@ export function StructuredData() {
         })),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "რეაბილიტაციისა და ფიზიოთერაპიის სერვისები სახლში",
+          name: "ფიზიო თერაპია და რეაბილიტაცია ბინაზე გამოძახებით",
           itemListElement: SERVICES.map((s) => ({
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
               name: s.name,
               description: s.description,
-              serviceType: "ფიზიოთერაპია და რეაბილიტაცია სახლში",
+              serviceType: "ფიზიოთერაპევტის გამოძახება ბინაზე",
               areaServed: { "@type": "City", name: "თბილისი" },
             },
           })),

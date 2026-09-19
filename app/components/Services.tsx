@@ -2,7 +2,8 @@
 
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
-import { motion } from "motion/react";
+import { PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
+import { m } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import {
   Bone,
@@ -62,10 +63,10 @@ export default function Services() {
     <section id="services" className="bg-gray-50 py-24 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
+        <m.div
           className="text-center mb-16"
-          initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 20 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
@@ -78,22 +79,22 @@ export default function Services() {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {t("services.subtitle")}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <motion.div
+              <m.div
                 key={index}
                 className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#4A9D5F]/20"
                 initial={
                   prefersReducedMotion
-                    ? { opacity: 1, y: 0 }
-                    : { opacity: 0, y: 30 }
+                    ? { y: 0 }
+                    : { y: 30 }
                 }
-                whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+                whileInView={prefersReducedMotion ? {} : { y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
@@ -120,16 +121,16 @@ export default function Services() {
                   <span>{t("services.learnMore")}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>
 
         {/* CTA Section */}
-        <motion.div
+        <m.div
           className="mt-16 text-center"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          whileInView={prefersReducedMotion ? {} : { y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
@@ -141,16 +142,16 @@ export default function Services() {
               <p className="text-gray-600">{t("services.cta.description")}</p>
             </div>
             <a
-              href="tel:+995591314222"
+              href={`tel:${PHONE_E164}`}
               onClick={() => trackCallClick("services_cta")}
-              aria-label="Call us at +995 591 31 42 22"
+              aria-label={`${t("contactChannels.call")} ${PHONE_DISPLAY}`}
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#4A9D5F] text-white rounded-xl font-semibold hover:bg-[#3d8550] active:bg-[#357045] transition-all shadow-md hover:shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
               <span>{t("services.cta.button")}</span>
             </a>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

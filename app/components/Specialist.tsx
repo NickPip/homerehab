@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 export default function Specialist() {
@@ -125,7 +125,7 @@ export default function Specialist() {
         {/* Specialist Card with Animation */}
         <div className="max-w-4xl mx-auto relative overflow-hidden">
           <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
+            <m.div
               key={activeDoctor}
               custom={direction}
               variants={variants}
@@ -163,11 +163,11 @@ export default function Specialist() {
                 <div className="relative h-[192px] sm:h-[224px] lg:h-full lg:min-h-[400px] bg-gradient-to-br from-[#E8F4F8] to-[#D4EBF0] overflow-hidden">
                   <Image
                     src={currentDoctor.image}
-                    alt={currentDoctor.name}
+                    alt={`${currentDoctor.name} — ${currentDoctor.credentials}, HomeRehab`}
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority={activeDoctor === 0}
+                    loading="lazy"
                   />
                   {/* Professional Badge Overlay */}
                   <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg z-10">
@@ -271,7 +271,7 @@ export default function Specialist() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </div>
 
@@ -313,6 +313,25 @@ export default function Specialist() {
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>
+
+        {/*
+          The carousel renders one therapist at a time, so the second never reaches the served
+          HTML. Both are named in the schema's employee list, and markup that claims people the
+          page does not show is a mismatch — besides which, the therapists' credentials are the
+          page's strongest expertise signal and belong in the crawlable text.
+        */}
+        <ul className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {doctors.map((doctor) => (
+            <li
+              key={doctor.id}
+              className="rounded-xl border border-gray-200 bg-white/70 px-5 py-4"
+            >
+              <h3 className="text-base font-bold text-gray-900">{doctor.name}</h3>
+              <p className="text-sm text-gray-600 mt-0.5">{doctor.credentials}</p>
+              <p className="text-sm text-gray-500 mt-1">{doctor.currentRole}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

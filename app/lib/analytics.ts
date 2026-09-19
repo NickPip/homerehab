@@ -8,3 +8,9 @@ export function trackCallClick(location: string) {
   if (!GA_ID) return;
   sendGAEvent("event", "call_click", { location });
 }
+
+/** Reports a click on a messaging channel (WhatsApp, Viber) as a `message_click` event. */
+export function trackMessageClick(channel: string, location: string) {
+  if (!GA_ID) return;
+  sendGAEvent("event", "message_click", { channel, location });
+}

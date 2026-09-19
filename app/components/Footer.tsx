@@ -1,7 +1,9 @@
 "use client";
 
-import { Phone, MapPin, Mail, Clock } from "lucide-react";
+import { Phone, MapPin, Mail, Clock, Star } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import ContactChannels from "./ContactChannels";
+import { GBP_REVIEW_URL, PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
 import { trackCallClick } from "../lib/analytics";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,25 +20,37 @@ export default function Footer() {
             <Link href="#home" className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
               <Image
                 src="/logo.png"
-                alt="HomeRehab Logo"
-                width={120}
-                height={40}
+                alt="HomeRehab — რეაბილიტაცია და ფიზიოთერაპია სახლში თბილისში"
+                width={270}
+                height={115}
                 className="h-8 sm:h-10 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-white/80 leading-relaxed mb-4 sm:mb-6 text-xs sm:text-sm">
               {t("footer.tagline")}
             </p>
-            <div className="flex items-center gap-2 sm:gap-3 text-white/90">
+            <div className="flex items-center gap-2 sm:gap-3 text-white/90 mb-4">
               <Phone className="w-4 h-4 text-[#4A9D5F] flex-shrink-0" />
               <a
-                href="tel:+995591314222"
+                href={`tel:${PHONE_E164}`}
                 onClick={() => trackCallClick("footer_logo")}
                 className="text-sm sm:text-base font-semibold hover:text-[#4A9D5F] transition-colors"
               >
-                +995 591 31 42 22
+                {PHONE_DISPLAY}
               </a>
             </div>
+            <ContactChannels location="footer" />
+            {GBP_REVIEW_URL && (
+              <a
+                href={GBP_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm text-white/80 underline underline-offset-2 transition-colors hover:text-[#4A9D5F]"
+              >
+                <Star className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span>{t("footer.reviewCta")}</span>
+              </a>
+            )}
           </div>
 
           {/* Quick Links */}
@@ -79,6 +93,22 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="#coverage"
+                  className="text-white/80 hover:text-[#4A9D5F] transition-colors text-xs sm:text-sm block py-1"
+                >
+                  {t("nav.coverage")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#faq"
+                  className="text-white/80 hover:text-[#4A9D5F] transition-colors text-xs sm:text-sm block py-1"
+                >
+                  {t("nav.faq")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="#contact"
                   className="text-white/80 hover:text-[#4A9D5F] transition-colors text-xs sm:text-sm block py-1"
                 >
@@ -101,11 +131,11 @@ export default function Footer() {
                     {t("footer.contact.phoneLabel")}
                   </p>
                   <a
-                    href="tel:+995591314222"
+                    href={`tel:${PHONE_E164}`}
                     onClick={() => trackCallClick("footer_contact")}
                     className="text-white hover:text-[#4A9D5F] transition-colors font-medium text-sm sm:text-base"
                   >
-                    +995 591 31 42 22
+                    {PHONE_DISPLAY}
                   </a>
                 </div>
               </li>

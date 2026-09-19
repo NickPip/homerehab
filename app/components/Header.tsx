@@ -3,7 +3,8 @@
 import { Phone, Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { trackCallClick } from "../lib/analytics";
-import { motion, AnimatePresence } from "motion/react";
+import { PHONE_DISPLAY, PHONE_E164 } from "../lib/site";
+import { m, AnimatePresence } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { useActiveSection } from "../hooks/useActiveSection";
 import Image from "next/image";
@@ -17,12 +18,12 @@ export default function Header() {
   const activeSection = useActiveSection();
 
   return (
-    <motion.header
+    <m.header
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
       initial={
-        prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }
+        prefersReducedMotion ? { y: 0 } : { y: -10 }
       }
-      animate={{ opacity: 1, y: 0 }}
+      animate={{ y: 0 }}
       transition={{
         duration: prefersReducedMotion ? 0 : 0.5,
         ease: "easeOut",
@@ -30,11 +31,11 @@ export default function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between lg:px-12">
         {/* Logo/Brand - clickable to scroll to hero */}
-        <motion.a
+        <m.a
           href="#home"
           className="flex items-center z-50"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          animate={{ y: 0 }}
           transition={{
             duration: prefersReducedMotion ? 0 : 0.5,
             delay: prefersReducedMotion ? 0 : 0.1,
@@ -44,19 +45,19 @@ export default function Header() {
         >
           <Image
             src="/logo.png"
-            alt="HomeRehab Logo"
-            width={180}
-            height={56}
+            alt="HomeRehab — რეაბილიტაცია და ფიზიოთერაპია სახლში თბილისში"
+            width={540}
+            height={229}
             className="h-10 sm:h-12 md:h-14 w-auto object-contain"
-            priority
+            sizes="(min-width: 768px) 132px, 94px"
           />
-        </motion.a>
+        </m.a>
 
         {/* Desktop Navigation Menu - centered */}
-        <motion.nav
-          className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          animate={{ opacity: 1 }}
+        <m.nav
+          className="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-7 px-4"
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          animate={{ y: 0 }}
           transition={{
             duration: prefersReducedMotion ? 0 : 0.5,
             delay: prefersReducedMotion ? 0 : 0.15,
@@ -65,7 +66,7 @@ export default function Header() {
         >
           <a
             href="#home"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "home"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -73,7 +74,7 @@ export default function Header() {
           >
             {t("nav.home")}
             {activeSection === "home" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -87,7 +88,7 @@ export default function Header() {
           </a>
           <a
             href="#services"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "services"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -95,7 +96,7 @@ export default function Header() {
           >
             {t("nav.services")}
             {activeSection === "services" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -109,7 +110,7 @@ export default function Header() {
           </a>
           <a
             href="#specialist"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "specialist"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -117,7 +118,7 @@ export default function Header() {
           >
             {t("nav.specialist")}
             {activeSection === "specialist" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -131,7 +132,7 @@ export default function Header() {
           </a>
           <a
             href="#why-us"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "why-us"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -139,7 +140,51 @@ export default function Header() {
           >
             {t("nav.whyUs")}
             {activeSection === "why-us" && (
-              <motion.span
+              <m.span
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
+                layoutId="activeSection"
+                initial={false}
+                transition={{
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 30,
+                }}
+              />
+            )}
+          </a>
+          <a
+            href="#coverage"
+            className={`relative hidden whitespace-nowrap xl:inline-block text-sm font-medium transition-colors ${
+              activeSection === "coverage"
+                ? "text-[#2C6B8E]"
+                : "text-gray-700 hover:text-[#2C6B8E]"
+            }`}
+          >
+            {t("nav.coverage")}
+            {activeSection === "coverage" && (
+              <m.span
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
+                layoutId="activeSection"
+                initial={false}
+                transition={{
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 30,
+                }}
+              />
+            )}
+          </a>
+          <a
+            href="#faq"
+            className={`relative hidden whitespace-nowrap xl:inline-block text-sm font-medium transition-colors ${
+              activeSection === "faq"
+                ? "text-[#2C6B8E]"
+                : "text-gray-700 hover:text-[#2C6B8E]"
+            }`}
+          >
+            {t("nav.faq")}
+            {activeSection === "faq" && (
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -153,7 +198,7 @@ export default function Header() {
           </a>
           <a
             href="#contact"
-            className={`relative text-sm font-medium transition-colors ${
+            className={`relative whitespace-nowrap text-sm font-medium transition-colors ${
               activeSection === "contact"
                 ? "text-[#2C6B8E]"
                 : "text-gray-700 hover:text-[#2C6B8E]"
@@ -161,7 +206,7 @@ export default function Header() {
           >
             {t("nav.contact")}
             {activeSection === "contact" && (
-              <motion.span
+              <m.span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4A9D5F]"
                 layoutId="activeSection"
                 initial={false}
@@ -173,13 +218,13 @@ export default function Header() {
               />
             )}
           </a>
-        </motion.nav>
+        </m.nav>
 
         {/* Right side actions */}
-        <motion.div
+        <m.div
           className="flex items-center gap-2 sm:gap-3 z-50"
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={prefersReducedMotion ? { y: 0 } : { y: 12 }}
+          animate={{ y: 0 }}
           transition={{
             duration: prefersReducedMotion ? 0 : 0.5,
             delay: prefersReducedMotion ? 0 : 0.2,
@@ -193,13 +238,13 @@ export default function Header() {
 
           {/* Phone Number - always visible */}
           <a
-            href="tel:+995591314222"
+            href={`tel:${PHONE_E164}`}
             onClick={() => trackCallClick("header")}
-            aria-label="Call us at +995 591 31 42 22"
+            aria-label={`${t("contactChannels.call")} ${PHONE_DISPLAY}`}
             className="flex items-center gap-1.5 sm:gap-2 bg-[#4A9D5F] text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg hover:bg-[#3d8550] active:bg-[#357045] transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#4A9D5F] focus:ring-offset-2 text-sm sm:text-base"
           >
             <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true" />
-            <span className="hidden xs:inline font-medium text-xs sm:text-sm">591-31-42-22</span>
+            <span className="hidden xs:inline font-medium text-xs sm:text-sm">{PHONE_DISPLAY}</span>
             <span className="xs:hidden font-medium">{t("hero.callButton")}</span>
           </a>
 
@@ -215,13 +260,13 @@ export default function Header() {
               <Menu className="w-6 h-6" />
             )}
           </button>
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -274,6 +319,28 @@ export default function Header() {
                 {t("nav.whyUs")}
               </a>
               <a
+                href="#coverage"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block py-3 px-2 rounded-lg transition-colors font-medium text-base border-b border-gray-100 ${
+                  activeSection === "coverage"
+                    ? "text-[#2C6B8E] bg-[#2C6B8E]/5"
+                    : "text-gray-700 hover:text-[#2C6B8E] hover:bg-gray-50"
+                }`}
+              >
+                {t("nav.coverage")}
+              </a>
+              <a
+                href="#faq"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block py-3 px-2 rounded-lg transition-colors font-medium text-base border-b border-gray-100 ${
+                  activeSection === "faq"
+                    ? "text-[#2C6B8E] bg-[#2C6B8E]/5"
+                    : "text-gray-700 hover:text-[#2C6B8E] hover:bg-gray-50"
+                }`}
+              >
+                {t("nav.faq")}
+              </a>
+              <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block py-3 px-2 rounded-lg transition-colors font-medium text-base border-b border-gray-100 ${
@@ -290,9 +357,9 @@ export default function Header() {
                 </div>
               </div>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </m.header>
   );
 }

@@ -3,7 +3,8 @@
 import { useLanguage } from "../contexts/LanguageContext";
 import { m } from "motion/react";
 import { useReducedMotion } from "../hooks/useReducedMotion";
-import { ListChecks } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ListChecks } from "lucide-react";
 import ContactChannels from "./ContactChannels";
 
 /**
@@ -38,6 +39,13 @@ export default function Process() {
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             {t("process.subtitle")}
           </p>
+          <Link
+            href="/gamodzaxeba"
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#2C6B8E] hover:underline"
+          >
+            {t("process.detailLink")}
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </Link>
         </m.div>
 
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-14 sm:mb-16">

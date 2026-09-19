@@ -33,6 +33,7 @@ interface Translations {
     badge: string;
     title: string;
     subtitle: string;
+    detailLink: string;
     steps: Array<{ title: string; description: string }>;
   };
   callback: {
@@ -430,6 +431,7 @@ const translations: Record<string, Translations> = {
       badge: "How It Works",
       title: "Rehabilitation at Home in Four Steps",
       subtitle: "From the first call to the end of your course, this is what happens.",
+      detailLink: "Read the full walkthrough of a home visit",
       steps: [
         {
           title: "Call and free consultation",
@@ -818,6 +820,7 @@ const translations: Record<string, Translations> = {
       badge: "როგორ ვმუშაობთ",
       title: "როგორ ხდება ფიზიოთერაპევტის ბინაზე გამოძახება — 4 ნაბიჯი",
       subtitle: "პირველი ზარიდან კურსის დასრულებამდე — აი, რა ხდება.",
+      detailLink: "ვრცლად: როგორ მიდის ფიზიოთერაპევტის ბინაზე გამოძახება",
       steps: [
         {
           title: "ზარი და უფასო კონსულტაცია",

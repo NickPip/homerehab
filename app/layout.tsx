@@ -13,6 +13,19 @@ const georgian = Noto_Sans_Georgian({
   variable: "--font-georgian",
 });
 
+/**
+ * Search Console "HTML tag" verification token for https://www.homerehab.ge.
+ *
+ * Checked in rather than kept in the environment: the token is rendered into a meta tag on every
+ * page, so it is public by construction and nothing is protected by hiding it. Keeping it here
+ * means the tag cannot silently disappear from a deploy that is missing an environment variable,
+ * which would un-verify the property. NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION still overrides it if
+ * the property is ever re-created with a new token.
+ */
+const GOOGLE_SITE_VERIFICATION =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
+  "-Kv5Wu_wjrJnW6hK15dGVcL9usExsUHSln87btphi9U";
+
 const TITLE = "ფიზიოთერაპია და რეაბილიტაცია სახლში, ბინაზე გამოძახებით | თბილისი";
 const DESCRIPTION =
   "ფიზიოთერაპევტის გამოძახება ბინაზე თბილისში. რეაბილიტაცია და ფიზიო თერაპია სახლში, ლიცენზირებული სპეციალისტით. დარეკეთ: +995 591 31 42 22";
@@ -90,11 +103,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION to the token Search Console gives you for the
-  // "HTML tag" verification method. Omitted entirely when unset.
-  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
-    : undefined,
+  verification: { google: GOOGLE_SITE_VERIFICATION },
 };
 
 export const viewport: Viewport = {
